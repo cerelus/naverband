@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+@import url(./reset.css);
+@import url(./fonts.css);
+
+:root{
+    --main-color: #0dcb67;
+}
+body{
+    font-family: 'NanumSquareNeo', serif;
+}
+.sp::after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url(../img/sp_pc.png);
+    background-size: 96px 94px;
+}
+.inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+.ir {
+    display: none;
+}
+.text-green{
+    color: var(--main-color);
+}
+.tit_main{
+    font-size: 60px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+.text-data{
+    font-size: 12px;
+    text-align: center;
+    line-height: 22px;
+    color: #999;
+}
+
+/* header */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+#header .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+/* header_logo */
+.logo_wrap {
+    display: flex;
+    gap: 10px;
+}
+.logo_img.sp::after {
+    width: 28px;
+    height: 28px;
+    background-position: -33px -36px;
+}
+.logo_tit a {
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+}
+/* header_gnb */
+.gnb{
+    display: none;
+}
+#header.fixed .gnb{
+    display: flex;
+    gap: 10px;
+    margin-left: 25px;
+}
+#header.fixed .gnb a{
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 16px;
+}
+#header.fixed .gnb li.on a{
+    background-color: #000;
+    color: #fff;
+}
+/* header_btn */
+#header .btn_wrap {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+}
+.btn_app {
+    padding: 9px 16px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 16px;
+}
+.btn_share {
+    width: 28px;
+    height: 28px;
+    background-image: url(../img/ico_share_w.png);
+    background-size: 28px 28px;
+}
+/* #header.fixed */
+#header.fixed{
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+}
+#header.fixed .logo_img.sp::after{
+    background-position: 0 -37px;
+}
+#header.fixed .logo_tit a{
+    color: #000;
+}
+#header.fixed .btn_app{
+    color: #000;
+    border-color: #000;
+}
+#header.fixed .btn_share {
+    background-image: url(../img/ico_share.png);
+}

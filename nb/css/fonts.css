@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+/* web font - 나눔스퀘어 네오 */
+@font-face {
+    font-family: "NanumSquareNeo";
+    src: url(./fonts/NanumSquareNeoTTF-eHv.eot); /* IE 호환성 보기 */
+    src: url(./fonts/NanumSquareNeoTTF-eHv.eot?#iefix) format("embedded-opentype"), /* IE 6 ~ 8 */
+         url(./fonts/NanumSquareNeoTTF-eHv.woff) format("woff"), /* 모던 브라우저 */
+         url(./fonts/NanumSquareNeo-eHv.ttf) format("truetype"); /* Safari, Android, iOS */
+    font-weight: 900;
+}
+@font-face {
+    font-family: "NanumSquareNeo";
+    src: url(./fonts/NanumSquareNeoTTF-dEb.eot);
+    src: url(./fonts/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"),
+         url(./fonts/NanumSquareNeoTTF-dEb.woff) format("woff"),
+         url(./fonts/NanumSquareNeo-dEb.ttf) format("truetype");
+    font-weight: 800;
+}
+@font-face {
+    font-family: "NanumSquareNeo";
+    src: url(./fonts/NanumSquareNeoTTF-cBd.eot);
+    src: url(./fonts/NanumSquareNeoTTF-cBd.eot?#iefix) format("embedded-opentype"),
+         url(./fonts/NanumSquareNeoTTF-cBd.woff) format("woff"),
+         url(./fonts/NanumSquareNeo-cBd.ttf) format("truetype");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "NanumSquareNeo";
+    src: url(./fonts/NanumSquareNeoTTF-bRg.eot);
+    src: url(./fonts/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"),
+         url(./fonts/NanumSquareNeoTTF-bRg.woff) format("woff"),
+         url(./fonts/NanumSquareNeo-bRg.ttf) format("truetype");
+    font-weight: 400;
+}

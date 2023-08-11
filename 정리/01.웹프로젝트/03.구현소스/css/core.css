@@ -1,0 +1,101 @@
+@charset "utf-8";
+/* 폰트, CSS변수, 공통클래스 셋팅 */
+
+/*** 폰트 ***/
+/* 웹폰트CDN - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
+
+/* 나눔스퀘어 */
+@font-face {
+    font-family: NanumSquare;
+    font-weight: 400;
+    src: url(./fonts/NanumSquareR.eot); /* IE 호환성 보기 */
+    src: url(./fonts/NanumSquareR.eot?#iefix) format("embedded-opentype"), /* IE 6 ~ 8 */
+         url(./fonts/NanumSquareR.woff) format("woff"), /* 모던 브라우저 */
+         url(./fonts/NanumSquareR.woff2) format("woff2"), /* 모던 브라우저 - WOFF2 지원  */
+         url(./fonts/NanumSquareR.ttf) format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: NanumSquare;
+    font-weight: 700;
+    src: url(./fonts/NanumSquareB.eot); /* IE 호환성 보기 */
+    src: url(./fonts/NanumSquareB.eot?#iefix) format("embedded-opentype"), /* IE 6 ~ 8 */
+         url(./fonts/NanumSquareB.woff) format("woff"), /* 모던 브라우저 */
+         url(./fonts/NanumSquareB.woff2) format("woff2"), /* 모던 브라우저 - WOFF2 지원  */
+         url(./fonts/NanumSquareB.ttf) format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: NanumSquare;
+    font-weight: 800;
+    src: url(./fonts/NanumSquareEB.eot); /* IE 호환성 보기 */
+    src: url(./fonts/NanumSquareEB.eot?#iefix) format("embedded-opentype"), /* IE 6 ~ 8 */
+         url(./fonts/NanumSquareEB.woff) format("woff"), /* 모던 브라우저 */
+         url(./fonts/NanumSquareEB.woff2) format("woff2"), /* 모던 브라우저 - WOFF2 지원  */
+         url(./fonts/NanumSquareEB.ttf) format("truetype"); /* Safari, Android, iOS */
+}
+
+/*** CSS변수 ***/
+:root{
+    --point-red: #f52334;
+    --point-yellow: #ffe001;
+    --point-brown: #3c2121;
+    --bg-yellow: #FFF5D9;
+    --bg-pink: #ffe2de;
+    --fw-bold: 700;
+    --fw-bolder: 800;
+}
+
+/*** 공통클래스 ***/
+body *{
+    font-family: 'Poppins', NanumSquare, sans-serif;
+    font-size: 1.6rem;
+
+    /* 블록잡힘 방지 */
+    user-select: none;
+
+    /* outline: 1px dotted lightgreen; */
+}
+.ibx{
+    margin: 0 auto;
+    padding: 0 30px;
+    max-width: 1700px;
+
+    box-sizing: border-box;
+}
+section{
+    overflow: hidden;
+}
+.sect_tit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 80px 0;
+}
+.sect_tit>h2{
+    position: relative;
+    font-weight: var(--fw-bolder);
+    font-size: 5rem;
+    color: var(--point-red);
+}
+.sect_tit>h2:after {
+    content: '';
+    position: absolute;
+    /* width: 0; */
+    width: 100%;
+    height: 4px;
+    background: var(--point-red);
+    bottom: -5px;
+    left: 0;
+    transition: all 0.5s;
+}
+.act{
+    transform: translateY(20%);
+    opacity: 0;
+    transition: 1.2s cubic-bezier(0.45, 0.05, 0.55, 0.95)
+}
+/* 등장클래스 + .on */
+.act.on{
+    transform: translateY(0);
+    opacity: 1;
+}

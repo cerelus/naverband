@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+/* Montserrat & Noto Sans Korean  */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+/* Spoqa Han Sans Neo */
+@font-face {
+    font-family: "Spoqa Han Sans Neo";
+    font-weight: 700;
+    src: url(../font/SpoqaHanSansNeo-Bold.eot); /* IE 호환성 보기 */
+    src: url(../font/SpoqaHanSansNeo-Bold.eot?#iefix) format("embedded-opentype"), /* IE 6 ~ 8 */
+         url(../font/SpoqaHanSansNeo-Bold.woff) format("woff"), /* 모던 브라우저 */
+         url(../font/SpoqaHanSansNeo-Bold.woff2) format("woff2"), /* 모던 브라우저 - WOFF2 지원  */
+         url(../font/SpoqaHanSansNeo-Bold.ttf) format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: "Spoqa Han Sans Neo";
+    font-weight: 500;
+    src: url(../font/SpoqaHanSansNeo-Medium.eot); /* IE 호환성 보기 */
+    src: url(../font/SpoqaHanSansNeo-Medium.eot?#iefix) format("embedded-opentype"), /* IE 6 ~ 8 */
+         url(../font/SpoqaHanSansNeo-Medium.woff) format("woff"), /* 모던 브라우저 */
+         url(../font/SpoqaHanSansNeo-Medium.woff2) format("woff2"), /* 모던 브라우저 - WOFF2 지원  */
+         url(../font/SpoqaHanSansNeo-Medium.ttf) format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: "Spoqa Han Sans Neo";
+    font-weight: 400;
+    src: url(../font/SpoqaHanSansNeo-Regular.eot); /* IE 호환성 보기 */
+    src: url(../font/SpoqaHanSansNeo-Regular.eot?#iefix) format("embedded-opentype"), /* IE 6 ~ 8 */
+         url(../font/SpoqaHanSansNeo-Regular.woff) format("woff"), /* 모던 브라우저 */
+         url(../font/SpoqaHanSansNeo-Regular.woff2) format("woff2"), /* 모던 브라우저 - WOFF2 지원  */
+         url(../font/SpoqaHanSansNeo-Regular.ttf) format("truetype"); /* Safari, Android, iOS */
+}
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Noto Sans KR', sans-serif;
+font-family: 'Spoqa Han Sans Neo',sans-serif; */

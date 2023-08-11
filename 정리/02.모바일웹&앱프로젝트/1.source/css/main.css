@@ -1,0 +1,452 @@
+@charset "utf-8";
+
+@import url(./reset.css);
+@import url(./font.css);
+@import url(./core.css);
+@import url(./common.css);
+
+/*////// cont1 - banner //////*/
+.cont1 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.cont1_banner {
+    width: 100%;
+    height: 100%;
+}
+.cont1_banner li.swiper-slide-active .banner_tit p {
+    opacity: 1;
+    transform: translateY(0px);
+}
+.cont1_banner > ul > li > a {
+    height: 100%;
+}
+.cont1_banner > ul > li > a > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont1_banner li .banner_tit {
+    position: absolute;
+    bottom: 16%;
+    left: 10%;
+}
+.cont1_banner li .banner_tit p {
+    color: #fff;
+    transform: translateY(100px);
+    opacity: 0;
+    position: relative;
+    transition: all 0.4s ease-out;
+}
+.cont1_banner li .banner_tit p:nth-child(1) {
+    transition-delay: 0.9s;
+}
+.cont1_banner li .banner_tit p:nth-child(2) {
+    transition-delay: 1.1s;
+}
+.banner_tit p:nth-child(1) {
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: -0.7px;
+}
+.banner_tit p:nth-child(2) {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #d5d5d5;
+}
+
+/*////// roll-banner //////*/
+.roll-banner {
+    background-color: #000;
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+.roll_box {
+    color: #fff;
+    display: flex;
+    position: absolute;
+    left: 0px;
+}
+.roll_text {
+    line-height: 200px;
+    font-family: "Spoqa Han Sans Neo", "Noto Sans KR", sans-serif;
+    font-size: 56px;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 900;
+    padding: 0 30px;
+    position: relative;
+    display: inline-block;
+    position: relative;
+    letter-spacing: 2px;
+    word-spacing: 6px;
+}
+.stroke {
+    color: #000;
+    text-shadow:
+    1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff;
+}
+
+/*////// cont2 - sale //////*/
+.cont2_sale {
+    top: 90px;
+    left: 0;
+    height: calc(100vh - 90px);
+    overflow: hidden;
+}
+.sale_list img{
+    position: relative;
+    /* top: 50%;
+    transform: translateY(-50%); */
+    /* border-radius: 20px 20px 0 0; */
+    width: 100%;
+}
+.sale_tit {
+    padding-top: 55px;
+    padding-left: 5vw;
+    letter-spacing: -3.5px;
+    margin-top: 60px;
+    font-size: 60px;
+    font-weight: 900;
+    box-sizing: border-box;
+    height: 20%;
+    margin-bottom: 40px;
+}
+.sale_list {
+    display: flex;
+    height: 80%;
+    position: relative;
+    display: flex;
+    position: absolute;
+    left: 0;
+    
+}
+.sale_info {
+    padding: 15px 10px 0;
+}
+.info-price {
+    display:flex;
+    }
+.sale_period {
+    /* background: #000; */
+    /* color: #fff; */
+    opacity: .8;
+    font-weight: 500;
+    text-align: center;
+    font-family: "Spoqa Han Sans Neo", "Noto Sans KR", sans-serif;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    display: flex;
+    height: 45px;
+    box-sizing: border-box;
+    line-height: 43px;
+    /* justify-content: center; */
+    align-items: center;
+}
+.info-name {
+    margin: 8px 0;
+    color: #666;
+    font-size: 15px;
+}
+.price-fixed{
+    margin-right: 8px;
+    color: #999;
+    text-decoration: line-through;
+    margin-right: 8px;
+}
+.price-sale, .price-percent {
+    color: #ee1c25;
+    font-weight: 600;
+    
+}
+.price-sale{
+    font-size: 18px;
+}
+.sale_info span:nth-child(3) {
+    display: flex;
+    align-items: center;
+}
+.sale_info span {
+    display: block;
+}
+.sale_cont {
+    position: relative;
+    height: 80%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.sale_box {
+    /* border-radius: 20px; */
+    /* box-shadow: 1px 1px 10px 2px #d5d5d5; */
+    /* border: 1px solid #d5d5d5; */
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+    /* margin: 0 auto; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* position: absolute; */
+    /* transform: translate(-50%,-50%); */
+}
+.price-percent {
+    margin-left: 2px;
+    vertical-align: 5px;
+    /* font-weight: 700; */
+}
+.sale_list li {
+    width: 350px;
+    min-width: 350px;
+    flex: 1;
+    position: relative;
+    left: 0;
+}
+.sbrand > div > div{
+    display: flex;
+}.sbrand .brand_imgbox > img{
+    width: 350px !important;
+    filter: blur(2px);
+}
+.sbrand .info{
+    background-color: #fff; width:100%;
+    border-left: 1px solid #aaa;
+}
+
+/*////// cont3 - brand //////*/
+.cont3{
+    position: relative;
+}
+.cont3_brand img{
+    width: 100%;
+}
+.brand_main {
+    max-width: 1900px;
+    height: 530px;
+    overflow: hidden;
+}
+.cont3_brand .brand_prod{
+    display: flex;
+    border: 1px solid #d5d5d5;
+}
+.cont3_brand .brand_prod > div{
+    flex: 1;
+}
+.brand_info > ul{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 40px;
+    height: 100%;
+    box-sizing: border-box;
+    height: 90%;
+}
+.brand_info > ul > li{
+    display: flex;
+    flex: 1;
+}
+.brand_tit{
+    padding-top: 30px;
+    padding-left: 5vw;
+    letter-spacing: -3.5px;
+    margin-top: 60px;
+    font-size: 60px;
+    font-weight: 900;
+    box-sizing: border-box;
+    height: 20%;
+    margin-bottom: 40px;
+}
+.prod_img{
+    width: 75px;
+    height: 75px;
+}
+.wrap {
+    width: 1200px;
+    border: 1px solid #ddd;
+    display: flex;
+}
+
+.box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box.style02 {
+    overflow: hidden;
+}
+.date::before {
+    content: '';
+    background: url(../images/side_btn-history.png) no-repeat center;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-size: contain;
+    vertical-align: middle;
+}
+.deal_period{
+    font-size: 17px;
+}
+.time span:not(:last-child)::after{
+    content: ':';
+}
+.cont3_brand{
+    height: 100vh;
+}
+.brand_main,
+.brand_sub {
+    position: absolute;
+    top: 0;
+    left: 5vw;
+}
+.brand_main{
+    top: 20%;
+    transform: translateY(-20%);
+}
+.brand_box{
+    position: relative;
+    height: 80%;
+}
+.brand_sub .swiper-slide{
+    display:flex;
+}
+.brand_box{
+    overflow: hidden;
+}
+.brand_img{
+        width: 100%;
+        background-color: rgba(0,0,0,0.3);
+        position: absolute;
+        height: 100%;
+        top: 0;
+
+}
+.brand_sub .swiper-slide{
+    border: 1px solid #aaa;
+}
+.brand_main{
+    height: 375px;
+    left: 0;
+}
+.brand_main .brand_info,
+.brand_sub .brand_info{
+    position: absolute;
+    top: 0;
+    
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.brand_main .brand_info > img{
+    width: 120px;
+}
+.brand_sub .brand_info > img{
+    width: 180px;
+}
+.brand_imgbox{
+    position: relative;
+}
+.brand_info{
+    color: #fff;
+}
+.brand_info p{
+    font-size: 20px;
+    margin-top: 20px;
+    /* font-weight: 500; */
+    line-height: 32px;
+    text-align: center;
+    font-family: "Noto Sans KR",sans-serif;
+    white-space: nowrap;
+}
+.brand_main .brand_info p{
+    font-size: 15px;
+    line-height: 23px;
+}
+.brand_box .brand_prodbox{
+    width: 100%;
+    background-color: #fff;
+}
+.brand_prodbox{
+    display: flex;
+    justify-content: center;
+}
+.brand_prodbox li{
+    margin-bottom: 15px;
+    width: 290px;
+    /* height: 35px; */
+}
+.brand_prodbox > img{
+    width: 110px;
+    height: 100%;
+}
+.sale_box img{
+    margin-bottom: 20px;
+}
+.sale_time{
+    width: 65%;
+    height: 100%;
+    text-align-last: left;
+    padding-left: 13px;
+}
+.sale_count{
+width: 35%;
+    height: 100%;
+    border-left: 1px solid #000;
+    text-align-last: left;
+    padding-left: 13px;
+}
+.sale_time span{
+    vertical-align: baseline;
+}
+.swiper-button-prev,.swiper-button-next{
+    width: 40px;
+    height: 40px;
+    color: #000;
+}
+.swiper-button-prev{
+    left: -75px;
+}
+.swiper-button-next{
+    left: 730px
+}
+.mbrand .swiper-slide{
+    animation-timing-function: ease-in;
+}
+.mbrand .swiper-slide.swiper-slide-active{
+    margin-left: 300px !important;
+    margin-right: 300px !important;
+    
+}
+.cont3 .brand_prodbox{
+    margin: 0 auto;
+    padding: 20px 0;
+        display: flex;
+        gap: 10px;
+    }
+
+    .cont3 .sale_info {
+        padding: 15px 15px 0;
+        width: 110px;
+    }
+    .cont3 .info-name{
+    font-size:15px;}
+    
+    
+    
+    
+    .cont3 .price-fixed
+    {
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+    .cont3 .price-sale{
+
+        display: inline-block;
+        font-size: 15px;
+    }
+    .cont3 .price-percent{
+        display: inline-block;
+        font-size: 14px;
+        vertical-align: middle;
+    }
+    .nos{text-decoration: none;}

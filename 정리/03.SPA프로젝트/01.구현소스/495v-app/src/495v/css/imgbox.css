@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+.imgbox {
+    max-width: 1280px;
+    width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    z-index: 1;
+    position: relative;
+}
+.imgbox___tit {
+    font-family: "SerpAndMolot", sans-serif;
+    font-size: 5vw;
+    margin-bottom: 2rem;
+}
+.imgbox__sub {
+    margin-left: 6.8vw;
+    font-size: 43px;
+    line-height: 1.3;
+    font-weight: 700;
+    text-align: justify;
+    letter-spacing: -0.8px;
+}
+.imgbox__divider {
+    margin: 50px 0;
+}
+.imgbox__divider img {
+    width: 100%;
+}
+.imgbox__bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10vw;
+    grid-row-gap: 1.5vw;
+}
+.item-img{
+    position: relative;
+    height: 80%;
+}
+.item-tit{
+    height: 20%;
+    text-align: center;
+}

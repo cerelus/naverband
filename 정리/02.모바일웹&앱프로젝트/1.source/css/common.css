@@ -1,0 +1,550 @@
+@charset "utf-8";
+
+/*********************
+    header
+**********************/
+#gnb{
+    background-color: #000;
+}
+.gnb {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid #333;
+    box-sizing: border-box;
+    background-color: #000;
+    justify-content: space-between;
+    transition: top 0.3s;
+}
+.gnb_left {
+    display: flex;
+}
+.gnb_logo {
+    background-color: #fff;
+}
+.gnb_menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 90px;
+    align-items: center;
+    /* position: relative; */
+}
+.menu-left > ul,
+.menu-right > ul {
+    display: flex;
+    padding: 0 15px;
+    /* position: relative; */
+}
+.menu-left > ul > li > a {
+    display: block;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 90px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.3s;
+}
+.menu-left > ul > li.active > a,
+.menu-right > ul > li:hover > a {
+    color: var(--yellow);
+}
+.menu-left > ul > li.active > a::after {
+    opacity: 1;
+}
+.menu-left > ul > li:active > .sub{
+    display: block;
+}
+.menu-right > ul::before {
+    content: "";
+    width: 1px;
+    height: 16px;
+    background-color: #666;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.menu-right a {
+    color: #fff;
+    line-height: 90px;
+    padding: 0 15px;
+    display: block;
+    font-size: 15px;
+    position: relative;
+    transition: 0.3s;
+}
+.menu-left > ul > li > a::after,
+.menu-right > ul > li > a::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    background-color: var(--yellow);
+    border-radius: 3px;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: 0.3s;
+}
+.btn-util {
+    display: flex;
+    gap: 20px;
+    height: 90px;
+    align-items: center;
+    padding-right: 30px;
+}
+.btn-util > li {
+    position: relative;
+}
+.btn-util > li > a {
+    width: 28px;
+    height: 28px;
+    display: block;
+    position: relative;
+}
+.btn-search {
+    background: url(../images/gnb_btn-util.png) no-repeat -28px 0;
+}
+.btn-mypage {
+    background: url(../images/gnb_btn-util.png) no-repeat 0 0;
+}
+.btn-cart {
+    background: url(../images/gnb_btn-cart.png) no-repeat 0 0;
+}
+.btn-cart > span:first-child {
+    top: -3px;
+    right: -5px;
+}
+.util-mypage {
+    margin-top: 15px;
+}
+.util-list {
+    top: 39px;
+}
+.sub-menu {
+    display: none;
+    width: 515px;
+    background-color: #000;
+    position: absolute;
+    height: calc(100vh - 90px);
+    top: 90px;
+    border-top: 1px solid #333;
+    border-right: 1px solid #333;
+    padding: 30px 70px 20px;
+    box-sizing: border-box;
+    left: 0;
+    transition: .3s;
+}
+
+/* .menu-left > ul >li:first-child .sub-menu{
+    display: block;
+} */
+
+
+.sub_tab2-cont > ul {
+    /* overflow-y: scroll; */
+}
+.sub-menu a {
+    text-transform: uppercase;
+}
+
+.sub_tab1-cont h3,
+.sub_tab1-cont span {
+    color: #fff;
+    display: block;
+}
+.sub_tab1-cont{
+    /* display: none; */
+}
+.sub_tab1-cont.active{
+    display: block;
+}
+.brand ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 10px;
+    margin-top: 30px;
+}
+.brand img {
+    width: 100%;
+}
+.brand-tit{
+    /* margin-bottom: 27px; */
+    font-weight: 700;
+    font-family: "Spoqa Han Sans Neo", sans-serif;
+    color: var(--yellow);
+    padding: 4px 0;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    color: #fff;
+    /* display: inline-block; */
+    width: 180px;
+    margin: 0 auto;
+    background-color: var(--yellow);
+}
+
+
+.brand-info{
+    margin-top: 15px;
+    position: relative;
+}
+.brand-info span:nth-child(1){
+    font-size: 14px;
+}
+.brand-info span:nth-child(2){
+    font-size: 13px;
+    color: #777;
+}
+.brand-wish{
+    position: absolute;
+    background: url(../images/btns-wish.png) no-repeat 0 0;
+    right: 0;
+    width: 17px;
+    height: 13px;
+    top:4px;
+}
+.sub_tab2-nav {
+    display: flex;
+    gap: 10px;
+}
+.sub_tab2-nav li {
+    flex: 1;
+    text-align: center;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 6px 0;
+}
+.sub_tab2-nav li a {
+    color: #666;
+    font-weight: 600;
+}
+.sub_tab2-nav li.active {
+    border-color: var(--yellow);
+    background-color: var(--yellow);
+}
+.sub_tab2-nav li.active a {
+    color: #fff;
+}
+.sub_tab2-cont {
+    color: #fff;
+    margin-top: 15px;
+    display: none;
+}
+.sub_tab2-cont.active{
+    display: block;
+}
+.sub_tab3-nav {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 70px;
+    border-bottom: 1px solid #d5d5d5;
+    cursor: pointer;
+    position: relative;
+
+}
+.sub_tab3-nav::after{
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: url(../images/gnb_btn-tab.png) no-repeat center;
+    position: absolute;
+    right: 10px;
+    top: 46%;
+    transition: .3s;
+    transform: rotate(180deg);
+}
+.sub_tab2-cont > ul > li.active .sub_tab3-nav::after{
+    transform: none;
+}
+.sub_tab3-cont {
+    height: 0;
+    overflow: hidden;
+    padding: 5px 0;
+    transition: .3s;
+}
+
+.sub_tab2-cont > ul > li.active .sub_tab3-cont {
+    height: 130px;
+
+}
+.sub_tab3-cont a {
+    font-size: 15px;
+    line-height: 40px;
+    padding: 0 15px;
+    color: #d5d5d5;
+}
+
+.menu-left li.active .sub-menu {
+    display: block;
+}
+
+body::-webkit-scrollbar{
+     /* 전체 스크롤바 크기변경  */
+    width: 7px;
+}
+body::-webkit-scrollbar-thumb{
+    /* 스크롤바  */
+    background-color: #555;
+    border-radius: 5px;
+}
+body::-webkit-scrollbar-track{
+     /* 스크롤바 트랙  */
+    background-color: #ddd;
+    border-radius: 5px;
+} 
+/*********************
+footer - F
+**********************/
+.info_top,
+.info_bottom {
+    display: flex;
+    border-top: 1px solid #aaa;
+    font-size: 14px;
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: #fff;
+}
+.info_top {
+    height: 50px;
+}
+.info_left {
+    width: 50%;
+    border-right: 1px solid #aaa;
+    box-sizing: border-box;
+}
+.info_right {
+    width: 50%;
+    display: flex;
+    box-sizing: border-box;
+}
+.info-tit {
+    font-size: 15px;
+    font-weight: 700;
+    font-family: "Spoqa Han Sans Neo", sans-serif;
+}
+.info_top span:first-child {
+    margin-right: 10px;
+}
+.info-company address {
+    margin-top: 20px;
+}
+.info-company p {
+    margin-top: 5px;
+    white-space: nowrap;
+}
+.info-cs {
+    display: flex;
+    gap: 15px;
+}
+.info-cs,
+.info-notice {
+    padding: 15px 55px;
+}
+.info-company,
+.info-link {
+    padding: 50px 60px 60px;
+}
+.notice-list {
+    margin: 0 15px;
+    margin-top: -1px;
+    position: relative;
+}
+.notice-more {
+    position: absolute;
+    right: 60px;
+}
+.notice-more img {
+    vertical-align: baseline;
+}
+.info-link {
+    gap: 80px;
+}
+.link-help > ul,
+.link-family > ul,
+.link-social > ul {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.info-notice > span {
+    margin-top: -1px;
+}
+.link-social > ul {
+    flex-direction: row;
+}
+.link-social > ul > li {
+    position: relative;
+    height: 35px;
+}
+.link-social > ul > li > a {
+    display: block;
+    width: 35px;
+    height: 100%;
+    background-image: url(../images/info_social.png);
+    transition: 0.2s ease-in;
+}
+.link-social > ul > li:hover > a {
+    background-position-y: -35px;
+}
+.social-facebook a {
+    background-position-x: -35px;
+}
+.social-blog a {
+    background-position-x: -70px;
+}
+.social-youtube a {
+    background-position-x: -105px;
+}
+.social-youtube,
+.social-insta,
+.util-mypage {
+    padding-bottom: 15px;
+}
+.social-youtube.active > .tooltip,
+.social-insta.active > .tooltip,
+.util-mypage.active > .tooltip {
+    visibility: visible;
+}
+
+/*********************
+    side - F
+**********************/
+.side {
+    position: fixed;
+    right: 30px;
+    bottom: 80px;
+    z-index: 999;
+}
+.side_history,
+.side_top {
+    border: 1px solid var(--gray);
+    display: block;
+    width: 55px;
+    height: 55px;
+    display: none;
+}
+.side_history {
+    background: #fff url(../images/side_btn-history.png) no-repeat center;
+}
+.side_history > span:first-child {
+    top: 9px;
+    right: 9px;
+}
+.side_history.active {
+    background: #000 url(../images/side_btn-close.png) no-repeat center;
+}
+.side_history.active .badge {
+    display: none;
+}
+.side_history.active + .history-layer {
+    display: block;
+}
+.side_top {
+    background: #fff url(../images/side_btn-top.png) no-repeat center;
+}
+.history-layer {
+    display: none;
+    position: absolute;
+    padding: 28px;
+    width: 380px;
+    height: 510px;
+    border: 1px solid var(--gray);
+    background-color: #fff;
+    box-sizing: border-box;
+    bottom: 125px;
+    right: 0;
+}
+.history-layer span {
+    font-size: 14px;
+}
+.item-count {
+    font-family: "Spoqa Han Sans Neo", sans-serif;
+    color: var(--yellow);
+    font-weight: 700;
+}
+.layer-tit {
+    font-size: 18px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 13px;
+    margin-bottom: 13px;
+    font-weight: 700;
+}
+.item-control {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: -0.7px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.item-control button {
+    padding: 5px 10px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 13px;
+}
+.item-control > span {
+    color: #666;
+}
+.item-list span {
+    font-family: "Spoqa Han Sans Neo", sans-serif;
+}
+.item-list li a {
+    display: flex;
+}
+.item-img {
+    width: 100px;
+}
+.item-img img {
+    width: 100%;
+}
+.item-info {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.item-brand {
+    font-weight: 700;
+    margin: 8px 0;
+}
+.item-name {
+    color: #666;
+    margin-bottom: 13px;
+}
+.item-list li {
+    display: flex;
+    position: relative;
+}
+.item-list li:not(:first-child) {
+    border-top: 1px solid #d5d5d5;
+    margin-top: 13px;
+    padding-top: 13px;
+}
+.item-btn {
+    position: absolute;
+    right: 0;
+}
+.item-btn button + button {
+    margin-left: 5px;
+}
+.btn-wish-add {
+    background: url(../images/side_btn-wish.png) no-repeat 0 0;
+    width: 20px;
+    height: 20px;
+}
+.btn-trash {
+    background: url(../images/side_btn-trash.png) no-repeat center;
+    width: 20px;
+    height: 20px;
+}
+
+
+

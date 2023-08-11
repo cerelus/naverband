@@ -1,0 +1,147 @@
+@charset "utf-8";
+
+#confirm {
+    position: fixed;
+    background-color: #000;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    opacity: 1;
+    z-index: 999;
+    transform: translateY(0);
+    transition: opacity 0.3s ease-in, transform 0.6s ease-out;
+    overflow: hidden;
+  }
+  
+  #confirm.hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  .confirm__box {
+    position: relative;
+    background: url(../../../public/images/common/confirm-frame.svg) no-repeat center/cover;
+    width: 928px;
+    aspect-ratio: 1/0.6;
+    transform: scale(0);
+    transition: transform 1s cubic-bezier(0.25, 0.25, 0, 1) 0.5s;
+  }
+.confirm__box-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 90%;
+}
+.confirm__tit {
+    font-family: "SerpAndMolot", sans-serif;
+    font-size: 36px;
+    margin-bottom: 24px;
+}
+.confirm__desc {
+    font-size: 22px;
+    margin-bottom: 70px;
+}
+.confirm__btns {
+    display: flex;
+    gap: 30px;
+}
+.confirm__btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.confirm__btn img {
+    width: 100%;
+    height: 100%;
+}
+.allow .btn-icon {
+    width: 42px;
+    height: 32px;
+}
+.reject .btn-icon {
+    width: 32px;
+    height: 32px;
+}
+.btn-text {
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.reject-text {
+    opacity: 0;
+    position: absolute;
+    bottom: 100px;
+    color: red;
+    transition: 0.3s ease-out;
+}
+/* media query */
+@media screen and (max-width: 1500px) {
+    .confirm__box {
+        width: 72vw;
+    }
+    .confirm__tit{
+        font-size: 2.8vw;
+    }
+    .confirm__desc{
+        font-size: 1.5vw;
+        margin-bottom: 4vw;
+    }
+    .allow .btn-icon {
+        width: 35px;
+        height: 26px;
+    }
+    .btn-text {
+        font-size: 1.6vw;
+    }
+    .reject .btn-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .confirm__box {
+        width: 77vw;
+    }
+    .confirm__tit{
+        font-size: 3.2vw;
+        margin-bottom: 24px;
+    }
+    .confirm__desc {
+        font-size: 2.1vw;
+        margin-bottom: 5.1vw;
+    }
+    .btn-text {
+        font-size: 1.8vw;
+    }
+}
+@media screen and (max-width: 700px) {
+    .confirm__box{
+        background: none;
+        color: #fff;
+    }
+    .confirm__tit {
+        font-size: 6.6vw;
+        margin-bottom: 8.2vw;
+    }
+    .confirm__desc {
+        font-size: 3.1vw;
+        margin-bottom: 14.2vw;
+    }
+    .confirm__btns{
+        justify-content: space-between;
+    width: 100%;
+    }
+    .btn-icon img{
+        filter: invert(100%);
+    }
+    .btn-text {
+        font-size: 2.8vw;
+    }
+}

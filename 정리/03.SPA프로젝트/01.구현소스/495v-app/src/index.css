@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+/* 폰트 */
+/* Josefin Slab */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600;700&display=swap');
+/* SerpAndMolot */
+@font-face {
+  font-family: "SerpAndMolot";
+  src: url(../public/font/SerpAndMolot.woff2) format("woff2"),
+       url(../public/font/SerpAndMolot.ttf) format("truetype");
+}
+html {
+  scroll-behavior: smooth;
+}
+html,body,h1,ul {
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: 'Josefin Slab', serif;
+}
+ul{
+  list-style: none;
+}
+button{
+  all:unset
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+img{
+  vertical-align: top;
+}
+
+/* 스크롤숨김 */
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}

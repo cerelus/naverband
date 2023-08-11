@@ -1,0 +1,130 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>네이버TV</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex">
+    <style type="text/css">
+        body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+        body,input,textarea,select,button,table{font-family:'나눔고딕',NanumGothic,'돋움',dotum,Helvetica,'Apple SD Gothic Neo',applegothic,sans-serif;font-size:12px;color:#3c3c3c}
+        html,body{height:100%}
+        body{background-color:#000}
+        img,fieldset{border:0}
+        ul,ol{list-style:none}
+        em,address{font-style:normal}
+        a{text-decoration:none;color:#3c3c3c}
+        a:hover,a:active,a:focus{text-decoration:none}
+        hr{display:none}
+        legend,.u_hc{visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:1px;height:1px;font-size:0;line-height:0}
+        caption{visibility:hidden;overflow:hidden;width:1px;height:1px;font-size:0;line-height:0}
+        img,button{border:none}
+        label,button,a{cursor:pointer}
+        a:active{background-color:transparent}
+    </style>
+</head>
+
+
+
+
+    
+    
+    
+
+
+
+<body>
+<div id="player" class="embed_player" style="height:100%; "></div>
+<div id="player-custom-element">
+    <player>
+        <player-layout>
+            <player-top-group slot="top-group">
+                <player-content-info slot="content-info">
+                    <template v-slot:title="props">
+                        <a class="rmc_title" href="https://tv.naver.com/v/28397174" target="_blank">{{ props.title }}</a>
+                    </template>
+                    <template v-slot:author="props">
+                        <a slot="author" class="rmc_channel" href="https://tv.naver.com/playnaver" target="_blank">{{ props.userName }}</a>
+                    </template>
+                </player-content-info>
+            </player-top-group>
+        </player-layout>
+    </player>
+</div>
+
+<script type="text/javascript" src="https://ssl.pstatic.net/img.tvcast/pc/js/jQuery/jQuery.1.11.3.min.js"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/img.tvcast/pc/js/jQuery/jQuery.tmpl.min.js"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/img.tvcast/pc/js/eg/eg.1.3.0.pkgd.min.js"></script>
+<script type="text/javascript" src="https://ssl.pstatic.net/tveta/libs/ssp-video/prod/ssp.web.sdk_2.8.1.js"></script>
+<script type="text/javascript" src='/resources/release/npm/player/prismplayer.umd.min_20230720143227.js'></script>
+<script type="text/javascript" src='/resources/release/js_v2/player/BaseWrapPlayer_20230720143227.js'></script>
+<script type="text/javascript" src='/resources/release/js_v2/player/tvcast.pc.EmbedPlayer_20230720143227.js'></script>
+<script type="text/javascript" src='/resources/release/js_v2/tvcast.LikeItApiController_20230720143227.js'></script>
+
+<script type="text/javascript">
+    var ghtEnv = {
+        rmcSid: "2010"
+        , apiDomain: "https://api.tv.naver.com"
+        , serviceapiDomainRMC: "https://serviceapi.rmcnmv.naver.com"
+        , countryCode: "KR"
+        , env: ""
+        , playerUpgradeElementId: "player-custom-element"
+        , sLikeItDomain: 'https://common.like.naver.com'
+        , sLikeItServiceId: 'TVCAST'
+        , sLikeItContentsId: '28397174'
+        , channelId: 'playnaver'
+        , apiDomain: 'https://api.tv.naver.com'
+    };
+
+    var ghtPlayerInfo = {
+        videoId: '4DFE73673CA7E49530F8F6718775D5B09827',
+        inKey: 'V1295db6f08d2de26ac5bd2a0111826c28d304db3314b3623940fd2a0111826c28d30',
+        clipNo: '28397174',
+        clip: {
+            title: jQuery(new DOMParser().parseFromString("[\uB124\uC774\uBC84 \uBC34\uB4DC 10\uC8FC\uB144\uD83E\uDD73] \uC138\uC0C1 \uBAA8\uB4E0 \uBAA8\uC784\uC758 \uC2DC\uC791, \'\uB124\uC774\uBC84 \uBC34\uB4DC\' (\uC138\uB85C ver.)", 'text/html')).find('body').text(),
+            thumbnail: 'https://phinf.pstatic.net/tvcast/20220805_132/z2Mr9_1659700078854CQytW_JPEG/e42dc64a-14b3-11ed-a120-505dacfbaa5c_01.jpg?type=f880_495_blend',
+            channelName: jQuery(new DOMParser().parseFromString("플레이 네이버(PLAY NAVER)", 'text/html')).find('body').text()
+        },
+        autoPlay: false,
+        coverImageUrl: 'https://phinf.pstatic.net/tvcast/20220805_132/z2Mr9_1659700078854CQytW_JPEG/e42dc64a-14b3-11ed-a120-505dacfbaa5c_01.jpg?type=f880_495_blend',
+        channelEmblem: 'https://phinf.pstatic.net/tvcast/20210720_242/kwWlU_1626782343643QXs9U_PNG/1626782343624.png?type=round_96_96',
+        fallbackChannelEmblem: 'https://phinf.pstatic.net/tvcast/20161227_13/photoinfra_1482831946369BANUd_PNG/default_round_ch.png?type=round_96_96',
+        channelSubscriptionCount: '16034',
+        isSubscribed: false,
+        focus: false
+    }
+
+    
+    
+    
+        ghtPlayerInfo.smrTrackingData = "";
+    
+    
+
+    
+    	ghtPlayerInfo.gladParam = null;
+    	ghtPlayerInfo.isShareType = true;
+	
+	
+    jQuery(window).on("load", function() {
+        EmbedPlayer.init(ghtEnv, ghtPlayerInfo);
+
+        // 퍼가기 플레이어 내 로그인(/embed/login) 후 좋아요/구독 데이터 새로고침
+        window.addEventListener('message', function (e) {
+            e.data == 'REACT' && EmbedPlayer.refresh();
+        });
+    });
+</script>
+</body>
+</html>

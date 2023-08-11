@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 | ABC마트</title>
+    <link rel="stylesheet" href="./css/login.css">
+<!-- swiper 플러그인 css -->
+<link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+<link rel="stylesheet" href="./css/sub.css" />
+
+<!-- 뷰JS 스탠드얼론 버전 가져오기! -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+<!-- 뷰JS vuex CDN -->
+<script src="https://unpkg.com/vuex@3.0.0"></script>
+
+<!-- 엑시오스 라이브러리 스텐드얼론 버전 가져오기(제이슨불러오기) -->
+<script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
+
+<!-- jQuery 라이브러리 -->
+<script src="./js/library/jquery-3.6.0.min.js"></script>
+<script src="./js/library/jquery-ui.min.js"></script>
+
+<!-- swiper 플러그인 js -->
+<script src="./js/library/swiper-bundle.min.js"></script>
+
+<script src="./js/main.js" type="module"></script>
+<script src="./js/common.js" type="module"></script>
+
+</head>
+<body>
+    <!-- top area -->
+    <header id="gnb">
+        <mgnb-area></mgnb-area>
+    </header>
+    <main id="cont" class="login">
+        <div class="login_tit">
+            <h2>로그인</h2>
+        </div>
+        <div class="login_cont">
+            <form action="process.php" method="post" class="logForm">
+                <div class="input-box">
+                    <input type="text" id="userid" name="userid" placeholder="아이디를 입력해 주세요." maxlength="20">
+                </div>
+                <div class="input-box">
+                    <input type="password" id="userpw" name="userpw" placeholder="비밀번호를 입력해 주세요." maxlength="20">
+                </div>
+            </form>
+            <div class="id-save">
+                <span>
+                    <input type="checkbox" name="chkbx" id="chkbx" checked>
+                    <label for="chkbx">아이디 저장</label>
+                </span>
+            </div>
+            <div class="login-btn">
+                <input type="submit" value="로그인" id="loginBtn">
+            </div>
+            <div class="login-util">
+                <a href="#" id="idSearch">아이디 찾기</a>
+                <a href="#" id="idSearch">비밀번호 찾기</a>
+                <a href="#" id="idSearch">회원가입</a>
+            </div>
+        </div>
+    </main>
+            <!-- bottom area -->
+            <footer id="info">
+                <info-area></info-area>
+            </footer>
+</body>
+</html>

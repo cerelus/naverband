@@ -1,0 +1,275 @@
+@charset "utf-8";
+
+@import url(./reset.css);
+@import url(./font.css);
+@import url(./core.css);
+@import url(./common.css);
+body{
+    /* overflow: hidden; */
+}
+/* 필터 */
+.sub {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+.sub_filter {
+    width: 20%;
+    max-width: 270px;
+    margin-top: 150px;
+}
+.sub_prod {
+    width: 80%;
+}
+.filter_head {
+    border-bottom: 3px solid #000;
+    font-weight: 700;
+    font-size: 25px;
+    padding: 15px 0;
+    margin: 0 20px;
+}
+.filter_cont {
+    margin: 0 20px 20px;
+}
+.fold-list-head::after {
+    content: "";
+    position: absolute;
+    background: url(../images/btn-fold.png) no-repeat center;
+    width: 13px;
+    height: 7px;
+    right: 10px;
+    top: 50%;
+    cursor: pointer;
+    transition: .3s;
+}
+.fold-list {
+    border-bottom: 1px solid #d5d5d5;
+}
+.fold-list-head {
+    position: relative;
+    padding: 15px 0;
+    cursor: pointer;
+}
+.fold-list-cont {
+    overflow: hidden;
+}
+.fold-list-cont li {
+    margin: 10px 0;
+}
+.fold-list-cont > ul > li > span > label::before {
+    width: 15px;
+    height: 15px;
+}
+.prod_tit{
+    margin: 60px 0 30px;
+}
+.prod_tit h2 {
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    height: 60px;
+}
+.tab-head-box {
+    display: flex;
+    margin-bottom: 40px;
+}
+.tab-head {
+    flex: 1;
+    border: 1px solid #d5d5d5;
+    text-align: center;
+    color: #666;
+    height: 60px;
+    box-sizing: border-box;
+    line-height: 60px;
+    border-bottom: 3px solid #000;
+    cursor: pointer;
+}
+.tab-head:nth-child(2){
+    border-left: none;
+    border-right: none;
+}
+.tab-head.active {
+    border: 3px solid #000;
+    border-bottom: none;
+    color: #000;
+    font-weight: 500;
+}
+.prod_box {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-column-gap: 45px;
+    grid-row-gap: 60px;
+}
+.prod_box img{
+    width: 100%;
+}
+
+/* 상품 */
+.prod_info{
+    padding: 15px 10px;
+}
+.info-brand{font-size: 15px;
+    font-weight: 600;
+}
+.price-fixed{
+    font-size: 19px;
+    font-weight: 600;
+}
+.on-sale .price-fixed{
+    color: #999;
+    text-decoration: line-through;
+    font-size: 14px;
+    font-family: 'Spoqa Han Sans Neo',sans-serif;
+    font-weight: normal;
+}
+.on-sale .price-sale{
+    color: #ee1c25;
+    font-size: 19px;
+    font-weight: 500;
+}
+.info-hidden{
+    display: none;
+}
+
+/* 상세페이지 */
+.detail::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라 */
+}
+.detail {
+    display: none;
+    /* display: flex; */
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+}
+.detail_cbtn {
+    background-color: #333;
+    color: #fff;
+    width: 100px;
+    height: 90px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.detail_content{
+    position: absolute;
+    right: 0;
+    width: calc(100% - 100px);
+    background: #fff;
+    /* height: 100%; */
+}
+.detail_top{
+    display: flex;
+
+    box-sizing: border-box;
+}
+.detail_img{
+    width: 60%;
+    padding-right: 100px;
+        box-sizing: border-box;
+}
+.detail_info{
+    position: sticky;
+    width: 40%;
+    background-color: #fff;
+    height: fit-content;
+    top: 50px;
+}
+.detail_img img{
+    width: 100%;
+}
+.detail_cbtn{
+    background: #000 url(../images/side_btn-close.png) no-repeat center;
+}
+.detail-brand {
+    border-bottom: 1px solid #000;
+    padding: 5px 0 10px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+.detail-name{
+    font-size: 32px;
+    line-height: 50px;
+    font-weight: 700;
+}
+.prod_tit h2{text-transform: uppercase;}
+.cat2-menu li:not(:last-child)::after{
+    content: '';
+}
+.cat2-menu{
+    display: flex;
+    justify-content: center;
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    margin: 4px 39px 0 40px;
+    background-color: #d5d5d5;
+}
+
+
+.detail-name{
+    margin: 20px 0;
+}
+.detail_content > div{
+    width: 1200px;
+    margin: 0 auto;
+}
+.fold-list-cont{
+    height: 0;
+    overflow: hidden;
+}
+.fold-list-head.active + .fold-list-cont{
+    height: auto;
+}
+.fold-list-head.active::after{
+    transform: rotate(-180deg);
+}
+.fold-list-cont > ul{margin-left: 15px;}
+.fprice{
+    font-size: 28px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    display: inline-block;
+}
+.prod_path{
+
+        padding-top: 15px;
+        letter-spacing: 1;
+        font-weight: 500;
+        color: #666;
+
+}
+.prod_path::before{
+    content: '';
+    background: url(../images/icon-cat.png) no-repeat 0 0;
+    width: 14px;
+    height: 13px;
+    margin-right: 5px;
+    display: inline-block;
+}
+.info-color{border-top:1px solid #aaa}
+.buy{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    margin-top: 20px;
+    display: inline-block;
+}
+.prod_box{
+    cursor: pointer;
+}
+.sub .info-brand{margin-bottom:10px;}
+.sub .info-name{margin-bottom:20px;}
+.sub .price-percent{
+    color: #ee1c25; font-weight: 500;
+}

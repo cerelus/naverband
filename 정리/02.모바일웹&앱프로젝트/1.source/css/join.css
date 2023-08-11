@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+@import url(./reset.css);
+@import url(./font.css);
+@import url(./core.css);
+@import url(./common.css);
+
+.join{
+    margin: 0 auto;
+}
+.join-tit{
+    font-size: 22px;
+    font-weight: 500;
+}
+.fold-head{
+    position: relative;
+}
+.fold-head::after{
+    content: '';
+    width: 13px;
+    height: 7px;
+    background: url(../images/fold-arrow.png) no-repeat;
+    position: absolute;
+}
+.fold-cont{
+    font-family: 'Noto Sans KR', sans-serif;
+}

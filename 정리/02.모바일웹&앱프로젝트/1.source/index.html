@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
+        <title>ABC마트 - 다시작업</title>
+
+        <!-- swiper 플러그인 css -->
+        <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="./css/main.css" />
+
+        <!-- 뷰JS 스탠드얼론 버전 가져오기! -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+        <!-- 뷰JS vuex CDN -->
+        <script src="https://unpkg.com/vuex@3.0.0"></script>
+
+        <!-- jQuery 라이브러리 -->
+        <script src="./js/library/jquery-3.6.0.min.js"></script>
+        <script src="./js/library/jquery-ui.min.js"></script>
+
+        <!-- swiper 플러그인 js -->
+        <script src="./js/library/swiper-bundle.min.js"></script>
+        <script src="./js/common.js" type="module"></script>
+        <script src="./js/main.js" type="module"></script>
+    </head>
+    <body>
+        <!-- top area -->
+        <header id="gnb">
+            <mgnb-area></mgnb-area>
+        </header>
+
+        <main id="cont">
+            <section class="cont1">
+                <div class="cont1_banner bannerSlide">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <img src="./images/cont1_banner1.png" alt="컨텐츠1-배너" />
+                                <div class="banner_tit">
+                                    <p>
+                                        <span>ASICS</span><br />
+                                        <span>BEST SHOES</span>
+                                    </p>
+                                    <p>SHOES COLLECTION</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <img src="./images/cont1_banner2.png" alt="컨텐츠1-배너" />
+                                <div class="banner_tit">
+                                    <p>
+                                        <span>NIKE</span><br />
+                                        <span>STYLE CONTEST</span>
+                                    </p>
+                                    <p>G-log에 스타일링 공유하고 경품받자!!</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <img src="./images/cont1_banner3.png" alt="컨텐츠1-배너" />
+                                <div class="banner_tit">
+                                    <p>
+                                        <span>VANS</span><br />
+                                        <span>OFF THE WALL</span>
+                                    </p>
+                                    <p>창의적인 아티스트와 반스의 만남</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="#">
+                                <img src="./images/cont1_banner4.png" alt="컨텐츠1-배너" />
+                                <div class="banner_tit">
+                                    <p><span>ADIDAS</span><br /><span>RUNNERS DAY</span></p>
+                                    <p>러닝의 모든 순간은 아디다스와 함께!!</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="roll-banner">
+                <ul class="roll_box">
+                    <li class="roll_text">
+                        데이트부터 산책까지,
+                        <span class="stroke">SNEAKERS! </span>
+                        ABC마트 만의 브랜드를 보고 싶다면!
+                        <span class="yellow">ABC-MART</span>
+                    </li>
+                    <li class="roll_text">
+                        데이트부터 산책까지,
+                        <span class="stroke">SNEAKERS! </span>
+                        ABC마트 만의 브랜드를 보고 싶다면!
+                        <span class="yellow">ABC-MART</span>
+                    </li>
+                    <li class="roll_text">
+                        데이트부터 산책까지,
+                        <span class="stroke">SNEAKERS! </span>
+                        ABC마트 만의 브랜드를 보고 싶다면!
+                        <span class="yellow">ABC-MART</span>
+                    </li>
+                </ul>
+            </div>
+
+            <section class="cont2">
+                <div class="cont2_sale">
+                    <h2 class="sale_tit">지금 가장 핫한 가격</h2>
+                    <div class="sale_cont">
+                        <ul class="sale_list">
+                            <li>
+                                <div class="sale_box">
+                                    <a href="#">
+                                        <img src="./images/cont2_deal1.jpg" alt="" />
+                                        <div class="sale_period">
+                                            <div class="sale_time">
+                                                <span class="date">
+                                                    <span class="cday"></span>
+                                                    <span>Day</span>
+                                                </span>
+                                                <span class="time">
+                                                    <span class="chour"></span>
+                                                    <span class="cminute"></span>
+                                                    <span class="csecond"></span>
+                                                </span>
+                                            </div>
+                                            <div class="sale_count">
+                                                <span>남은수량</span>
+                                                <span class="yellow">80</span>
+                                            </div>
+                                        </div>
+                                        <div class="sale_info">
+                                            <h4 class="info-brand">나이키</h4>
+                                            <p class="info-name">에어 맥스 AP</p>
+                                            <div class="info-price">
+                                                <span class="price-fixed">109,000원</span>
+                                                <span class="price-sale">87,200원</span>
+                                                <span class="price-percent">[20%]</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sale_box">
+                                    <a href="#">
+                                        <img src="./images/cont2_deal2.jpg" alt="" />
+                                        <div class="sale_period">
+                                            <div class="sale_time">
+                                                <span class="date">
+                                                    <span class="cday"></span>
+                                                    <span>Day</span>
+                                                </span>
+                                                <span class="time">
+                                                    <span class="chour"></span>
+                                                    <span class="cminute"></span>
+                                                    <span class="csecond"></span>
+                                                </span>
+                                            </div>
+                                            <div class="sale_count">
+                                                <span>남은수량</span>
+                                                <span class="yellow">80</span>
+                                            </div>
+                                        </div>
+                                        <div class="sale_info">
+                                            <h4 class="info-brand">아디다스</h4>
+                                            <p class="info-name">슈퍼스타</p>
+                                            <div class="info-price">
+                                                <span class="price-fixed">109,000원</span>
+                                                <span class="price-sale">76,000원</span>
+                                                <span class="price-percent">[30%]</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sale_box">
+                                    <a href="#">
+                                        <img src="./images/cont2_deal3.jpg" alt="" />
+                                        <div class="sale_period">
+                                            <div class="sale_time">
+                                                <span class="date">
+                                                    <span class="cday"></span>
+                                                    <span>Day</span>
+                                                </span>
+                                                <span class="time">
+                                                    <span class="chour"></span>
+                                                    <span class="cminute"></span>
+                                                    <span class="csecond"></span>
+                                                </span>
+                                            </div>
+                                            <div class="sale_count">
+                                                <span>남은수량</span>
+                                                <span class="yellow">30</span>
+                                            </div>
+                                        </div>
+                                        <div class="sale_info">
+                                            <h4 class="info-brand">호킨스</h4>
+                                            <p class="info-name">웜앤라이트 패디2</p>
+                                            <div class="info-price">
+                                                <span class="price-fixed">99,000원</span>
+                                                <span class="price-sale">29,700원</span>
+                                                <span class="price-percent">[70%]</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sale_box">
+                                    <a href="#">
+                                        <img src="./images/cont2_deal4.jpg" alt="" />
+                                        <div class="sale_period">
+                                            <div class="sale_time">
+                                                <span class="date">
+                                                    <span class="cday"></span>
+                                                    <span>Day</span>
+                                                </span>
+                                                <span class="time">
+                                                    <span class="chour"></span>
+                                                    <span class="cminute"></span>
+                                                    <span class="csecond"></span>
+                                                </span>
+                                            </div>
+                                            <div class="sale_count">
+                                                <span>남은수량</span>
+                                                <span class="yellow">80</span>
+                                            </div>
+                                        </div>
+                                        <div class="sale_info">
+                                            <h4 class="info-brand">아식스</h4>
+                                            <p class="info-name">젤-1130</p>
+                                            <div class="info-price">
+                                                <span class="price-fixed">99,000원</span>
+                                                <span class="price-sale">59,400원</span>
+                                                <span class="price-percent">[40%]</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sale_box">
+                                    <a href="#">
+                                        <img src="./images/cont2_deal5.jpg" alt="" />
+                                        <div class="sale_period">
+                                            <div class="sale_time">
+                                                <span class="date">
+                                                    <span class="cday"></span>
+                                                    <span>Day</span>
+                                                </span>
+                                                <span class="time">
+                                                    <span class="chour"></span>
+                                                    <span class="cminute"></span>
+                                                    <span class="csecond"></span>
+                                                </span>
+                                            </div>
+                                            <div class="sale_count">
+                                                <span>남은수량</span>
+                                                <span class="yellow">79</span>
+                                            </div>
+                                        </div>
+                                        <div class="sale_info">
+                                            <h4 class="info-brand">호킨스</h4>
+                                            <p class="info-name">노아</p>
+                                            <div class="info-price">
+                                                <span class="price-fixed">69,000원</span>
+                                                <span class="price-sale">20,700원</span>
+                                                <span class="price-percent">[70%]</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sale_box">
+                                    <a href="#">
+                                        <img src="./images/cont2_deal6.jpg" alt="" />
+                                        <div class="sale_period">
+                                            <div class="sale_time">
+                                                <span class="date">
+                                                    <span class="cday"></span>
+                                                    <span>Day</span>
+                                                </span>
+                                                <span class="time">
+                                                    <span class="chour"></span>
+                                                    <span class="cminute"></span>
+                                                    <span class="csecond"></span>
+                                                </span>
+                                            </div>
+                                            <div class="sale_count">
+                                                <span>남은수량</span>
+                                                <span class="yellow">80</span>
+                                            </div>
+                                        </div>
+                                        <div class="sale_info">
+                                            <h4 class="info-brand">반스</h4>
+                                            <p class="info-name">V - 85</p>
+                                            <div class="info-price">
+                                                <span class="price-fixed">79,000원</span>
+                                                <span class="price-sale">71,000원</span>
+                                                <span class="price-percent">[10%]</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sale_box">
+                                    <a href="#">
+                                        <img src="./images/cont2_deal7.jpg" alt="" />
+                                        <div class="sale_period">
+                                            <div class="sale_time">
+                                                <span class="date">
+                                                    <span class="cday"></span>
+                                                    <span>Day</span>
+                                                </span>
+                                                <span class="time">
+                                                    <span class="chour"></span>
+                                                    <span class="cminute"></span>
+                                                    <span class="csecond"></span>
+                                                </span>
+                                            </div>
+                                            <div class="sale_count">
+                                                <span>남은수량</span>
+                                                <span class="yellow">61</span>
+                                            </div>
+                                        </div>
+                                        <div class="sale_info">
+                                            <h4 class="info-brand">누오보</h4>
+                                            <p class="info-name">하이폭시스8</p>
+                                            <div class="info-price">
+                                                <span class="price-fixed">119,000원</span>
+                                                <span class="price-sale">85,000원</span>
+                                                <span class="price-percent">[34%]</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sale_box">
+                                    <a href="#">
+                                        <img src="./images/cont2_deal8.jpg" alt="" />
+                                        <div class="sale_period">
+                                            <div class="sale_time">
+                                                <span class="date">
+                                                    <span class="cday"></span>
+                                                    <span>Day</span>
+                                                </span>
+                                                <span class="time">
+                                                    <span class="chour"></span>
+                                                    <span class="cminute"></span>
+                                                    <span class="csecond"></span>
+                                                </span>
+                                            </div>
+                                            <div class="sale_count">
+                                                <span>남은수량</span>
+                                                <span class="yellow">54</span>
+                                            </div>
+                                        </div>
+                                        <div class="sale_info">
+                                            <h4 class="info-brand">누오보</h4>
+                                            <p class="info-name">케이시4</p>
+                                            <div class="info-price">
+                                                <span class="price-fixed">69,000원</span>
+                                                <span class="price-sale">55,000원</span>
+                                                <span class="price-percent">[20%]</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cont3">
+                <div class="cont3_brand">
+                    <h2 class="brand_tit">인기 상품을 한눈에!</h2>
+
+                    <div class="brand_box">
+                        <div class="brand_main mbrand mBrand">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./images/brand3.jpg" />
+                                    <div class="brand_img"></div>
+                                    <div class="brand_info">
+                                        <img src="./images/brand/brand3/logo_w.png" alt="" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brand4.jpg" />
+                                    <div class="brand_img"></div>
+                                    <div class="brand_info">
+                                        <img src="./images/brand/brand4/logo_w.png" alt="" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brand5.jpg" />
+                                    <div class="brand_img"></div>
+                                    <div class="brand_info">
+                                        <img src="./images/brand/brand5/logo_w.png" alt="" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brand6.jpg" />
+                                    <div class="brand_img"></div>
+                                    <div class="brand_info">
+                                        <img src="./images/brand/brand6/logo_w.png" alt="" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brand1.jpg" />
+                                    <div class="brand_img"></div>
+                                    <div class="brand_info">
+                                        <img src="./images/brand/brand1/logo_w.png" alt="" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brand2.jpg" />
+                                    <div class="brand_img"></div>
+                                    <div class="brand_info">
+                                        <img src="./images/brand/brand2/logo_w.png" alt="" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brand3.jpg" />
+                                    <div class="brand_img"></div>
+                                    <div class="brand_info">
+                                        <img src="./images/brand/brand3/logo_w.png" alt="" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brand4.jpg" />
+                                    <div class="brand_img"></div>
+                                    <div class="brand_info">
+                                        <img src="./images/brand/brand4/logo_w.png" alt="" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brand5.jpg" />
+                                    <div class="brand_img"></div>
+                                    <div class="brand_info">
+                                        <img src="./images/brand/brand5/logo_w.png" alt="" />
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/brand6.jpg" />
+                                    <div class="brand_img"></div>
+                                    <div class="brand_info">
+                                        <img src="./images/brand/brand6/logo_w.png" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="brand_sub sbrand sBrand">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="brand_imgbox">
+                                        <img src="./images/brand3.jpg" />
+                                        <div class="brand_img"></div>
+                                        <div class="brand_info">
+                                            <img src="./images/brand/brand3/logo_w.png" alt="" />
+                                            <p>
+                                                나만의 길,
+                                                <br />나만의 방식으로.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="brand_prodbox">
+                                        <ul>
+                                            <li>
+                                                <a href="#"
+                                                    ><div class="brand_prodbox">
+                                                        <img src="./images/cont4/3-1.jpg" alt="" />
+                                                        <div class="sale_info">
+                                                            <h4 class="info-brand">반스</h4>
+                                                            <p class="info-name">젤-1130</p>
+                                                            <div class="info-price">
+                                                                <span class="price-fixed">99,000</span>
+                                                                <span class="price-sale">59,400</span>
+                                                                <span class="price-percent">[40%]</span>
+                                                            </div>
+                                                        </div>
+                                                    </div></a
+                                                >
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    ><div class="brand_prodbox">
+                                                        <img src="./images/cont4/3-2.jpg" alt="" />
+                                                        <div class="sale_info">
+                                                            <h4 class="info-brand">반스</h4>
+                                                            <p class="info-name">v-130</p>
+                                                            <div class="info-price">
+                                                                <span class="price-fixed">79,000</span>
+                                                            </div>
+                                                        </div>
+                                                    </div></a
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand_imgbox">
+                                        <img src="./images/brand4.jpg" />
+                                        <div class="brand_img"></div>
+                                        <div class="brand_info">
+                                            <img src="./images/brand/brand4/logo_w.png" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="brand_prodbox">
+                                        <ul>
+                                            <li>
+                                                <a href="#"
+                                                    ><div class="brand_prodbox">
+                                                        <img src="./images/cont4/4-1.jpg" alt="" />
+                                                        <div class="sale_info">
+                                                            <h4 class="info-brand">아식스</h4>
+                                                            <p class="info-name">카닉스</p>
+                                                            <div class="info-price">
+                                                                <span class="price-fixed">89,000</span>
+                                                                <span class="price-sale">49,400</span>
+                                                                <span class="price-percent">[30%]</span>
+                                                            </div>
+                                                        </div>
+                                                    </div></a
+                                                >
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    ><div class="brand_prodbox">
+                                                        <img src="./images/cont4/4-2.jpg" alt="" />
+                                                        <div class="sale_info">
+                                                            <h4 class="info-brand">아식스</h4>
+                                                            <p class="info-name">에어130</p>
+                                                            <div class="info-price">
+                                                                <span class="price-fixed">99,000</span>
+                                                                <span class="price-sale">59,400</span>
+                                                                <span class="price-percent">[40%]</span>
+                                                            </div>
+                                                        </div>
+                                                    </div></a
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand_imgbox">
+                                        <img src="./images/brand5.jpg" />
+                                        <div class="brand_img"></div>
+                                        <div class="brand_info">
+                                            <img src="./images/brand/brand5/logo_w.png" alt="" />
+                                            <p>
+                                                베이직과 심플함으로
+                                                <br />여름을 담아내다
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="brand_prodbox">
+                                        <ul>
+                                            <li>
+                                                <a href="#"
+                                                    ><div class="brand_prodbox">
+                                                        <img src="./images/cont4/5-1.jpg" alt="" />
+                                                        <div class="sale_info">
+                                                            <h4 class="info-brand">누오보</h4>
+                                                            <p class="info-name">젤-1130</p>
+                                                            <div class="info-price">
+                                                                <span class="price-fixed">78,000</span>
+                                                            </div>
+                                                        </div>
+                                                    </div></a
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand_imgbox">
+                                        <img src="./images/brand6.jpg" />
+                                        <div class="brand_img"></div>
+                                        <div class="brand_info">
+                                            <img src="./images/brand/brand6/logo_w.png" alt="" />
+                                            <p>
+                                                클래식 감성의
+                                                <br />하이테크 러닝 슈즈
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="brand_prodbox">
+                                        <ul>
+                                            <li>
+                                                <a href="#"
+                                                    ><div class="brand_prodbox">
+                                                        <img src="./images/cont4/6-1.jpg" alt="" />
+                                                        <div class="sale_info">
+                                                            <h4 class="info-brand">호킨스</h4>
+                                                            <p class="info-name">비에이블 80</p>
+                                                            <div class="info-price">
+                                                                <span class="price-fixed">33,000</span>
+                                                            </div>
+                                                        </div>
+                                                    </div></a
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand_imgbox">
+                                        <img src="./images/brand1.jpg" />
+                                        <div class="brand_img"></div>
+                                        <div class="brand_info">
+                                            <img src="./images/brand/brand1/logo_w.png" alt="" />
+                                            <p>
+                                                산뜻해진 계절따라<br />
+                                                봄을 맞이할 뉴 컬렉션
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="brand_prodbox">
+                                        <ul>
+                                            <li>
+                                                <a href="#"
+                                                    ><div class="brand_prodbox">
+                                                        <img src="./images/cont4/1-1.jpg" alt="" />
+                                                        <div class="sale_info">
+                                                            <h4 class="info-brand">나이키</h4>
+                                                            <p class="info-name">썬-113</p>
+                                                            <div class="info-price">
+                                                                <span class="price-fixed">99,000</span>
+                                                            </div>
+                                                        </div>
+                                                    </div></a
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand_imgbox">
+                                        <img src="./images/brand2.jpg" />
+                                        <div class="brand_img"></div>
+                                        <div class="brand_info">
+                                            <img src="./images/brand/brand2/logo_w.png" alt="" />
+                                            <p>
+                                                벗고 싶지 않은
+                                                <br />편안함을 즐기다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="brand_prodbox">
+                                        <ul>
+                                            <li>
+                                                <a href="#"
+                                                    ><div class="brand_prodbox">
+                                                        <img src="./images/cont4/2-1.jpg" alt="" />
+                                                        <div class="sale_info">
+                                                            <h4 class="info-brand">아디다스</h4>
+                                                            <p class="info-name">젤-1130</p>
+                                                            <div class="info-price">
+                                                                <span class="price-fixed">99,000</span>
+                                                                <span class="price-sale">59,400</span>
+                                                                <span class="price-percent">[40%]</span>
+                                                            </div>
+                                                        </div>
+                                                    </div></a
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand_imgbox">
+                                        <img src="./images/brand3.jpg" />
+                                        <div class="brand_img"></div>
+                                        <div class="brand_info">
+                                            <img src="./images/brand/brand3/logo_w.png" alt="" />
+                                            <p>
+                                                나만의 길,
+                                                <br />나만의 방식으로.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="brand_prodbox">
+                                        <ul>
+                                            <li>
+                                                <a href="#"
+                                                    ><div class="brand_prodbox">
+                                                        <img src="./images/cont4/3-1.jpg" alt="" />
+                                                        <div class="sale_info">
+                                                            <h4 class="info-brand">반스</h4>
+                                                            <p class="info-name">젤-1130</p>
+                                                            <div class="info-price">
+                                                                <span class="price-fixed">99,000</span>
+                                                                <span class="price-sale">59,400</span>
+                                                                <span class="price-percent">[40%]</span>
+                                                            </div>
+                                                        </div>
+                                                    </div></a
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand_imgbox">
+                                        <img src="./images/brand4.jpg" />
+                                        <div class="brand_img"></div>
+                                        <div class="brand_info">
+                                            <img src="./images/brand/brand4/logo_w.png" alt="" />
+                                            <p>
+                                                러닝을 뛰어넘어
+                                                <br />패션 아이콘으로
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="brand_prodbox">
+                                        <ul>
+                                            <li>
+                                                <a href="#"
+                                                    ><div class="brand_prodbox">
+                                                        <img src="./images/cont4/1.jpg" alt="" />
+                                                        <div class="sale_info">
+                                                            <h4 class="info-brand">아식스</h4>
+                                                            <p class="info-name">젤-1130</p>
+                                                            <div class="info-price">
+                                                                <span class="price-fixed">99,000</span>
+                                                                <span class="price-sale">59,400</span>
+                                                                <span class="price-percent">[40%]</span>
+                                                            </div>
+                                                        </div>
+                                                    </div></a
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand_imgbox">
+                                        <img src="./images/brand5.jpg" />
+                                        <div class="brand_img"></div>
+                                        <div class="brand_info">
+                                            <img src="./images/brand/brand5/logo_w.png" alt="" />
+                                            <p>
+                                                베이직과 심플함으로
+                                                <br />여름을 담아내다
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="brand_prodbox">
+                                        <ul>
+                                            <li>
+                                                <a href="#"
+                                                    ><div class="brand_prodbox">
+                                                        <img src="./images/cont4/5-1.jpg" alt="" />
+                                                        <div class="sale_info">
+                                                            <h4 class="info-brand">누오보</h4>
+                                                            <p class="info-name">인켄08</p>
+                                                            <div class="info-price">
+                                                                <span class="price-fixed">79,000</span>
+                                                            </div>
+                                                        </div>
+                                                    </div></a
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="brand_imgbox">
+                                        <img src="./images/brand6.jpg" />
+                                        <div class="brand_img"></div>
+                                        <div class="brand_info">
+                                            <img src="./images/brand/brand6/logo_w.png" alt="" />
+                                            <p>
+                                                클래식 감성의
+                                                <br />하이테크 러닝 슈즈
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="brand_prodbox">
+                                        <ul>
+                                            <li>
+                                                <a href="#"
+                                                    ><div class="brand_prodbox">
+                                                        <img src="./images/cont4/6-1.jpg" alt="" />
+                                                        <div class="sale_info">
+                                                            <h4 class="info-brand">호킨스</h4>
+                                                            <p class="info-name">XR 59</p>
+                                                            <div class="info-price">
+                                                                <span class="price-fixed">99,000</span>
+                                                                <span class="price-sale">58,000</span>
+                                                                <span class="price-percent">[20%]</span>
+                                                            </div>
+                                                        </div>
+                                                    </div></a
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- bottom area -->
+        <footer id="info">
+            <info-area></info-area>
+        </footer>
+
+        <!-- side area -->
+        <div id="side">
+            <side-area></side-area>
+        </div>
+
+        <script>
+            var sBrand = new Swiper(".sBrand", {
+                //         speed: 800,slidesPerView: 2,
+                // effect: "fade",
+
+                // loop: true,loopedSlides: 1,
+                // //         spaceBetween: 300,
+                // //         loopedSlides: 6,
+                // //         loop: true,
+                // //         autoplay: {
+                // //     delay: 1000,
+                // //     disableOnInteraction: false,
+                // },
+                speed: 800,
+                spaceBetween: 50,
+                effect: "fade",
+                loop: true,
+                width: 700,
+                loopedSlides: 6,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                autoplay: {
+                              delay: 4000,
+                              disableOnInteraction: false,
+                          },
+            });
+            var mBrand = new Swiper(".mbrand", {
+                speed: 800,
+                spaceBetween: 50,
+                width: 290,
+                loop: true,
+                loopedSlides: 6,
+                pagination: {
+                    el: ".swiper-scrollbar",
+                },
+
+                //             spaceBetween: 300,
+                //             effect: "fade",
+                //             // slidesPerView: 1,
+                //             loop: true,
+
+                //             navigation: {
+                //     nextEl: ".swiper-button-next",
+                //     // prevEl: ".swiper-button-prev",
+                //   },
+                //   pagination: {
+                //     el: ".swiper-pagination",
+                //     clickable: true,
+                //   },
+                //   loopedSlides: 6,
+                //   loop: true,
+                //   autoplay: {
+                //         delay: 5000,
+                //         disableOnInteraction: false,
+                //     },
+            });
+            mBrand.controller.control = sBrand;
+            sBrand.controller.control = mBrand;
+        </script>
+    </body>
+</html>
