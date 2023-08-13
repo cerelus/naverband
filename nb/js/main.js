@@ -23,4 +23,26 @@ window.addEventListener("load", () => {
             <img src="./img/ballon0${seq}.png" alt="말풍선" class="text_ballon ballon${seq}">
         `;
     });
+
+    // report6 - 롤링이미지
+    const report6Slide = $(".section_report6 .slide_wrap");
+    for (i = 0; i < 3; i++) {
+        report6Slide.append(`<img src="./img/history.png" alt="밴드 히스트리">`);
+    }
+    report6Slide.find("img").last().on("load",() => {
+            moveItem(report6Slide);
+        });
+
+    function moveItem(itemBox) {
+        let itemPos = 0;
+        let itemWidth = itemBox.find("img").width();
+        setInterval(() => {
+            itemPos--;
+            if (itemPos < -itemWidth) {
+                itemPos = 0;
+                itemBox.append(itemBox.find("img").first());
+            }
+            itemBox.css({ left: lpos + "px" });
+        }, 11);
+    }
 }); ///////// load

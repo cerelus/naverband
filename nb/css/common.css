@@ -27,11 +27,13 @@ body{
 .text-green{
     color: var(--main-color);
 }
+.tit_wrap{
+    text-align: center;
+}
 .tit_main{
     font-size: 60px;
     font-weight: 800;
-    letter-spacing: 1.5px;
-    text-align: center;
+    letter-spacing: -1.5px;
 }
 .text-data{
     font-size: 12px;
