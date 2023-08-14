@@ -129,3 +129,25 @@ body{
 #header.fixed .btn_share {
     background-image: url(../img/ico_share.png);
 }
+
+/* footer */
+#footer .inner{
+    padding: 70px 0;
+    text-align: center;
+}
+#footer .inner *{
+    font-size: 16px;
+    position: relative;
+}
+#footer .go_corp{
+    padding-right: 12px;
+    margin-right: 12px;
+}
+#footer .go_corp::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1px;
+    height: 20px;
+    background-color: #d8d8d8;
+}

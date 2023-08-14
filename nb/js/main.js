@@ -4,7 +4,7 @@ window.addEventListener("load", () => {
 
     // gnb 스크롤 이벤트
     const header = document.getElementById("header");
-    const report1 = document.querySelector(".section_report1");
+    const report1 = document.querySelector(".report1");
     window.addEventListener("scroll", () => {
         const report1Pos = report1.getBoundingClientRect().top;
         if (report1Pos <= 0) {
@@ -15,7 +15,7 @@ window.addEventListener("load", () => {
     }); /////// scroll
 
     // report3 - 말풍선 넣기
-    const report3 = document.querySelector(".section_report3");
+    const report3 = document.querySelector(".report3");
     const textBallon = report3.querySelectorAll(".slide_wrap .text_wrap");
     textBallon.forEach((ele, idx) => {
         let seq = idx + 1;
@@ -25,7 +25,7 @@ window.addEventListener("load", () => {
     });
 
     // report6 - 롤링이미지
-    const report6Slide = $(".section_report6 .slide_wrap");
+    const report6Slide = $(".report6 .slide_wrap");
     for (i = 0; i < 3; i++) {
         report6Slide.append(`<img src="./img/history.png" alt="밴드 히스트리">`);
     }
@@ -42,7 +42,18 @@ window.addEventListener("load", () => {
                 itemPos = 0;
                 itemBox.append(itemBox.find("img").first());
             }
-            itemBox.css({ left: lpos + "px" });
+            itemBox.css({ left: itemPos + "px" });
         }, 11);
+    }
+
+    // notice
+    const noticeTit = document.querySelectorAll(".notice .notice_title");
+    toggleCls(noticeTit, "on");
+    function toggleCls(target, classname){
+        target.forEach((ele)=>{
+            ele.onclick = function(){
+                this.classList.toggle(classname);
+            };
+        });
     }
 }); ///////// load
