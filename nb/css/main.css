@@ -275,24 +275,27 @@
 }
 .report4 .scroll_wrap li {
     display: flex;
+    position: relative;
     font-size: 64px;
     font-weight: 700;
     white-space: nowrap;
     letter-spacing: -2px;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-}
-.report4 .scroll_wrap li:last-child {
-    border-top: none;
 }
 .report4 .scroll_wrap span {
     position: relative;
-    padding: 70px;
+    padding: 70px 200px 70px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.report4 .scroll_wrap li:last-child span{
+    border-top: none;
 }
 .report4 .scroll_wrap span::after {
     content: "";
     position: absolute;
+    top: 50%;
     right: 40px;
+    transform: translateY(-50%);
     width: 120px;
     aspect-ratio: 1;
     background-size: 120px 120px;

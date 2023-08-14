@@ -1,0 +1,1 @@
+const qs = (x,y)
