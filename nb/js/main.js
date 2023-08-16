@@ -27,11 +27,10 @@ window.addEventListener("load", () => {
     // report4 - 스크롤 이벤트
     const report4 = document.querySelector(".report4");
     const scrollStart = report3.getBoundingClientRect().t
-    const scrollBx = report4.querySelectorAll("li");
-    scrollBx.addEventListener("scroll",()=>{
-
-    }); //// scroll
-
+    const scrollBox = report4.querySelectorAll("li");
+    // scrollBox.forEach((e)=>{
+        
+    // });
     // report6 - 롤링이미지
     const report6Slide = $(".report6 .slide_wrap");
     for (i = 0; i < 3; i++) {
@@ -60,7 +59,7 @@ window.addEventListener("load", () => {
     function toggleCls(target, classname){
         target.forEach((ele)=>{
             ele.onclick = function(){
-                this.classList.toggle(classname);
+                ele.classList.toggle(classname);
             };
         });
     }

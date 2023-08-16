@@ -400,12 +400,16 @@
 .notice .notice_title.on::after{
     transform: rotate(180deg);
 }
-.notice .notice_list{
-    display: none;
+.notice .notice_title + .notice_list{
+    height: 0;
+    overflow: hidden;
+    transition: height 3s ease-out;
+}
+.notice .notice_list ul{
     padding: 0 40px 40px;
 }
 .notice .notice_title.on + .notice_list{
-    display: block;
+    height: 200px;
 }
 .notice_list li{
     position: relative;
