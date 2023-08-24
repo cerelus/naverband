@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+@import url(./reset.css);
+@import url(./fonts.css);
+@import url(./common.css);
+
 /* visual */
 .visual {
     position: relative;
@@ -392,7 +396,7 @@
     background-image: url(../img/ico_fold.png);
     background-repeat: no-repeat;
     background-size: contain;
-    transition: background-image 0.25s linear;
+    transition: .5s ease-in-out;
 }
 .notice_title:hover::after{
     background-image: url(../img/ico_fold_hover.png);
@@ -403,13 +407,10 @@
 .notice .notice_title + .notice_list{
     height: 0;
     overflow: hidden;
-    transition: height 3s ease-out;
+    transition: height .5s ease-in-out;
 }
 .notice .notice_list ul{
     padding: 0 40px 40px;
-}
-.notice .notice_title.on + .notice_list{
-    height: 200px;
 }
 .notice_list li{
     position: relative;
@@ -421,11 +422,17 @@
 .notice_list li::before{
     content: '';
     position: absolute;
-    top: 50%;
+    top: 14px;
     left: 0;
     transform: translateY(-50%);
     width: 2px;
     height: 2px;
     background-color: #444;
     border-radius: 1px;
+}
+.notice_list li a{
+    text-decoration: underline;
+}
+.notice_list li a:hover{
+    color: var(--main-color);
 }

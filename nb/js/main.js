@@ -1,3 +1,5 @@
+import noticeData from "./data/noticeData.js";
+
 window.addEventListener("load", () => {
     window.addEventListener("scroll", () => {
         fixGnb();
@@ -46,7 +48,7 @@ window.addEventListener("load", () => {
     // });
     // report6 - 롤링이미지
     const report6Slide = $(".report6 .slide_wrap");
-    for (i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
         report6Slide.append(`<img src="./img/history.png" alt="밴드 히스트리">`);
     }
     report6Slide
@@ -69,14 +71,38 @@ window.addEventListener("load", () => {
         }, 11);
     }
 
-    // notice
-    const noticeTit = document.querySelectorAll(".notice .notice_title");
-    toggleCls(noticeTit, "on");
-    function toggleCls(target, classname) {
-        target.forEach((ele) => {
-            ele.onclick = function () {
-                ele.classList.toggle(classname);
-            };
-        });
-    }
+    /* notice */
+    const noticeWrap = document.querySelector(".notice_wrap");
+    
+    // 리스트 넣기
+    noticeData.forEach((ele)=>{
+        const content = ele.content.split("^");
+        let code = `<li>
+                        <span class="notice_title">${ele.title}</span>
+                        <div class="notice_list">
+                            <ul>
+                            ${content.map(x => `<li>${x}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </li>`;
+        noticeWrap.innerHTML += code;
+    }); //// forEach
+
+    // click-slideUp/Down
+    const noticeTit = noticeWrap.querySelectorAll(".notice_title");
+
+    noticeTit.forEach((ele) => {
+        const noticeList = ele.nextElementSibling;
+        const listHeight = noticeList.querySelector("ul").offsetHeight;
+      
+        ele.addEventListener("click", function(){
+            if(noticeList.offsetHeight === 0){
+                noticeList.style.height = listHeight + "px";
+                ele.classList.add("on");
+            } else{
+                noticeList.style.height = "0px";
+                ele.classList.remove("on");
+            }
+        }); //// click
+    }); //// forEach
 }); ///////// load
