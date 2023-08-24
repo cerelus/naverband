@@ -111,7 +111,7 @@ body{
     background-image: url(../img/ico_share_w.png);
     background-size: 28px 28px;
 }
-/* header-fixed */
+/* header.fixed */
 #header.fixed{
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(15px);
@@ -152,7 +152,7 @@ body{
     background-color: #d8d8d8;
 }
 
-/* top btn */
+/* top button */
 .btn_top{
     position: fixed;
     bottom: 30px;
@@ -160,5 +160,15 @@ body{
     width: 60px;
     height: 60px;
     background: url(../img/btn_top.png) no-repeat center/cover;
-    z-index: 1;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s linear;
+}
+.btn_top.show{
+    opacity: 1;
+    visibility: visible;
+}
+.btn_top:hover{
+    background: url(../img/btn_top_hover.png) no-repeat center/cover;
 }

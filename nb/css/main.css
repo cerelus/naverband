@@ -1,33 +1,33 @@
 @charset "utf-8";
 
-/* report0 */
-.report0 {
+/* visual */
+.visual {
     position: relative;
     width: 100%;
     height: 100vh;
 }
-.report0::after {
+.visual::after {
     content: "";
-    animation: report0Bg 1s cubic-bezier(0.2, 0.23, 0.23, 0.99) 3.4s forwards;
+    animation: visualBg 1s cubic-bezier(0.2, 0.23, 0.23, 0.99) 3.4s forwards;
 }
-.report0::after,
-.report0 .video_wrap,
-.report0 .inner {
+.visual::after,
+.visual .video_wrap,
+.visual .inner {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
 }
-.report0 .inner {
+.visual .inner {
     z-index: 1;
 }
-.report0 .video_wrap video {
+.visual .video_wrap video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.report0 .tit_wrap {
+.visual .tit_wrap {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -35,30 +35,30 @@
     width: 100%;
     color: #fff;
     /* animation */
-    animation: report0Title 1s cubic-bezier(0.2, 0.23, 0.23, 0.99) 3.4s forwards;
+    animation: visualTitle 1s cubic-bezier(0.2, 0.23, 0.23, 0.99) 3.4s forwards;
     margin-top: 50px;
     opacity: 0;
     color: light;
 }
-.report0 .tit_sub {
+.visual .tit_sub {
     margin-bottom: 12px;
     font-size: 29px;
     font-weight: 900;
 }
-.report0 .tit_main {
+.visual .tit_main {
     margin-bottom: 40px;
     font-size: 98px;
     font-weight: 900;
     line-height: 1.1;
     letter-spacing: -4px;
 }
-.report0 .btn_wrap {
+.visual .btn_wrap {
     display: flex;
     justify-content: center;
     gap: 16px;
 }
-.report0 .btn_view,
-.report0 .btn_event {
+.visual .btn_view,
+.visual .btn_event {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,21 +69,21 @@
     font-weight: 800;
     border-radius: 34px;
 }
-.report0 .btn_view {
+.visual .btn_view {
     background-color: rgba(0, 0, 0, 0.5);
     border: 3px solid #fff;
     box-sizing: border-box;
 }
-.report0 .btn_view.sp::after {
+.visual .btn_view.sp::after {
     width: 26px;
     height: 26px;
     background-position: -70px -32px;
 }
-.report0 .btn_event {
+.visual .btn_event {
     background-color: #58ff70;
     line-height: 68px;
 }
-.report0 .btn_event.sp::after {
+.visual .btn_event.sp::after {
     width: 28px;
     height: 28px;
     background-position: -37px 0px;
@@ -97,12 +97,12 @@
     height: 11px;
     background: url(../img/arrow_down.png) no-repeat 0 0 / 19px 11px;
 }
-@keyframes report0Bg {
+@keyframes visualBg {
     to {
         background-color: rgba(0, 0, 0, 0.5);
     }
 }
-@keyframes report0Title {
+@keyframes visualTitle {
     to {
         opacity: 1;
         margin-top: 0;
