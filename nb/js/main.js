@@ -15,8 +15,9 @@ window.addEventListener("load", () => {
         report1Pos <= 0 ? header.classList.add("fixed") : header.classList.remove("fixed");
     } ////// fixGnb
     // gnb_link
-    const pgDownBtn = document.querySelector(".btn_page-down");
     const gnbList = header.querySelectorAll(".gnb li a");
+    const pgDownBtn = document.querySelector(".btn_page-down");
+    const eventBtn = document.querySelector(".btn_event");
 
     function movePg(ele) {
         event.preventDefault();
@@ -29,12 +30,17 @@ window.addEventListener("load", () => {
     gnbList.forEach((ele) => {
         ele.addEventListener("click", () => {
             movePg(ele);
-            for(let x of gnbList) x.parentElement.classList.remove("on");
+            for (let x of gnbList) x.parentElement.classList.remove("on");
             ele.parentElement.classList.add("on");
         });
     }); ////// forEach
 
-    pgDownBtn.addEventListener("click", function () { movePg(this);} );
+    pgDownBtn.addEventListener("click", function () {
+        movePg(this);
+    });
+    eventBtn.addEventListener("click", function () {
+        movePg(this);
+    });
 
     /* top button */
     const visual = document.querySelector(".visual");
@@ -47,8 +53,27 @@ window.addEventListener("load", () => {
     // top버튼 표시
     function showTopBtn() {
         const visualPos = visual.getBoundingClientRect().top;
-        visualPos < -120 ? topBtn.classList.add("show") : topBtn.classList.remove("show");
+        visualPos < -120 ? topBtn.classList.add("on") : topBtn.classList.remove("on");
     } ////// showTopBtn
+
+    /* visual */
+    const viewBtn = visual.querySelector(".btn_view-video");
+    const popupVid = document.querySelector(".popup_video");
+    const videoWrap = popupVid.querySelector(".video_wrap");
+    const closeBtn = popupVid.querySelector(".btn_close");
+
+    viewBtn.addEventListener("click", () => {
+        videoWrap.innerHTML = 
+                `<iframe src="https://tv.naver.com/embed/28397077?autoPlay=true" 
+                frameborder="0" allow="autoplay" allowfullscreen></iframe>`;
+        popupVid.classList.add("on");
+        document.body.classList.add("hidden");
+    });
+    closeBtn.addEventListener("click", () => {
+        videoWrap.innerHTML = "";
+        popupVid.classList.remove("on");
+        document.body.classList.remove("hidden");
+    });
 
     /* report3 */
     const report3 = document.querySelector(".report3");

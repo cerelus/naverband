@@ -6,6 +6,10 @@
 body{
     font-family: 'NanumSquareNeo', serif;
 }
+body.hidden{
+    height: 100vh;
+    overflow: hidden;
+}
 .sp::after {
     content: '';
     display: inline-block;
@@ -45,7 +49,7 @@ body{
     top: 0;
     left: 0;
     right: 0;
-    z-index: 999;
+    z-index: 1000;
 }
 #header .inner {
     display: flex;
@@ -161,12 +165,12 @@ body{
     width: 60px;
     height: 60px;
     background: url(../img/btn_top.png) no-repeat center/cover;
-    z-index: 10;
+    z-index: 1000;
     opacity: 0;
     visibility: hidden;
     transition: .2s linear;
 }
-.btn_top.show{
+.btn_top.on{
     opacity: 1;
     visibility: visible;
 }
