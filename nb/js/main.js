@@ -9,11 +9,32 @@ window.addEventListener("load", () => {
     /* gnb */
     const header = document.getElementById("header");
     const report1 = document.querySelector(".report1");
-    // gnb 상단고정
+    // gnb_상단고정
     function fixGnb() {
         const report1Pos = report1.getBoundingClientRect().top;
         report1Pos <= 0 ? header.classList.add("fixed") : header.classList.remove("fixed");
     } ////// fixGnb
+    // gnb_link
+    const pgDownBtn = document.querySelector(".btn_page-down");
+    const gnbList = header.querySelectorAll(".gnb li a");
+
+    function movePg(ele) {
+        event.preventDefault();
+        const secId = ele.getAttribute("href");
+        // section의 절대좌표 구하기
+        const secPos = document.querySelector(secId).getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: secPos, behavior: "smooth" });
+    } ////// movePg
+
+    gnbList.forEach((ele) => {
+        ele.addEventListener("click", () => {
+            movePg(ele);
+            for(let x of gnbList) x.parentElement.classList.remove("on");
+            ele.parentElement.classList.add("on");
+        });
+    }); ////// forEach
+
+    pgDownBtn.addEventListener("click", function () { movePg(this);} );
 
     /* top button */
     const visual = document.querySelector(".visual");
@@ -73,15 +94,15 @@ window.addEventListener("load", () => {
 
     /* notice */
     const noticeWrap = document.querySelector(".notice_wrap");
-    
+
     // 리스트 넣기
-    noticeData.forEach((ele)=>{
+    noticeData.forEach((ele) => {
         const content = ele.content.split("^");
         let code = `<li>
                         <span class="notice_title">${ele.title}</span>
                         <div class="notice_list">
                             <ul>
-                            ${content.map(x => `<li>${x}</li>`).join('')}
+                            ${content.map((x) => `<li>${x}</li>`).join("")}
                             </ul>
                         </div>
                     </li>`;
@@ -94,12 +115,12 @@ window.addEventListener("load", () => {
     noticeTit.forEach((ele) => {
         const noticeList = ele.nextElementSibling;
         const listHeight = noticeList.querySelector("ul").offsetHeight;
-      
-        ele.addEventListener("click", function(){
-            if(noticeList.offsetHeight === 0){
+
+        ele.addEventListener("click", function () {
+            if (noticeList.offsetHeight === 0) {
                 noticeList.style.height = listHeight + "px";
                 ele.classList.add("on");
-            } else{
+            } else {
                 noticeList.style.height = "0px";
                 ele.classList.remove("on");
             }

@@ -83,6 +83,10 @@ body{
     font-size: 12px;
     font-weight: 700;
     border-radius: 16px;
+    transition: background .3s linear;
+}
+#header.fixed .gnb a:hover{
+    background-color: rgba(0, 0, 0, 0.05);
 }
 #header.fixed .gnb li.on a{
     background-color: #000;
