@@ -4,6 +4,7 @@ window.addEventListener("load", () => {
     window.addEventListener("scroll", () => {
         fixGnb();
         showTopBtn();
+        getPercent();
     }); /////// scroll
 
     /* gnb */
@@ -63,8 +64,7 @@ window.addEventListener("load", () => {
     const closeBtn = popupVid.querySelector(".btn_close");
 
     viewBtn.addEventListener("click", () => {
-        videoWrap.innerHTML = 
-                `<iframe src="https://tv.naver.com/embed/28397077?autoPlay=true" 
+        videoWrap.innerHTML = `<iframe src="https://tv.naver.com/embed/28397077?autoPlay=true" 
                 frameborder="0" allow="autoplay" allowfullscreen></iframe>`;
         popupVid.classList.add("on");
         document.body.classList.add("hidden");
@@ -74,6 +74,22 @@ window.addEventListener("load", () => {
         popupVid.classList.remove("on");
         document.body.classList.remove("hidden");
     });
+
+    /* report2 */
+    function getPercent() {
+        const report2 = document.querySelector(".report2");
+        const scrollBefore = report2.querySelector(".scroll_before");
+        // 스크롤 한계값: 타겟의 offsetHeight - window의 innerHeight
+        // 스크롤 시작위치: report2 - innerHeight*3/5, 스크롤 종료위치: report2 + innerHeight*1/5
+        let scrollHeight = report2.offsetHeight - window.innerHeight / 5;
+        // 현재 스크롤 위치
+        let currentHeight = -(report2.getBoundingClientRect().top - window.innerHeight / 5 * 3);
+
+        let scrollPercent = Math.floor(currentHeight / scrollHeight * 100);
+        if (scrollPercent >= 0 && scrollPercent <= 100) {
+            scrollBefore.style.clipPath = `inset(0px 0px ${scrollPercent}% )`;
+        }
+    } ////// getPercent
 
     /* report3 */
     const report3 = document.querySelector(".report3");

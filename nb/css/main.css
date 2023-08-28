@@ -76,7 +76,6 @@
 .visual .btn_view-video {
     background-color: rgba(0, 0, 0, 0.5);
     border: 3px solid #fff;
-    box-sizing: border-box;
 }
 .visual .btn_view-video.sp::after {
     width: 26px;
@@ -163,19 +162,22 @@
 }
 .report2 .tit_main {
     margin-bottom: 60px;
+    line-height: 1.4;
     white-space: nowrap;
 }
-.report2 .sticky_wrap {
+.report2 .scroll_wrap {
     position: relative;
     width: 100%;
     height: 100%;
 }
-.report2 .sticky {
+.report2 .scroll {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
 }
-.report2 .sticky img {
+.report2 .scroll img {
     display: block;
     margin: 0 auto 50px;
     width: 220px;
@@ -183,19 +185,21 @@
 }
 .report2 .tit_wrap {
     position: absolute;
-    /* top: 50%; */
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
 }
-.report2 .sticky_after {
-    background-color: var(--main-color);
-}
-.report2 .sticky_after .tit_main {
-    color: #fff;
-}
-.report2 .sticky_after .tit_desc {
+.report2 .tit_desc {
     font-size: 22px;
     font-weight: 700;
+}
+.report2 .scroll_before {
+    background-color: #fff;
+    z-index: 1;
+    transition: clip-path 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.report2 .scroll_after {
+    background-color: var(--main-color);
     color: #fff;
 }
 
@@ -449,7 +453,7 @@
     background-color: #000;
     z-index: 1001;
 }
-.popup.on{
+.popup.on {
     display: block;
 }
 /* popup_video */
@@ -474,8 +478,8 @@
     height: 42px;
     background-image: url(../img/ico_close.png);
     background-size: 42px 42px;
-    transition: background .25s linear;
+    transition: background 0.25s linear;
 }
-.btn_close:hover{
+.btn_close:hover {
     background-image: url(../img/ico_close_hover.png);
 }
