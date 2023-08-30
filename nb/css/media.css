@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+@media (max-width: 1024px) {
+    .report3 .slide_wrap {
+        margin: 0 10% 30px;
+    }
+    .report3 .slide_container {
+        width: 335px;
+        padding: 60px 15px 28px;
+        box-sizing: content-box;
+        overflow: hidden;
+    }
+    .report3 .slide_container ul {
+        gap: 0;
+    }
+    .report3 .slide_container ul li {
+        flex: none;
+    }
+}
