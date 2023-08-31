@@ -2,6 +2,8 @@
 
 :root{
     --main-color: #0dcb67;
+    --bg-color: #f7f7f7;
+    --border-color: #e1e1e1;
 }
 body{
     font-family: 'NanumSquareNeo', serif;
@@ -10,6 +12,15 @@ body.hidden{
     height: 100vh;
     overflow: hidden;
 }
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+/* common class */
 .sp::after {
     content: '';
     display: inline-block;
@@ -34,6 +45,7 @@ body.hidden{
 .tit_main{
     font-size: 60px;
     font-weight: 800;
+    line-height: 1.4;
     letter-spacing: -1.5px;
     text-align: center;
 }

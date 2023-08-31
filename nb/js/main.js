@@ -1,3 +1,4 @@
+import {updateScrollPos, setSmoothScroll} from "./smoothScroll.js";
 import noticeData from "./data/noticeData.js";
 
 window.addEventListener("load", () => {
@@ -6,9 +7,20 @@ window.addEventListener("load", () => {
     window.addEventListener("scroll", () => {
         fixGnb();
         showTopBtn();
-        updatePercent();
+        updateBg();  // report2
+        updatePos();  // report3
     }); /////// scroll
 
+    // 스크롤 위치 업데이트
+    window.addEventListener("keyup",()=>{
+        setTimeout(() => {
+            updateScrollPos(window.pageYOffset);
+        }, 300);
+    });
+    window.addEventListener("mouseup",()=>{
+        updateScrollPos(window.pageYOffset);
+    });
+    
     /* gnb */
     const header = document.getElementById("header");
     const report1 = document.querySelector(".report1");
@@ -28,6 +40,7 @@ window.addEventListener("load", () => {
         // section의 절대좌표 구하기
         const secPos = document.querySelector(secId).getBoundingClientRect().top + window.scrollY;
         window.scrollTo({ top: secPos, behavior: "smooth" });
+        updateScrollPos(secPos);
     } ////// movePg
 
     gnbList.forEach((ele) => {
@@ -52,6 +65,7 @@ window.addEventListener("load", () => {
     topBtn.addEventListener("click", (e) => {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: "smooth" });
+        updateScrollPos(0);
     });
     // top버튼 표시
     function showTopBtn() {
@@ -78,7 +92,7 @@ window.addEventListener("load", () => {
     });
 
     /* report2 */
-    function updatePercent() {
+    function updateBg() {
         const report2 = document.querySelector(".report2");
         const scrollBefore = report2.querySelector(".scroll_before");
         // 스크롤 이동 한계값 = (report2.offsetHeight - window.innerHeight) + window.innerHeight
@@ -88,29 +102,45 @@ window.addEventListener("load", () => {
         // 현재 스크롤 위치
         let currentHeight = -(report2.getBoundingClientRect().top - (window.innerHeight / 3) * 2);
         // 퍼센트 업데이트
-        let currentPercent;
-        if (currentHeight >= 0 && currentHeight <= scrollHeight) {
-            let getPercent = Math.floor((currentHeight / scrollHeight) * 100);
-            currentPercent = getPercent;
-        } else if (currentHeight < 0) {
-            currentPercent = 0;
-        } else {
-            currentPercent = 100;
-        }
+        let currentPercent = getPercent(scrollHeight, currentHeight);
+
         scrollBefore.style.clipPath = `inset(0px 0px ${currentPercent}% )`;
     } ////// updatePercent
 
+    // 퍼센트 계산 함수
+    function getPercent(overall, current) {
+        if (current >= 0 && current <= overall) {
+            return Math.floor((current / overall) * 100);
+        } else if (current < 0) {
+            return 0;
+        } else {
+            return 100;
+        }
+    }
+
     /* report3 */
     const report3 = document.querySelector(".report3");
-    const r3Slide = report3.querySelector(".slide_container");
-    const wrapper = report3.querySelector(".slide_container ul");
     const textBallon = report3.querySelectorAll(".slide_wrap .text_wrap");
+    // report3_list-image
     textBallon.forEach((ele, idx) => {
         let seq = idx + 1;
         ele.innerHTML += `
-            <img src="./img/ballon0${seq}.png" alt="말풍선" class="text_ballon ballon${seq}">
+        <img src="./img/ballon0${seq}.png" alt="말풍선" class="text_ballon ballon${seq}">
         `;
     });
+    
+    function updatePos() {
+        const report3 = document.querySelector(".report3");
+        const decor = report3.querySelectorAll(".text_ballon, .face");
+        // 스크롤 이동 한계값
+        let scrollHeight = report3.offsetHeight - window.innerHeight / 3;
+        let currentHeight = -(report3.getBoundingClientRect().top - window.innerHeight / 3 * 2);
+
+        let currentPercent = 100 - getPercent(scrollHeight, currentHeight);
+        decor.forEach((ele) => {
+            ele.style.transform = `translateY(${currentPercent}px)`;
+        });
+    }
 
     // report3_slide
     let report3Swiper = new Swiper(".report3Slide", {
@@ -141,6 +171,7 @@ window.addEventListener("load", () => {
     // scrollBox.forEach((e)=>{
 
     // });
+
     // report6 - 롤링이미지
     const report6Slide = $(".report6 .slide_wrap");
     for (let i = 0; i < 3; i++) {
@@ -201,7 +232,10 @@ window.addEventListener("load", () => {
         }); //// click
     }); ////// forEach
 
+    // 초기화
     function init() {
-        updatePercent();
+        setSmoothScroll();
+        updateBg();
+        updatePos();
     }
 }); ///////// load
