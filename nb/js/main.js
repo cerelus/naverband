@@ -1,26 +1,26 @@
-import {updateScrollPos, setSmoothScroll} from "./smoothScroll.js";
+import { updateScrollPos, setSmoothScroll } from "./smoothScroll.js";
+import reportData from "./data/reportData.js";
 import noticeData from "./data/noticeData.js";
 
 window.addEventListener("load", () => {
-    init();
-
     window.addEventListener("scroll", () => {
         fixGnb();
         showTopBtn();
-        updateBg();  // report2
-        updatePos();  // report3
+        updateBgPos(); // report2
+        moveImg(); // report3
+        moveTxt();  // report4
     }); /////// scroll
 
     // 스크롤 위치 업데이트
-    window.addEventListener("keyup",()=>{
+    window.addEventListener("keyup", () => {
         setTimeout(() => {
             updateScrollPos(window.pageYOffset);
         }, 300);
     });
-    window.addEventListener("mouseup",()=>{
+    window.addEventListener("mouseup", () => {
         updateScrollPos(window.pageYOffset);
     });
-    
+
     /* gnb */
     const header = document.getElementById("header");
     const report1 = document.querySelector(".report1");
@@ -92,7 +92,8 @@ window.addEventListener("load", () => {
     });
 
     /* report2 */
-    function updateBg() {
+    // 배경위치 변경
+    function updateBgPos() {
         const report2 = document.querySelector(".report2");
         const scrollBefore = report2.querySelector(".scroll_before");
         // 스크롤 이동 한계값 = (report2.offsetHeight - window.innerHeight) + window.innerHeight
@@ -100,47 +101,47 @@ window.addEventListener("load", () => {
         // 종료위치: report2 + window.innerHeight * 1 / 3
         let scrollHeight = report2.offsetHeight;
         // 현재 스크롤 위치
-        let currentHeight = -(report2.getBoundingClientRect().top - (window.innerHeight / 3) * 2);
+        let currentHeight = report2.getBoundingClientRect().top - (window.innerHeight / 3) * 2;
         // 퍼센트 업데이트
-        let currentPercent = getPercent(scrollHeight, currentHeight);
+        let currentPercent = getPercent(currentHeight, scrollHeight);
 
         scrollBefore.style.clipPath = `inset(0px 0px ${currentPercent}% )`;
-    } ////// updatePercent
+    } ////// updateBgPos
 
-    // 퍼센트 계산 함수
-    function getPercent(overall, current) {
-        if (current >= 0 && current <= overall) {
-            return Math.floor((current / overall) * 100);
-        } else if (current < 0) {
+    // 퍼센트 계산
+    function getPercent(current, overall) {
+        if (current <= 0 && current >= -overall) {
+            return Math.floor(Math.abs(current / overall) * 100);
+        } else if (current > 0) {
             return 0;
         } else {
             return 100;
         }
-    }
+    } ////// getPercent
 
     /* report3 */
     const report3 = document.querySelector(".report3");
     const textBallon = report3.querySelectorAll(".slide_wrap .text_wrap");
-    // report3_list-image
+    // 이미지 넣기
     textBallon.forEach((ele, idx) => {
         let seq = idx + 1;
         ele.innerHTML += `
         <img src="./img/ballon0${seq}.png" alt="말풍선" class="text_ballon ballon${seq}">
         `;
     });
-    
-    function updatePos() {
+
+    // 이미지 위치 변경
+    function moveImg() {
         const report3 = document.querySelector(".report3");
-        const decor = report3.querySelectorAll(".text_ballon, .face");
+        const r3Imgs = report3.querySelectorAll(".text_ballon, .face");
         // 스크롤 이동 한계값
         let scrollHeight = report3.offsetHeight - window.innerHeight / 3;
-        let currentHeight = -(report3.getBoundingClientRect().top - window.innerHeight / 3 * 2);
-
-        let currentPercent = 100 - getPercent(scrollHeight, currentHeight);
-        decor.forEach((ele) => {
+        let currentHeight = report3.getBoundingClientRect().top - (window.innerHeight / 3) * 2;
+        let currentPercent = 100 - getPercent(currentHeight, scrollHeight);
+        r3Imgs.forEach((ele) => {
             ele.style.transform = `translateY(${currentPercent}px)`;
         });
-    }
+    } ////// moveImg
 
     // report3_slide
     let report3Swiper = new Swiper(".report3Slide", {
@@ -166,11 +167,36 @@ window.addEventListener("load", () => {
 
     /* report4 */
     const report4 = document.querySelector(".report4");
-    const scrollStart = report3.getBoundingClientRect().t;
-    const scrollBox = report4.querySelectorAll("li");
-    // scrollBox.forEach((e)=>{
+    const r4Scroll = report4.querySelector(".scroll_wrap");
 
-    // });
+    // 텍스트 넣기
+    const r4Data = reportData["report4"];
+    let code = "<ul>";
+    for (let x in r4Data) {
+        code += "<li>";
+        for (let y = 0; y < 3; y++) {
+            for (let y of r4Data[x]) {
+                code += `<span class="item_${y.cat}">${y.txt}</span>`;
+            }
+        }
+        code += "</li>";
+    }
+    code += "</ul>";
+    r4Scroll.innerHTML += code;
+
+    // 텍스트 위치 변경
+    function moveTxt() {
+        const report4 = document.querySelector(".report4");
+        const r4TxtTop = report4.querySelector(".scroll_wrap ul li:nth-child(1)");
+        const r4TxtBottom = report4.querySelector(".scroll_wrap ul li:nth-child(2)");
+
+        let scrollHeight = report4.offsetHeight + window.innerHeight;
+        let currentHeight = report4.getBoundingClientRect().top - window.innerHeight;
+
+        let currentPercent = getPercent(currentHeight, scrollHeight);
+        r4TxtTop.style.left = `-${currentPercent * 5}px`;
+        r4TxtBottom.style.right = `-${currentPercent * 5}px`;
+    } ////// moveTxt
 
     // report6 - 롤링이미지
     const report6Slide = $(".report6 .slide_wrap");
@@ -235,7 +261,10 @@ window.addEventListener("load", () => {
     // 초기화
     function init() {
         setSmoothScroll();
-        updateBg();
-        updatePos();
+        updateBgPos();
+        moveImg();
+        moveTxt();
     }
+
+    init();
 }); ///////// load
