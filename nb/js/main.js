@@ -76,17 +76,17 @@ window.addEventListener("load", () => {
     /* visual */
     const viewBtn = visual.querySelector(".btn_view-video");
     const popupVid = document.querySelector(".popup_video");
-    const videoWrap = popupVid.querySelector(".video_wrap");
+    const vlVideoWrap = popupVid.querySelector(".video_wrap");
     const closeBtn = popupVid.querySelector(".btn_close");
 
     viewBtn.addEventListener("click", () => {
-        videoWrap.innerHTML = `<iframe src="https://tv.naver.com/embed/28397077?autoPlay=true" 
+        vlVideoWrap.innerHTML = `<iframe src="https://tv.naver.com/embed/28397077?autoPlay=true" 
                 frameborder="0" allow="autoplay" allowfullscreen></iframe>`;
         popupVid.classList.add("on");
         document.body.classList.add("hidden");
     });
     closeBtn.addEventListener("click", () => {
-        videoWrap.innerHTML = "";
+        vlVideoWrap.innerHTML = "";
         popupVid.classList.remove("on");
         document.body.classList.remove("hidden");
     });
@@ -121,20 +121,20 @@ window.addEventListener("load", () => {
 
     /* report3 */
     const report3 = document.querySelector(".report3");
-    const textBallon = report3.querySelectorAll(".slide_wrap .text_wrap");
+    const r3TextWrap = report3.querySelectorAll(".slide_wrap .text_wrap");
 
     // 이미지 넣기
-    textBallon.forEach((ele, idx) => {
+    r3TextWrap.forEach((ele, idx) => {
         let seq = idx + 1;
         ele.innerHTML += `
-        <img src="./img/ballon0${seq}.png" alt="말풍선" class="text_ballon ballon${seq}">
+        <img src="./img/tooltip0${seq}.png" alt="말풍선" class="text_tooltip tooltip${seq}">
         `;
     });
 
     // 이미지 위치 변경
     function moveImg() {
         const report3 = document.querySelector(".report3");
-        const r3Imgs = report3.querySelectorAll(".text_ballon, .face");
+        const r3Imgs = report3.querySelectorAll(".text_tooltip, .face");
         // 스크롤 이동 한계값
         let scrollHeight = report3.offsetHeight - window.innerHeight / 3;
         let currentHeight = report3.getBoundingClientRect().top - (window.innerHeight / 3) * 2;
@@ -168,9 +168,10 @@ window.addEventListener("load", () => {
 
     /* report4 */
     const report4 = document.querySelector(".report4");
-    const r4Scroll = report4.querySelector(".scroll_wrap");
+    const r4Scroll = document.createElement("div");
+    r4Scroll.className = "scroll_wrap";
 
-    // 텍스트 넣기
+    // 스크롤될 텍스트 넣기
     const r4Data = reportData["report4"];
     let r4Code = "<ul>";
     r4Data.forEach((arr) => {
@@ -184,6 +185,7 @@ window.addEventListener("load", () => {
     }); //// forEach
     r4Code += "</ul>";
     r4Scroll.innerHTML += r4Code;
+    report4.append(r4Scroll);
 
     // 텍스트 위치 변경
     function moveTxt() {
@@ -200,12 +202,15 @@ window.addEventListener("load", () => {
     } ////// moveTxt
 
     /* report6 */
-    const report6 = document.querySelector(".report6");
-    const r6Slide = report6.querySelector(".report6 .slide_container");
-    // 이미지 넣기
+    const r6SlideWrap = document.querySelector(".report6 .slide_wrap");
+    const r6Slide = document.createElement("ul");
+    r6Slide.className = "slide_container";
+
+    // 슬라이드에 이미지 넣기
     for (let x = 0; x < 3; x++) {
         r6Slide.innerHTML += `<li><img src="./img/history.png" alt="밴드 히스토리"></li>`;
     }
+    r6SlideWrap.append(r6Slide);
 
     // 슬라이드 위치 변경
     function moveSlide() {
@@ -218,7 +223,7 @@ window.addEventListener("load", () => {
             if (slidePos < -slideWidth) {
                 slidePos = 0;
                 firstSlide = r6Slide.querySelectorAll("li")[0];
-                r6Slide.appendChild(firstSlide);
+                r6Slide.append(firstSlide);
             }
             r6Slide.style.left = slidePos + "px";
         }, 11);
@@ -242,7 +247,8 @@ window.addEventListener("load", () => {
     // 탭 슬라이드 넣기
     r7Code = `<div class="tab_content swiper report7Slide">
                     <ul class="swiper-wrapper">
-                        ${r7Data.map((obj) => `<li class="swiper-slide"><img src="${obj.img}" alt="지역 모임"></li>`)
+                        ${r7Data
+                            .map((obj) => `<li class="swiper-slide"><img src="${obj.img}" alt="지역 모임"></li>`)
                             .join("")}
                     </ul>
                 </div>`;
@@ -283,8 +289,25 @@ window.addEventListener("load", () => {
         }, 100);
     });
 
+    /* report10 */
+    const report10 = document.querySelector(".report10");
+    const r10VideoWrap = document.createElement("div");
+    r10VideoWrap.className = "video_wrap";
+
+    // 동영상 넣기
+    for (let x = 0; x < 3; x++) {
+        r10VideoWrap.innerHTML
+        += `<video autoplay muted loop playsinline class="heart${x + 1}">
+                <source src="./video/heart0${x + 1}.mp4" />
+            </video>`;
+    }
+    report10.append(r10VideoWrap);
+
     /* notice */
-    const noticeWrap = document.querySelector(".notice_wrap");
+    const noticeInner = document.querySelector(".notice .inner");
+    const noticeWrap = document.createElement("ul");
+    noticeWrap.className = "notice_wrap";
+
     // 리스트 넣기
     noticeData.forEach((ele) => {
         const content = ele.content.split("^");
@@ -298,6 +321,7 @@ window.addEventListener("load", () => {
                     </li>`;
         noticeWrap.innerHTML += code;
     }); //// forEach
+    noticeInner.append(noticeWrap);
 
     // 리스트 클릭시 슬라이드 효과
     const noticeTit = noticeWrap.querySelectorAll(".notice_title");

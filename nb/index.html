@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="./css/media.css" />
         <script src="./js/library/jquery-3.6.0.min.js"></script>
         <script src="./js/library/jquery-ui.min.js"></script>
-        <script src="./js/swiper-bundle.min.js"></script>
+        <script src="./js/library/swiper-bundle.min.js"></script>
         <script type="module" src="./js/main.js"></script>
     </head>
     <body>
@@ -28,13 +28,10 @@
                         <a href="#report">밴드 10주년 보고서</a>
                     </li>
                     <li>
-                        <a href="#doband">이렇게 밴드해</a>
-                    </li>
-                    <li>
                         <a href="#mydna">나의 모임 DNA는?</a>
                     </li>
                     <li>
-                        <a href="#myband">마이밴드리포트</a>
+                        <a href="#doband">이렇게 밴드해</a>
                     </li>
                     <li>
                         <a href="#event">이벤트</a>
@@ -168,7 +165,6 @@
                         </video>
                     </div>
                 </div>
-                <div class="scroll_wrap"></div>
             </section>
             <!-- <section class="report5">
                 <div class="inner">
@@ -205,7 +201,6 @@
                             <p class="tit_sub">10년 동안 모임을 위한</p>
                             <h3 class="tit_main">밴드의 6가지 변화</h3>
                         </div>
-                        <ul class="slide_container"></ul>
                     </div>
                 </div>
             </section>
@@ -221,33 +216,58 @@
                     </div>
                 </div>
             </section>
-            <section class="report8">
+            <div class="section_wrap">
                 <div class="inner">
-                    <div class="report8_left">
+                    <section class="report8">
                         <div class="tit_wrap">
                             <p class="tit_sub">Happy Band Year</p>
                             <h3 class="tit_main">
                                 <span class="text-green">8</span>월 <span class="text-green">8</span>일<br />밴드 10주년
                             </h3>
                         </div>
-                        <div class="video_wrap"></div>
-                    </div>
-                    <div class="report8_right">
-                        <div class="slide_wrap"></div>
-                    </div>
+                        <div class="video_wrap">
+                            <video autoplay muted loop playsinline class="video_before">
+                                <source src="./video/firework_before.mp4" />
+                            </video>
+                            <video autoplay muted loop playsinline class="video_after">
+                                <source src="./video/firework_after.mp4" />
+                            </video>
+                        </div>
+                        <div class="switch_wrap">
+                            <label for="switch" class="switch">
+                                <input type="checkbox" id="switch" />
+                                <span class="switch_slide"></span>
+                            </label>
+                            <p class="switch_desc">밀어서 축하하기</p>
+                        </div>
+                    </section>
+                    <section class="report9">
+                        <div class="tit_wrap">
+                            <p class="tit_sub">밴드 10주년 특집</p>
+                            <h3 class="tit_main">
+                                <span class="text-green">9</span> <br />
+                                나의 모임 DNA는?
+                            </h3>
+                        </div>
+                        <div class="img_wrap">
+                            <img src="./img/dna.gif" alt="모임 dna" />
+                        </div>
+                        <div class="btn_wrap">
+                            <span class="tooltip"></span>
+                            <button type="button" class="btn_go-test">테스트 시작하기</button>
+                        </div>
+                    </section>
                 </div>
-            </section>
-            <section class="report9">
+            </div>
+            <section class="report10">
                 <h3 class="tit_main">
-                    <span class="text-green">10</span>년 동안<br />
-                    밴드해줘서<br />
-                    고마워!
+                    <span><span class="text-green">10</span>년 동안</span>
+                    <span>밴드해줘서</span>
+                    <span>고마워!</span>
                 </h3>
             </section>
             <section class="notice">
-                <div class="inner">
-                    <ul class="notice_wrap"></ul>
-                </div>
+                <div class="inner"></div>
             </section>
         </main>
         <footer id="footer">
