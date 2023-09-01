@@ -4,6 +4,7 @@
     --main-color: #0dcb67;
     --bg-color: #f7f7f7;
     --border-color: #e1e1e1;
+    --btn-transition: 0.25s ease-in-out;
 }
 body{
     font-family: 'NanumSquareNeo', serif;
@@ -100,7 +101,7 @@ body.hidden{
     font-size: 12px;
     font-weight: 700;
     border-radius: 16px;
-    transition: background .3s linear;
+    transition: var(--btn-transition);
 }
 #header.fixed .gnb a:hover{
     background-color: rgba(0, 0, 0, 0.05);
@@ -181,12 +182,12 @@ body.hidden{
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
-    transition: .2s linear;
+    transition: var(--btn-transition);
 }
 .btn_top.on{
     opacity: 1;
     visibility: visible;
 }
 .btn_top:hover{
-    background: url(../img/btn_top_hover.png) no-repeat center/cover;
+    background: url(../img/btn_top_h.png) no-repeat center/cover;
 }

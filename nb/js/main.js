@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
         showTopBtn();
         updateBgPos(); // report2
         moveImg(); // report3
-        moveTxt();  // report4
+        moveTxt(); // report4
     }); /////// scroll
 
     // 스크롤 위치 업데이트
@@ -122,6 +122,7 @@ window.addEventListener("load", () => {
     /* report3 */
     const report3 = document.querySelector(".report3");
     const textBallon = report3.querySelectorAll(".slide_wrap .text_wrap");
+
     // 이미지 넣기
     textBallon.forEach((ele, idx) => {
         let seq = idx + 1;
@@ -143,8 +144,8 @@ window.addEventListener("load", () => {
         });
     } ////// moveImg
 
-    // report3_slide
-    let report3Swiper = new Swiper(".report3Slide", {
+    // swiper slide
+    let r3Swiper = new Swiper(".report3Slide", {
         slidesPerView: 1,
         speed: 800,
         spaceBetween: 30,
@@ -171,18 +172,18 @@ window.addEventListener("load", () => {
 
     // 텍스트 넣기
     const r4Data = reportData["report4"];
-    let code = "<ul>";
-    for (let x in r4Data) {
-        code += "<li>";
-        for (let y = 0; y < 3; y++) {
-            for (let y of r4Data[x]) {
-                code += `<span class="item_${y.cat}">${y.txt}</span>`;
+    let r4Code = "<ul>";
+    r4Data.forEach((arr) => {
+        r4Code += "<li>";
+        for (let x = 0; x < 3; x++) {
+            for (let y of arr) {
+                r4Code += `<span class="item_${y.cat}">${y.txt}</span>`;
             }
         }
-        code += "</li>";
-    }
-    code += "</ul>";
-    r4Scroll.innerHTML += code;
+        r4Code += "</li>";
+    }); //// forEach
+    r4Code += "</ul>";
+    r4Scroll.innerHTML += r4Code;
 
     // 텍스트 위치 변경
     function moveTxt() {
@@ -198,34 +199,92 @@ window.addEventListener("load", () => {
         r4TxtBottom.style.right = `-${currentPercent * 5}px`;
     } ////// moveTxt
 
-    // report6 - 롤링이미지
-    const report6Slide = $(".report6 .slide_wrap");
-    for (let i = 0; i < 3; i++) {
-        report6Slide.append(`<img src="./img/history.png" alt="밴드 히스트리">`);
+    /* report6 */
+    const report6 = document.querySelector(".report6");
+    const r6Slide = report6.querySelector(".report6 .slide_container");
+    // 이미지 넣기
+    for (let x = 0; x < 3; x++) {
+        r6Slide.innerHTML += `<li><img src="./img/history.png" alt="밴드 히스토리"></li>`;
     }
-    report6Slide
-        .find("img")
-        .last()
-        .on("load", () => {
-            moveItem(report6Slide);
-        });
 
-    function moveItem(itemBox) {
-        let itemPos = 0;
-        let itemWidth = itemBox.find("img").width();
+    // 슬라이드 위치 변경
+    function moveSlide() {
+        const r6Slide = document.querySelector(".report6 .slide_container");
+        let firstSlide = r6Slide.querySelectorAll("li")[0];
+        let slidePos = 0;
+        let slideWidth = firstSlide.offsetWidth;
         setInterval(() => {
-            itemPos--;
-            if (itemPos < -itemWidth) {
-                itemPos = 0;
-                itemBox.append(itemBox.find("img").first());
+            slidePos--;
+            if (slidePos < -slideWidth) {
+                slidePos = 0;
+                firstSlide = r6Slide.querySelectorAll("li")[0];
+                r6Slide.appendChild(firstSlide);
             }
-            itemBox.css({ left: itemPos + "px" });
+            r6Slide.style.left = slidePos + "px";
         }, 11);
-    }
+    } ////// moveSlide
+
+    /* report7 */
+    const report7 = document.querySelector(".report7");
+    const r7Tab = report7.querySelector(".tab_wrap");
+    const tabList = document.createElement("ul");
+    tabList.classList = "tab_list";
+
+    // 탭 버튼 넣기
+    const r7Data = reportData["report7"];
+    let r7Code = "";
+    r7Data.forEach((obj) => {
+        r7Code += `<li><button type="button">${obj.txt}</button></li>`;
+    }); //// forEach
+    tabList.innerHTML = r7Code;
+    r7Tab.prepend(tabList);
+
+    // 탭 슬라이드 넣기
+    r7Code = `<div class="tab_content swiper report7Slide">
+                    <ul class="swiper-wrapper">
+                        ${r7Data.map((obj) => `<li class="swiper-slide"><img src="${obj.img}" alt="지역 모임"></li>`)
+                            .join("")}
+                    </ul>
+                </div>`;
+    r7Tab.innerHTML += r7Code;
+
+    // swiper slide
+    let r7Swiper = new Swiper(".report7Slide", {
+        effect: "fade",
+        speed: 800,
+        allowTouchMove: false,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+    });
+
+    // 버튼과 슬라이드 연결
+    const tabBtns = r7Tab.querySelectorAll(".tab_list button");
+    tabBtns[0].parentElement.classList.add("on");
+
+    // 버튼에 슬라이드 연결
+    tabBtns.forEach((btn, idx) => {
+        btn.addEventListener("click", () => {
+            for (let x of tabBtns) x.parentElement.classList.remove("on");
+            btn.parentElement.classList.add("on");
+
+            r7Swiper.slideToLoop(idx);
+        });
+    }); //// forEach
+
+    // 슬라이드에 버튼 연결
+    r7Swiper.on("realIndexChange", () => {
+        setTimeout(() => {
+            let currentIdx = r7Swiper.realIndex;
+            for (let x of tabBtns) x.parentElement.classList.remove("on");
+            tabBtns[currentIdx].parentElement.classList.add("on");
+        }, 100);
+    });
 
     /* notice */
     const noticeWrap = document.querySelector(".notice_wrap");
-
     // 리스트 넣기
     noticeData.forEach((ele) => {
         const content = ele.content.split("^");
@@ -233,14 +292,14 @@ window.addEventListener("load", () => {
                         <span class="notice_title">${ele.title}</span>
                         <div class="notice_list">
                             <ul>
-                            ${content.map((x) => `<li>${x}</li>`).join("")}
+                            ${content.map((val) => `<li>${val}</li>`).join("")}
                             </ul>
                         </div>
                     </li>`;
         noticeWrap.innerHTML += code;
     }); //// forEach
 
-    // click-slideUp/Down
+    // 리스트 클릭시 슬라이드 효과
     const noticeTit = noticeWrap.querySelectorAll(".notice_title");
 
     noticeTit.forEach((ele) => {
@@ -264,6 +323,7 @@ window.addEventListener("load", () => {
         updateBgPos();
         moveImg();
         moveTxt();
+        moveSlide();
     }
 
     init();
