@@ -103,7 +103,7 @@
     background-size: 19px 11px;
     transition: var(--btn-transition);
 }
-.btn_page-down:hover{
+.btn_page-down:hover {
     background-image: url(../img/ico_arrow-down_h.png);
 }
 @keyframes visualBg {
@@ -122,7 +122,6 @@
 /* report1 */
 .report1 {
     position: relative;
-    width: 100%;
     height: 100vh;
 }
 .report1 .tit_wrap {
@@ -211,7 +210,6 @@
 
 /* report3 */
 .report3 {
-    width: 100%;
     height: 100vh;
 }
 .report3 .inner {
@@ -276,7 +274,7 @@
     width: 140px;
     aspect-ratio: 1;
     transform: translateY(100px);
-    transition: 0.85s cubic-bezier(0.35, 0.68, 0.3, 0.63);
+    transition: 0.9s cubic-bezier(0.35, 0.68, 0.3, 0.63);
 }
 .report3 .girl {
     background: url(../img/girl.png) no-repeat center / cover;
@@ -287,27 +285,27 @@
     background: url(../img/boy.png) no-repeat center / cover;
     bottom: -48px;
 }
-.report3 .text_ballon {
+.report3 .text_tooltip {
     position: absolute;
     transform: translateY(100px);
-    transition: 0.85s cubic-bezier(0.35, 0.68, 0.3, 0.63);
+    transition: 0.9s cubic-bezier(0.35, 0.68, 0.3, 0.63);
 }
-.report3 .ballon1 {
+.report3 .tooltip1 {
     width: 130px;
     top: 63px;
     left: 162px;
 }
-.report3 .ballon2 {
+.report3 .tooltip2 {
     width: 147px;
     top: 64px;
     right: 94px;
 }
-.report3 .ballon3 {
+.report3 .tooltip3 {
     width: 186px;
     top: -50px;
     left: calc(50% - 186px / 2);
 }
-.report3 .ballon4 {
+.report3 .tooltip4 {
     width: 285px;
     top: -65px;
     left: calc(50% - 285px / 2);
@@ -469,7 +467,7 @@
 
 /* report7 */
 .report7 .inner {
-    padding-top: 9%;
+    padding-top: 9.5%;
 }
 .report7 .tit_main {
     margin-bottom: 30px;
@@ -506,7 +504,7 @@
     border-radius: 3px;
     background-color: #fff;
     transition: 0.3s ease-out;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 .report7 .tab_list li.on button,
 .report7 .tab_list li button:hover {
@@ -553,15 +551,162 @@
     object-fit: cover;
 }
 
-/* report8 */
-.report8 .inner {
+/* report8,9 */
+.section_wrap .inner {
     display: flex;
     justify-content: center;
     gap: 40px;
+    padding-top: 9.5%;
 }
-.report8_right {
+.section_wrap section {
+    flex: 1;
+    width: 100%;
+    max-width: 575px;
+    aspect-ratio: 575 / 727;
+    text-align: center;
+    border-radius: 28px;
+    box-sizing: border-box;
+}
+.section_wrap .tit_sub {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.section_wrap .tit_main {
+    font-size: 50px;
+    letter-spacing: -1px;
+}
+.report8 {
+    position: relative;
+    padding: 50px 0 45px;
+    background-color: var(--bg-color);
+    overflow: hidden;
+    z-index: 0;
+}
+.report8 .video_wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.report8 .video_wrap video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    clip-path: inset(1px);
+}
+.report8 .video_wrap .video_after {
+    visibility: hidden;
+}
+.report8 .switch_wrap {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5.5%;
+}
+.report8 .switch {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 106px;
+    height: 52px;
+}
+.report8 .switch input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+.report8 .switch_slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #d6d7d9;
+    border-radius: 34px;
+    cursor: pointer;
+}
+.report8 .switch_slide::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 40px;
+    aspect-ratio: 1;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+}
+.report8 .switch_desc {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+.report9 {
+    padding: 50px;
     background-color: #0e142b;
+}
+.report9 .tit_wrap {
     color: #fff;
+}
+.report9 .img_wrap {
+    width: 360px;
+    aspect-ratio: 360/324;
+}
+.report9 .img_wrap img {
+    width: 100%;
+}
+.report9 .btn_go-test {
+    padding: 26px 48px;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background-color: #fff;
+    border-radius: 37px;
+    transition: var(--btn-transition);
+}
+/* report10 */
+.report10 {
+    position: relative;
+    width: 100%;
+    height: 89vh;
+}
+.report10 .tit_main {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+.report10 .tit_main > span {
+    display: block;
+    font-size: 96px;
+    line-height: 1.3;
+}
+.report10 .video_wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.report10 .video_wrap video {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+}
+.report10 .heart1 {
+    top: 120px;
+    left: calc(50% - 350px);
+}
+.report10 .heart2 {
+    top: 424px;
+    left: calc(50% + 350px);
+}
+.report10 .heart3 {
+    top: 553px;
+    left: calc(50% - 500px);
 }
 
 /* notice */
