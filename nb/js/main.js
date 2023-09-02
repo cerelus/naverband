@@ -93,15 +93,17 @@ window.addEventListener("load", () => {
 
     /* report2 */
     // 배경위치 변경
+    const report2 = document.querySelector(".report2");
+    const scrollBefore = report2.querySelector(".scroll_before");
     function updateBgPos() {
-        const report2 = document.querySelector(".report2");
-        const scrollBefore = report2.querySelector(".scroll_before");
         // 스크롤 이동 한계값 = (report2.offsetHeight - window.innerHeight) + window.innerHeight
         // 시작위치: report2 - window.innerHeight * 2 / 3
         // 종료위치: report2 + window.innerHeight * 1 / 3
         let scrollHeight = report2.offsetHeight;
-        // 현재 스크롤 위치
-        let currentHeight = report2.getBoundingClientRect().top - (window.innerHeight / 3) * 2;
+        // 스크롤 시작 위치
+        let scrollStart = report2.getBoundingClientRect().top - (window.innerHeight / 3) * 2;
+        // 현재 스크롤 높이
+        let currentHeight = -scrollStart;
         // 퍼센트 업데이트
         let currentPercent = getPercent(currentHeight, scrollHeight);
 
@@ -110,9 +112,9 @@ window.addEventListener("load", () => {
 
     // 퍼센트 계산
     function getPercent(current, overall) {
-        if (current <= 0 && current >= -overall) {
-            return Math.floor(Math.abs(current / overall) * 100);
-        } else if (current > 0) {
+        if (current >= 0 && current <= overall) {
+            return Math.floor((current / overall) * 100);
+        } else if (current < 0) {
             return 0;
         } else {
             return 100;
@@ -131,14 +133,21 @@ window.addEventListener("load", () => {
         `;
     });
 
+    const r3Imgs = report3.querySelectorAll(".text_tooltip, .face");
+    // 총 이동거리
+    let distance = 100;
+    for (let x of r3Imgs) x.style.transform = `translateY(${distance}px)`;
+
     // 이미지 위치 변경
     function moveImg() {
-        const report3 = document.querySelector(".report3");
-        const r3Imgs = report3.querySelectorAll(".text_tooltip, .face");
         // 스크롤 이동 한계값
         let scrollHeight = report3.offsetHeight - window.innerHeight / 3;
-        let currentHeight = report3.getBoundingClientRect().top - (window.innerHeight / 3) * 2;
-        let currentPercent = 100 - getPercent(currentHeight, scrollHeight);
+        // 스크롤 시작 위치
+        let scrollStart = report3.getBoundingClientRect().top - (window.innerHeight / 3) * 2;
+        // 현재 스크롤 높이
+        let currentHeight = -scrollStart;
+        // 퍼섽트 업데이트
+        let currentPercent = distance * (1 - getPercent(currentHeight, scrollHeight) / 100);
         r3Imgs.forEach((ele) => {
             ele.style.transform = `translateY(${currentPercent}px)`;
         });
@@ -296,8 +305,7 @@ window.addEventListener("load", () => {
 
     // 동영상 넣기
     for (let x = 0; x < 3; x++) {
-        r10VideoWrap.innerHTML
-        += `<video autoplay muted loop playsinline class="heart${x + 1}">
+        r10VideoWrap.innerHTML += `<video autoplay muted loop playsinline class="heart${x + 1}">
                 <source src="./video/heart0${x + 1}.mp4" />
             </video>`;
     }

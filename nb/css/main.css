@@ -273,7 +273,6 @@
     right: 5%;
     width: 140px;
     aspect-ratio: 1;
-    transform: translateY(100px);
     transition: 0.9s cubic-bezier(0.35, 0.68, 0.3, 0.63);
 }
 .report3 .girl {
@@ -287,7 +286,6 @@
 }
 .report3 .text_tooltip {
     position: absolute;
-    transform: translateY(100px);
     transition: 0.9s cubic-bezier(0.35, 0.68, 0.3, 0.63);
 }
 .report3 .tooltip1 {
