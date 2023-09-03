@@ -1,3 +1,4 @@
+import { updateScrollPos } from "./smoothScroll.js";
 /* gnb */
 const header = document.getElementById("header");
 const report1 = document.querySelector(".report1");
