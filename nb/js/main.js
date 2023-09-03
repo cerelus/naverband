@@ -7,12 +7,20 @@ window.addEventListener("load", () => {
     window.addEventListener("scroll", () => {
         fixGnb();
         showTopBtn();
+        updateImg(); // report1
         updateBgPos(); // report2
         moveImg(); // report3
         moveTxt(); // report4
     }); /////// scroll
 
-    // 스크롤 위치 업데이트
+    let winWidth = window.innerWidth;
+
+    window.addEventListener("resize", () => {
+        winWidth = window.innerWidth;
+        resizeCanvas();
+    }); ////// resize
+
+    // 스크롤 현재 위치 업데이트
     window.addEventListener("keyup", () => {
         setTimeout(() => {
             updateScrollPos(window.pageYOffset);
@@ -29,6 +37,7 @@ window.addEventListener("load", () => {
     const vlVideoWrap = popupVid.querySelector(".video_wrap");
     const closeBtn = popupVid.querySelector(".btn_close");
 
+    // 비디오 넣기
     viewBtn.addEventListener("click", () => {
         vlVideoWrap.innerHTML = `<iframe src="https://tv.naver.com/embed/28397077?autoPlay=true" 
                 frameborder="0" allow="autoplay" allowfullscreen></iframe>`;
@@ -41,10 +50,83 @@ window.addEventListener("load", () => {
         document.body.classList.remove("hidden");
     });
 
+    /* report1 */
+    const report1 = document.querySelector(".report1");
+    const r1Inner = report1.querySelector(".report1 .inner");
+    const r1CanvasWrap = document.createElement("div");
+    r1CanvasWrap.className = "canvas_wrap";
+    r1Inner.append(r1CanvasWrap);
+
+    // 캔버스 생성
+    const r1Canvas = document.createElement("canvas");
+    const ctx1 = r1Canvas.getContext("2d");
+    r1CanvasWrap.append(r1Canvas);
+
+    // 이미지 추가
+    const imgLength = 60;
+    const imgArr = [];
+    let imgCnt = 0;
+
+    for (let x = 1; x <= imgLength; x++) {
+        let img = new Image();
+        img.src = `./img/phone/phone${x}.png`;
+        imgArr.push(img);
+
+        img.onload = function () {
+            imgCnt++;
+            if (imgCnt === imgLength) {
+                resizeCanvas();
+            }
+        };
+    }
+
+    // 캔버스 가로크기
+    let r1CanvasWidth = [320, 244, 220];
+    // 캔버스 이동거리
+    let canvasMoveDist = 50;
+
+    // 캔버스 이미지 변경
+    function updateImg() {
+        // 스크롤 이동 한계값
+        let scrollHeight = report1.offsetHeight + (window.innerHeight / 10) * 9;
+        let scrollStart = report1.getBoundingClientRect().top - window.innerHeight;
+        let currentHeight = -scrollStart;
+        let currentPercent = getPercent(currentHeight, scrollHeight) / 100;
+        let currentImg = Math.floor(imgLength * currentPercent);
+
+        // 이미지 순번
+        let imgSeq = Math.min(imgLength - 1, Math.max(0, currentImg));
+
+        ctx1.clearRect(0, 0, r1Canvas.width, r1Canvas.height);
+        ctx1.drawImage(imgArr[imgSeq], 0, 0, r1Canvas.width, r1Canvas.height);
+
+        // 캔버스 위치 이동
+        if (imgSeq > 19) {
+            let transformValue = Math.floor(currentPercent * canvasMoveDist);
+            r1CanvasWrap.style.transform = `translate(-50%, -${transformValue}%)`;
+        } else {
+            r1CanvasWrap.style.transform = `translate(-50%, 0%)`;
+        }
+    } ////// updateImg
+
+    // 캔버스 사이즈 변경
+    function resizeCanvas() {
+        if (winWidth >= 1440) {
+            r1Canvas.width = r1CanvasWidth[0];
+        } else if (winWidth >= 1024) {
+            r1Canvas.width = r1CanvasWidth[1];
+        } else {
+            r1Canvas.width = r1CanvasWidth[2];
+        }
+        r1Canvas.height = r1Canvas.width * 2;
+        // 캔버스 재렌더링
+        updateImg();
+    }
+
     /* report2 */
-    // 배경위치 변경
     const report2 = document.querySelector(".report2");
     const scrollBefore = report2.querySelector(".scroll_before");
+    // 배경위치 변경
     function updateBgPos() {
         // 스크롤 이동 한계값 = (report2.offsetHeight - window.innerHeight) + window.innerHeight
         // 시작위치: report2 - window.innerHeight * 2 / 3
@@ -74,10 +156,10 @@ window.addEventListener("load", () => {
 
     const r3Imgs = report3.querySelectorAll(".text_tooltip, .face");
     // 총 이동거리
-    let distance = 100;
-    for (let x of r3Imgs) x.style.transform = `translateY(${distance}px)`;
+    let imgMoveDist = 100;
+    for (let x of r3Imgs) x.style.transform = `translateY(${imgMoveDist}px)`;
 
-    // 이미지 위치 변경
+    // 이미지 위치 이동
     function moveImg() {
         // 스크롤 이동 한계값
         let scrollHeight = report3.offsetHeight - window.innerHeight / 3;
@@ -85,9 +167,10 @@ window.addEventListener("load", () => {
         let scrollStart = report3.getBoundingClientRect().top - (window.innerHeight / 3) * 2;
         // 현재 스크롤 높이
         let currentHeight = -scrollStart;
-        // 퍼섽트 업데이트
-        let currentPercent = distance * (1 - getPercent(currentHeight, scrollHeight) / 100);
-        for (let y of r3Imgs) y.style.transform = `translateY(${currentPercent}px)`;
+        // 현재 이동 거리
+        let currentMoveDist = Math.floor((imgMoveDist * getPercent(currentHeight, scrollHeight)) / 100);
+        let transformValue = imgMoveDist - currentMoveDist;
+        for (let y of r3Imgs) y.style.transform = `translateY(${transformValue}px)`;
     } ////// moveImg
 
     // swiper slide
@@ -270,7 +353,7 @@ window.addEventListener("load", () => {
     }); //// forEach
     noticeInner.append(noticeWrap);
 
-    // 리스트 클릭시 슬라이드 효과
+    // 리스트 클릭시 슬라이드 효과 주기
     const noticeTit = noticeWrap.querySelectorAll(".notice_title");
 
     noticeTit.forEach((ele) => {

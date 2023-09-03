@@ -122,7 +122,7 @@
 /* report1 */
 .report1 {
     position: relative;
-    height: 100vh;
+    height: 110vh;
 }
 .report1 .tit_wrap {
     margin-bottom: 18%;
@@ -144,13 +144,13 @@
     font-weight: 700;
     color: #999;
 }
-.report1 .mokup_wrap {
+.report1 .canvas_wrap {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 320px;
-    aspect-ratio: 2;
+    transform: translate(-50%, 0%);
+    transition: 0.7s cubic-bezier(0.35, 0.63, 0.42, 0.68);
+    z-index: 2;
 }
 .report1 .mokup_wrap img {
     width: 100%;
@@ -273,7 +273,7 @@
     right: 5%;
     width: 140px;
     aspect-ratio: 1;
-    transition: 0.9s cubic-bezier(0.35, 0.68, 0.3, 0.63);
+    transition: 0.8s cubic-bezier(0.35, 0.63, 0.42, 0.68);
 }
 .report3 .girl {
     background: url(../img/girl.png) no-repeat center / cover;
@@ -286,7 +286,7 @@
 }
 .report3 .text_tooltip {
     position: absolute;
-    transition: 0.9s cubic-bezier(0.35, 0.68, 0.3, 0.63);
+    transition: 0.8s cubic-bezier(0.35, 0.63, 0.42, 0.68);
 }
 .report3 .tooltip1 {
     width: 130px;
