@@ -1,6 +1,7 @@
-import { updateScrollPos, setSmoothScroll } from "./smoothScroll.js";
 import reportData from "./data/reportData.js";
+import keywordData from "./data/keywordData.js";
 import noticeData from "./data/noticeData.js";
+import { updateScrollPos, setSmoothScroll } from "./smoothScroll.js";
 import { fixGnb, showTopBtn, getPercent } from "./common.js";
 
 window.addEventListener("load", () => {
@@ -63,18 +64,19 @@ window.addEventListener("load", () => {
     r1CanvasWrap.append(r1Canvas);
 
     // 이미지 추가
-    const imgLength = 60;
-    const imgArr = [];
-    let imgCnt = 0;
+    const phoneImgs = [];
+    // 이미지 갯수
+    const r1ImgLength = 60;
+    let r1LoadedImg = 0;
 
-    for (let x = 1; x <= imgLength; x++) {
+    for (let x = 1; x <= r1ImgLength; x++) {
         let img = new Image();
         img.src = `./img/phone/phone${x}.png`;
-        imgArr.push(img);
+        phoneImgs.push(img);
 
         img.onload = function () {
-            imgCnt++;
-            if (imgCnt === imgLength) {
+            r1LoadedImg++;
+            if (r1LoadedImg === r1ImgLength) {
                 resizeCanvas();
             }
         };
@@ -92,13 +94,13 @@ window.addEventListener("load", () => {
         let scrollStart = report1.getBoundingClientRect().top - window.innerHeight;
         let currentHeight = -scrollStart;
         let currentPercent = getPercent(currentHeight, scrollHeight) / 100;
-        let currentImg = Math.floor(imgLength * currentPercent);
+        let currentImg = Math.floor(r1ImgLength * currentPercent);
 
         // 이미지 순번
-        let imgSeq = Math.min(imgLength - 1, Math.max(0, currentImg));
+        let imgSeq = Math.min(r1ImgLength - 1, Math.max(0, currentImg));
 
         ctx1.clearRect(0, 0, r1Canvas.width, r1Canvas.height);
-        ctx1.drawImage(imgArr[imgSeq], 0, 0, r1Canvas.width, r1Canvas.height);
+        ctx1.drawImage(phoneImgs[imgSeq], 0, 0, r1Canvas.width, r1Canvas.height);
 
         // 캔버스 위치 이동
         if (imgSeq > 19) {
@@ -231,6 +233,122 @@ window.addEventListener("load", () => {
         r4TxtTop.style.left = `-${currentPercent * step}px`;
         r4TxtBottom.style.right = `-${currentPercent * step}px`;
     } ////// moveTxt
+
+    /* report5 */
+    const r5TabContent = document.querySelector(".report5 .tab_content");
+    const r5TabWrap = document.createElement("div");
+    r5TabWrap.className = "canvas_wrap";
+    r5TabContent.append(r5TabWrap);
+
+    // 캔버스 생성
+    const r5Canvas = document.createElement("canvas");
+    const ctx5 = r5Canvas.getContext("2d");
+    r5TabWrap.append(r5Canvas);
+    r5Canvas.width = 1440;
+    r5Canvas.height = 610;
+
+    // 키워드 객체 배열 리스트
+    let keywordList = [];
+    // 이미지 객체 배열 리스트
+    let keywordImgList = [];
+    // 이미지 갯수
+    const r5ImgLength = 10;
+    let r5LoadedImg = 0;
+
+    for (let x in keywordData) {
+        let keywords = keywordData[x];
+        let imgs = [];
+
+        keywordData[x].forEach((obj) => {
+            const image = new Image();
+            image.src = obj.src;
+            imgs.push(image);
+
+            // 이미지 전부 로드시 캔버스에 그리기
+            image.onload = function () {
+                r5LoadedImg++;
+                if (r5LoadedImg === r5ImgLength) {
+                    drawKeywordImg(selectedList, selectedImgList);
+                }
+            };
+        });
+        // 키워드 객체 배열을 리스트 배열에 저장
+        keywordList.push(keywords);
+        // 이미지 객체 배열을 리스트 배열에 저장
+        keywordImgList.push(imgs);
+    } //// for in
+
+    // 초기 키워드 리스트 선택
+    let selectedList = keywordList[0];
+    let selectedImgList = keywordImgList[0];
+
+    // 선택된 리스트의 y, speed값을 배열에 저장
+    // -> 원본 데이터 변경X
+    let listY = [];
+    let listSpeed = [];
+    selectedList.forEach((item) => {
+        listY.push(item.y);
+        listSpeed.push(item.speed);
+    });
+
+    const r5TabBtns = document.querySelectorAll(".tab_list ul li");
+    // 가속도
+    const accel = 0.2;
+    // 튕겨지는 정도
+    const bounceRate = -0.3;
+    // 이미지가 튕겨진 횟수
+    let bounceCnt = [0, 0, 0, 0, 0];
+    let animationId;
+    const keywordSize = [410, 330, 260, 190, 120];
+
+    r5TabBtns.forEach((btn, idx) => {
+        btn.addEventListener("click", () => {
+            for (let x of r5TabBtns) x.classList.remove("on");
+            btn.classList.add("on");
+
+            selectedList = keywordList[idx];
+            selectedImgList = keywordImgList[idx];
+
+            // 초기화
+            listY = [];
+            listSpeed = [];
+            bounceCnt = [0, 0, 0, 0, 0];
+
+            // 선택된 키워드 리스트의 y, speed값 배열에 저장
+            selectedList.forEach((item) => {
+                listY.push(item.y);
+                listSpeed.push(item.speed);
+            });
+
+            cancelAnimationFrame(animationId);
+            drawKeywordImg(selectedList, selectedImgList);
+        });
+    }); //// forEach
+
+    function drawKeywordImg(list, img) {
+        ctx5.clearRect(0, 0, r5Canvas.width, r5Canvas.height);
+
+        list.forEach((item, idx) => {
+            ctx5.drawImage(img[idx], item.x, listY[idx], keywordSize[idx], keywordSize[idx]);
+
+            listSpeed[idx] += accel;
+            listY[idx] += listSpeed[idx];
+
+            // 키워드 이미지가 캔버스를 벗어날때
+            if (listY[idx] + keywordSize[idx] > r5Canvas.height) {
+                listY[idx] = r5Canvas.height - keywordSize[idx];
+                // 반대방향으로 튕기기
+                listSpeed[idx] *= bounceRate;
+                bounceCnt[idx]++;
+            }
+        });
+        // 키워드 이미지가 모두 3번 튀겨지면 애니메이션 종료
+        if (bounceCnt.every((cnt) => cnt > 3)) {
+            cancelAnimationFrame(animationId);
+        } else {
+            animationId = requestAnimationFrame(() => drawKeywordImg(selectedList, selectedImgList));
+        }
+    }
 
     /* report6 */
     const r6SlideWrap = document.querySelector(".report6 .slide_wrap");
