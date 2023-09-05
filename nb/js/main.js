@@ -3,6 +3,7 @@ import keywordData from "./data/keywordData.js";
 import noticeData from "./data/noticeData.js";
 import { updateScrollPos, setSmoothScroll } from "./smoothScroll.js";
 import { fixGnb, showTopBtn, getPercent } from "./common.js";
+import { updateBgPos, moveImg, moveTxt } from "./scrollAni.js";
 
 window.addEventListener("load", () => {
     window.addEventListener("scroll", () => {
@@ -125,125 +126,24 @@ window.addEventListener("load", () => {
         updateImg();
     }
 
-    /* report2 */
-    const report2 = document.querySelector(".report2");
-    const scrollBefore = report2.querySelector(".scroll_before");
-    // 배경위치 변경
-    function updateBgPos() {
-        // 스크롤 이동 한계값 = (report2.offsetHeight - window.innerHeight) + window.innerHeight
-        // 시작위치: report2 - window.innerHeight * 2 / 3
-        // 종료위치: report2 + window.innerHeight * 1 / 3
-        let scrollHeight = report2.offsetHeight;
-        // 스크롤 시작 위치
-        let scrollStart = report2.getBoundingClientRect().top - (window.innerHeight / 3) * 2;
-        // 현재 스크롤 높이
-        let currentHeight = -scrollStart;
-        // 퍼센트 업데이트
-        let currentPercent = getPercent(currentHeight, scrollHeight);
-
-        scrollBefore.style.clipPath = `inset(0px 0px ${currentPercent}% )`;
-    } ////// updateBgPos
-
-    /* report3 */
-    const report3 = document.querySelector(".report3");
-    const r3TextWrap = report3.querySelectorAll(".slide_wrap .text_wrap");
-
-    // 이미지 넣기
-    r3TextWrap.forEach((ele, idx) => {
-        let seq = idx + 1;
-        ele.innerHTML += `
-        <img src="./img/tooltip0${seq}.png" alt="말풍선" class="text_tooltip tooltip${seq}">
-        `;
-    });
-
-    const r3Imgs = report3.querySelectorAll(".text_tooltip, .face");
-    // 총 이동거리
-    let imgMoveDist = 100;
-    for (let x of r3Imgs) x.style.transform = `translateY(${imgMoveDist}px)`;
-
-    // 이미지 위치 이동
-    function moveImg() {
-        // 스크롤 이동 한계값
-        let scrollHeight = report3.offsetHeight - window.innerHeight / 3;
-        // 스크롤 시작 위치
-        let scrollStart = report3.getBoundingClientRect().top - (window.innerHeight / 3) * 2;
-        // 현재 스크롤 높이
-        let currentHeight = -scrollStart;
-        // 현재 이동 거리
-        let currentMoveDist = Math.floor((imgMoveDist * getPercent(currentHeight, scrollHeight)) / 100);
-        let transformValue = imgMoveDist - currentMoveDist;
-        for (let y of r3Imgs) y.style.transform = `translateY(${transformValue}px)`;
-    } ////// moveImg
-
-    // swiper slide
-    let r3Swiper = new Swiper(".report3Slide", {
-        slidesPerView: 1,
-        speed: 800,
-        spaceBetween: 30,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-            1025: {
-                slidesPerView: 3,
-                spaceBetween: 0,
-                allowTouchMove: false,
-            },
-        },
-    });
-
-    /* report4 */
-    const report4 = document.querySelector(".report4");
-    const r4Scroll = document.createElement("div");
-    r4Scroll.className = "scroll_wrap";
-
-    // 스크롤될 텍스트 넣기
-    const r4Data = reportData["report4"];
-    let r4Code = "<ul>";
-    r4Data.forEach((arr) => {
-        r4Code += "<li>";
-        for (let x = 0; x < 3; x++) {
-            for (let y of arr) {
-                r4Code += `<span class="item_${y.cat}">${y.txt}</span>`;
-            }
-        }
-        r4Code += "</li>";
-    }); //// forEach
-    r4Code += "</ul>";
-    r4Scroll.innerHTML += r4Code;
-    report4.append(r4Scroll);
-
-    // 텍스트 위치 변경
-    const r4TxtTop = report4.querySelector(".scroll_wrap ul li:nth-child(1)");
-    const r4TxtBottom = report4.querySelector(".scroll_wrap ul li:nth-child(2)");
-    // 텍스트 이동단위
-    let step = 5;
-
-    function moveTxt() {
-        let scrollHeight = report4.offsetHeight + window.innerHeight;
-        let scrollStart = report4.getBoundingClientRect().top - window.innerHeight;
-        let currentHeight = -scrollStart;
-
-        let currentPercent = getPercent(currentHeight, scrollHeight);
-        r4TxtTop.style.left = `-${currentPercent * step}px`;
-        r4TxtBottom.style.right = `-${currentPercent * step}px`;
-    } ////// moveTxt
-
     /* report5 */
-    const r5TabContent = document.querySelector(".report5 .tab_content");
-    const r5TabWrap = document.createElement("div");
-    r5TabWrap.className = "canvas_wrap";
-    r5TabContent.append(r5TabWrap);
+    // 탭 버튼 넣기
+    const r5TabList = document.querySelector(".report5 .tab_list");
+    const tabBtnWrap = document.createElement("ul");
+    for (let x in keywordData) {
+        tabBtnWrap.innerHTML += `<li><button type="button">${x}</button></li>`;
+    }
+    r5TabList.append(tabBtnWrap);
 
     // 캔버스 생성
+    const r5TabContent = document.querySelector(".report5 .tab_content");
+    const r5CanvasWrap = document.createElement("div");
+    r5CanvasWrap.className = "canvas_wrap";
+    r5TabContent.append(r5CanvasWrap);
+
     const r5Canvas = document.createElement("canvas");
     const ctx5 = r5Canvas.getContext("2d");
-    r5TabWrap.append(r5Canvas);
+    r5CanvasWrap.append(r5Canvas);
     r5Canvas.width = 1440;
     r5Canvas.height = 610;
 
@@ -292,6 +192,8 @@ window.addEventListener("load", () => {
     });
 
     const r5TabBtns = document.querySelectorAll(".tab_list ul li");
+    r5TabBtns[0].classList.add("on");
+    
     // 가속도
     const accel = 0.2;
     // 튕겨지는 정도
@@ -386,22 +288,19 @@ window.addEventListener("load", () => {
 
     // 탭 버튼 넣기
     const r7Data = reportData["report7"];
-    let r7Code = "";
     r7Data.forEach((obj) => {
-        r7Code += `<li><button type="button">${obj.txt}</button></li>`;
+        tabList.innerHTML += `<li><button type="button">${obj.txt}</button></li>`;
     }); //// forEach
-    tabList.innerHTML = r7Code;
     r7Tab.prepend(tabList);
 
     // 탭 슬라이드 넣기
-    r7Code = `<div class="tab_content swiper report7Slide">
+    r7Tab.innerHTML += `<div class="tab_content swiper report7Slide">
                     <ul class="swiper-wrapper">
                         ${r7Data
                             .map((obj) => `<li class="swiper-slide"><img src="${obj.img}" alt="지역 모임"></li>`)
                             .join("")}
                     </ul>
                 </div>`;
-    r7Tab.innerHTML += r7Code;
 
     // swiper slide
     let r7Swiper = new Swiper(".report7Slide", {
@@ -416,13 +315,13 @@ window.addEventListener("load", () => {
     });
 
     // 버튼과 슬라이드 연결
-    const tabBtns = r7Tab.querySelectorAll(".tab_list button");
-    tabBtns[0].parentElement.classList.add("on");
+    const r7TabBtns = r7Tab.querySelectorAll(".tab_list button");
+    r7TabBtns[0].parentElement.classList.add("on");
 
     // 버튼에 슬라이드 연결
-    tabBtns.forEach((btn, idx) => {
+    r7TabBtns.forEach((btn, idx) => {
         btn.addEventListener("click", () => {
-            for (let x of tabBtns) x.parentElement.classList.remove("on");
+            for (let x of r7TabBtns) x.parentElement.classList.remove("on");
             btn.parentElement.classList.add("on");
 
             r7Swiper.slideToLoop(idx);
@@ -433,8 +332,8 @@ window.addEventListener("load", () => {
     r7Swiper.on("realIndexChange", () => {
         setTimeout(() => {
             let currentIdx = r7Swiper.realIndex;
-            for (let x of tabBtns) x.parentElement.classList.remove("on");
-            tabBtns[currentIdx].parentElement.classList.add("on");
+            for (let x of r7TabBtns) x.parentElement.classList.remove("on");
+            r7TabBtns[currentIdx].parentElement.classList.add("on");
         }, 100);
     });
 
@@ -459,7 +358,7 @@ window.addEventListener("load", () => {
     // 리스트 넣기
     noticeData.forEach((ele) => {
         const content = ele.content.split("^");
-        let code = `<li>
+        noticeWrap.innerHTML += `<li>
                         <span class="notice_title">${ele.title}</span>
                         <div class="notice_list">
                             <ul>
@@ -467,7 +366,6 @@ window.addEventListener("load", () => {
                             </ul>
                         </div>
                     </li>`;
-        noticeWrap.innerHTML += code;
     }); //// forEach
     noticeInner.append(noticeWrap);
 
