@@ -191,9 +191,6 @@ window.addEventListener("load", () => {
         listSpeed.push(item.speed);
     });
 
-    const r5TabBtns = document.querySelectorAll(".tab_list ul li");
-    r5TabBtns[0].classList.add("on");
-    
     // 가속도
     const accel = 0.2;
     // 튕겨지는 정도
@@ -202,6 +199,9 @@ window.addEventListener("load", () => {
     let bounceCnt = [0, 0, 0, 0, 0];
     let animationId;
     const keywordSize = [410, 330, 260, 190, 120];
+
+    const r5TabBtns = document.querySelectorAll(".tab_list ul li");
+    r5TabBtns[0].classList.add("on");
 
     r5TabBtns.forEach((btn, idx) => {
         btn.addEventListener("click", () => {
@@ -337,18 +337,21 @@ window.addEventListener("load", () => {
         }, 100);
     });
 
-    /* report10 */
-    const report10 = document.querySelector(".report10");
-    const r10VideoWrap = document.createElement("div");
-    r10VideoWrap.className = "video_wrap";
+    /* report8 */
+    const r8Switch = document.getElementById("switch");
+    const r8Videos = document.querySelectorAll(".report8 video");
 
-    // 동영상 넣기
-    for (let x = 0; x < 3; x++) {
-        r10VideoWrap.innerHTML += `<video autoplay muted loop playsinline class="heart${x + 1}">
-                <source src="./video/heart0${x + 1}.mp4" />
-            </video>`;
-    }
-    report10.append(r10VideoWrap);
+    r8Switch.addEventListener("click", function(){
+        if(this.checked) {
+            r8Videos[0].style.visibility = "hidden";
+            r8Videos[1].currentTime = 0;
+            r8Videos[1].style.visibility = "visible";
+        } else{
+            r8Videos[1].style.visibility = "hidden";
+            r8Videos[0].currentTime = 0;
+            r8Videos[0].style.visibility = "visible";
+        }
+    }); //// click
 
     /* notice */
     const noticeInner = document.querySelector(".notice .inner");
