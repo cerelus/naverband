@@ -728,6 +728,7 @@
     position: relative;
     width: 100%;
     height: 89vh;
+    overflow: hidden;
 }
 .report10 .tit_main {
     position: absolute;
@@ -741,15 +742,16 @@
     font-size: 96px;
     line-height: 1.3;
     transform: scale(0);
+    transform-origin: center;
 }
 .report10 .tit_main span:nth-child(1) {
-    animation: bounceAni .5s ease 0.3s forwards;
+    animation: bounceAni .5s ease-in-out 0.4s forwards;
 }
 .report10 .tit_main span:nth-child(2) {
-    animation: bounceAni .5s ease 0.5s forwards;
+    animation: bounceAni .5s ease-in-out 0.8s forwards;
 }
 .report10 .tit_main span:nth-child(3) {
-    animation: bounceAni .5s ease 0.7s forwards;
+    animation: bounceAni .5s ease-in-out 1.2s forwards;
 }
 .report10 .video_wrap {
     position: absolute;
@@ -767,17 +769,17 @@
 .report10 .heart1 {
     top: 120px;
     left: calc(50% - 350px);
-    animation: bounceAni .5s ease 0.4s forwards;
+    animation: bounceAni .5s ease-in-out 0.6s forwards;
 }
 .report10 .heart2 {
     top: 424px;
     left: calc(50% + 350px);
-    animation: bounceAni .5s ease 0.6s forwards;
+    animation: bounceAni .5s ease-in-out 1s forwards;
 }
 .report10 .heart3 {
     top: 553px;
     left: calc(50% - 500px);
-    animation: bounceAni .5s ease 0.8s forwards;
+    animation: bounceAni .5s ease-in-out 1.4s forwards;
 }
 @keyframes bounceAni {
     0%{
