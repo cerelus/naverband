@@ -3,6 +3,7 @@
 @import url(./reset.css);
 @import url(./fonts.css);
 @import url(./common.css);
+@import url(./popup.css);
 
 /* visual */
 .visual {
@@ -617,12 +618,13 @@
     box-sizing: border-box;
 }
 .section_wrap .tit_sub {
-    margin-bottom: 20px;
+    margin-bottom: 23px;
     font-size: 20px;
     font-weight: 700;
 }
 .section_wrap .tit_main {
-    font-size: 50px;
+    font-size: 45px;
+    line-height: 1.4;
     letter-spacing: -1px;
 }
 .report8 {
@@ -635,9 +637,9 @@
 .report8 .video_wrap {
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    width: 100%;
+    height: 96%;
 }
 .report8 .video_wrap video {
     position: absolute;
@@ -701,6 +703,7 @@
     line-height: 1.4;
 }
 .report9 {
+    position: relative;
     padding: 50px;
     background-color: #0e142b;
 }
@@ -708,11 +711,18 @@
     color: #fff;
 }
 .report9 .img_wrap {
+    margin: 0 auto;
     width: 360px;
     aspect-ratio: 360/324;
 }
 .report9 .img_wrap img {
     width: 100%;
+}
+.report9 .btn_wrap{
+    position: absolute;
+    left: 50%;
+    bottom: 8.8%;
+    transform: translateX(-50%);
 }
 .report9 .btn_go-test {
     padding: 26px 48px;
@@ -869,46 +879,4 @@
 }
 .notice_list li a:hover {
     color: var(--main-color);
-}
-
-/* popup */
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #000;
-    z-index: 1001;
-}
-.popup.on {
-    display: block;
-}
-/* popup_video */
-.popup_video .video_wrap {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 1080px;
-    width: 100%;
-    aspect-ratio: 1080/607;
-}
-.popup_video iframe {
-    width: 100%;
-    height: 100%;
-}
-.btn_close {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    width: 42px;
-    height: 42px;
-    background-image: url(../img/ico_close.png);
-    background-size: 42px 42px;
-    transition: var(--btn-transition);
-}
-.btn_close:hover {
-    background-image: url(../img/ico_close_h.png);
 }

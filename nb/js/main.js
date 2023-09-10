@@ -4,6 +4,7 @@ import noticeData from "./data/noticeData.js";
 import { updateScrollPos, setSmoothScroll } from "./smoothScroll.js";
 import { fixGnb, showTopBtn, getPercent } from "./common.js";
 import { updateBgPos, moveImg, moveTxt } from "./scrollAni.js";
+import goNextQ from "./mbti.js";
 
 window.addEventListener("load", () => {
     window.addEventListener("scroll", () => {
@@ -37,7 +38,7 @@ window.addEventListener("load", () => {
     const viewBtn = visual.querySelector(".btn_view-video");
     const popupVid = document.querySelector(".popup_video");
     const vlVideoWrap = popupVid.querySelector(".video_wrap");
-    const closeBtn = popupVid.querySelector(".btn_close");
+    const vidCloseBtn = popupVid.querySelector(".btn_close");
 
     // 비디오 넣기
     viewBtn.addEventListener("click", () => {
@@ -46,7 +47,7 @@ window.addEventListener("load", () => {
         popupVid.classList.add("on");
         document.body.classList.add("hidden");
     });
-    closeBtn.addEventListener("click", () => {
+    vidCloseBtn.addEventListener("click", () => {
         vlVideoWrap.innerHTML = "";
         popupVid.classList.remove("on");
         document.body.classList.remove("hidden");
@@ -351,6 +352,19 @@ window.addEventListener("load", () => {
             r8Videos[0].currentTime = 0;
             r8Videos[0].style.visibility = "visible";
         }
+    }); //// click
+
+    /* report9 */
+    const goTestBtn = document.querySelector(".report9 .btn_go-test");
+    const popupMbti = document.querySelector(".popup_mbti");
+    const mbtiCloseBtn = popupMbti.querySelector(".btn_close");
+    goTestBtn.addEventListener("click", ()=>{
+        popupMbti.style.display = "block";
+        // 0: 첫번째 질문부터 화면에 표시
+        goNextQ(0);
+    }); //// click
+    mbtiCloseBtn.addEventListener("click", ()=>{
+        popupMbti.style.display = "none";
     }); //// click
 
     /* notice */
