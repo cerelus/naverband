@@ -16,6 +16,9 @@ function updateScrollPos(val){
     pos = val;
 }
 
+// mbti 팝업창
+const popupMbti = document.querySelector(".popup_mbti");
+
 function SmoothScroll(target, speed, smooth) {
     if (target === document)
         target = (document.scrollingElement ||
@@ -38,6 +41,9 @@ function SmoothScroll(target, speed, smooth) {
     })
 
     function scrolled(e) {
+        // mbti 팝업창에는 기본 스크롤 사용
+        if(popupMbti.classList.contains("on")) return;
+        
         e.preventDefault(); // disable default scrolling
 
         var delta = normalizeWheelDelta(e)

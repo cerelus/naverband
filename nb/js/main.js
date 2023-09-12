@@ -359,12 +359,14 @@ window.addEventListener("load", () => {
     const popupMbti = document.querySelector(".popup_mbti");
     const mbtiCloseBtn = popupMbti.querySelector(".btn_close");
     goTestBtn.addEventListener("click", ()=>{
-        popupMbti.style.display = "block";
-        // 0: 첫번째 질문부터 화면에 표시
+        popupMbti.classList.add("on");
+        document.body.classList.add("hidden");
+        // 첫번째 질문부터 화면에 표시
         goNextQ(0);
     }); //// click
     mbtiCloseBtn.addEventListener("click", ()=>{
-        popupMbti.style.display = "none";
+        popupMbti.classList.remove("on");
+        document.body.classList.remove("hidden");
     }); //// click
 
     /* notice */

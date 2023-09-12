@@ -868,7 +868,6 @@
     position: absolute;
     top: 14px;
     left: 0;
-    transform: translateY(-50%);
     width: 2px;
     height: 2px;
     background-color: #444;

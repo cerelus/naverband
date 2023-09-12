@@ -5,89 +5,89 @@ const qnaData = [
     {
         q: "일주일 동안<br>내 모임 약속은 …",
         a: [
-            { txt: "하루 놀면 하루 휴식! 징검다리 필수", type: ["E", 1] },
-            { txt: "3일 연속 약속도 거뜬", type: ["E", 2] },
-            { txt: "일주일에 한 번도 고민", type: ["E", 0] },
+            { desc: "하루 놀면 하루 휴식! 징검다리 필수", type: ["E", 1] },
+            { desc: "3일 연속 약속도 거뜬", type: ["E", 2] },
+            { desc: "일주일에 한 번도 고민", type: ["E", 0] },
         ],
     },
     {
         q: "선호하는<br>약속 장소는?",
         a: [
-            { txt: "웨이팅, 두렵지 않아! 핫플로", type: ["E", 1] },
-            { txt: "조용한 곳이 좋아! 한적한 골목길로", type: ["E", 0] },
+            { desc: "웨이팅, 두렵지 않아! 핫플로", type: ["E", 1] },
+            { desc: "조용한 곳이 좋아! 한적한 골목길로", type: ["E", 0] },
         ],
     },
     {
         q: "장소가 정해졌다!<br>그럼 나는",
         a: [
-            { txt: "주변 맛집 놀거리 모두 탐색 완료!", type: ["P", 0] },
-            { txt: "당일에 알아보고 바로 출발", type: ["P", 2] },
-            { txt: "얼마나 걸리지? 가는 길 미리 체크", type: ["P", 1] },
+            { desc: "주변 맛집 놀거리 모두 탐색 완료!", type: ["P", 0] },
+            { desc: "당일에 알아보고 바로 출발", type: ["P", 2] },
+            { desc: "얼마나 걸리지? 가는 길 미리 체크", type: ["P", 1] },
         ],
     },
     {
         q: "내일은 약속 날!<br>단체 그룹방은 잠잠한데..",
         a: [
-            { txt: "누가 말 꺼내기 전까지 기다리기", type: ["E", 0] },
-            { txt: "어디서 볼래? 먼저 연락하기", type: ["E", 1] },
+            { desc: "누가 말 꺼내기 전까지 기다리기", type: ["E", 0] },
+            { desc: "어디서 볼래? 먼저 연락하기", type: ["E", 1] },
         ],
     },
     {
         q: "약속 장소에<br>늦게 도착했을 때 나는",
         a: [
-            { txt: "왜 늦었는지 설명부터", type: ["T", 1] },
-            { txt: "일단 사과부터", type: ["T", 0] },
+            { desc: "왜 늦었는지 설명부터", type: ["T", 1] },
+            { desc: "일단 사과부터", type: ["T", 0] },
         ],
     },
     {
         q: "가기로 했던 식당이 닫았다!<br>어디로 가지?",
         a: [
-            { txt: "가본 적 있는 식당", type:  ["N", 0] },
-            { txt: "바로 옆에 있는 새로운 식당", type: ["N", 1] },
+            { desc: "바로 옆에 있는 새로운 식당", type: ["N", 1] },
+            { desc: "가본 적 있는 식당", type: ["N", 0] },
         ],
     },
     {
-        q: "가고 싶었던 카페 도착!<br>아무도 없이 휑한 분위기에, 나는",
+        q: "가고 싶었던 카페 도착!<br>아무도 없이 휑한 분위기에 나는",
         a: [
-            { txt: "다른 카페를 검색한다", type: ["N", 0] },
-            { txt: "감각을 믿고 우선 들어간다", type: ["N", 1] },
+            { desc: "다른 카페를 검색한다", type: ["N", 0] },
+            { desc: "감각을 믿고 우선 들어간다", type: ["N", 1] },
         ],
     },
     {
         q: "카페에서 메뉴 선택 중<br>어떤 걸 마셔볼까?",
         a: [
-            { txt: "사장님 추천! 랜덤 음료", type: ["N", 2] },
-            { txt: "카페 시그니처 메뉴", type: ["N", 1] },
-            { txt: "무난하게 아메리카노", type: ["N", 0] },
+            { desc: "사장님 추천! 랜덤 음료", type: ["N", 2] },
+            { desc: "카페 시그니처 메뉴", type: ["N", 1] },
+            { desc: "무난하게 아메리카노", type: ["N", 0] },
         ],
     },
     {
         q: "친구가 고민을<br>털어놓을 때, 나는",
         a: [
-            { txt: "진짜 힘들었겠다. 기분은 괜찮아?", type: ["T", 0] },
-            { txt: "그래서 지금은 해결된 거야?", type: ["T", 1] },
+            { desc: "진짜 힘들었겠다. 기분은 괜찮아?", type: ["T", 0] },
+            { desc: "그래서 지금은 해결된 거야?", type: ["T", 1] },
         ],
     },
     {
         q: "친구와 의견이<br>갈릴 때 나는",
         a: [
-            { txt: "‘음, 그럴 수 있지’ 마인드 장착", type: ["T", 1] },
-            { txt: "‘난 다르게 생각해’ 토론 모드 돌입", type:  ["T", 2] },
-            { txt: "‘네 말이 맞는 거 같아’ 100% 끄덕끄덕", type:  ["T", 0] },
+            { desc: "‘음, 그럴 수 있지’ 마인드 장착", type: ["T", 1] },
+            { desc: "‘난 다르게 생각해’ 토론 모드 돌입", type: ["T", 2] },
+            { desc: "‘네 말이 맞는 거 같아’ 100% 끄덕끄덕", type: ["T", 0] },
         ],
     },
     {
         q: "친구가 ‘우리 이제 뭐 하지?’<br>라고 물었을 때",
         a: [
-            { txt: "이다음은 여기! 플랜대로 이동!", type: ["P", 0] },
-            { txt: "일단 나가서 뭐 있는지 보고 정할까?", type: ["P", 1] },
+            { desc: "일단 나가서 뭐 있는지 보고 정할까?", type: ["P", 1] },
+            { desc: "이다음은 여기! 플랜대로 이동!", type: ["P", 0] },
         ],
     },
     {
-        q: "한가로운 주말,<br>친구가 집 근처로 나오라고 한다면?",
+        q: "한가로운 주말, 친구가<br>집 근처로 나오라고 한다면?",
         a: [
-            { txt: "지금…? 급작스러운 제안에 당황한다", type: ["P", 0] },
-            { txt: "편안한 차림으로 바로 나간다", type: ["P", 1] },
+            { desc: "편안한 차림으로 바로 나간다", type: ["P", 1] },
+            { desc: "지금…? 급작스러운 제안에 당황한다", type: ["P", 0] },
         ],
     },
 ];
@@ -104,8 +104,16 @@ const resultData = [
             "참다 터지면 칼같이 관계를 끊어내는 스타일",
         ],
         band: [
-            { img: "./img/dna/band15.png", name: "취미 인기 밴드" },
-            { img: "./img/dna/band16.png", name: "습관 미션 인증 밴드" },
+            {
+                name: "취미 인기 밴드",
+                img: "./img/dna/band15.png",
+                link: "https://band.us/keyword-group/%EC%B7%A8%EB%AF%B8",
+            },
+            {
+                name: "습관 미션 인증 밴드",
+                img: "./img/dna/band16.png",
+                link: "https://band.us/discover/recommended-mission/%EC%8A%B5%EA%B4%80",
+            },
         ],
         color: "#bb58ea",
         type: "ISFJ",
@@ -121,8 +129,16 @@ const resultData = [
             "계획하지 않았던 번개 만남은 부담부담!",
         ],
         band: [
-            { img: "./img/dna/band14.png", name: "경제/재테크 인기 밴드" },
-            { img: "./img/dna/band03.png", name: "글쓰기 미션 인증 밴드" },
+            {
+                name: "경제/재테크 인기 밴드",
+                img: "./img/dna/band14.png",
+                link: "https://band.us/keyword-group/%EA%B2%BD%EC%A0%9C%2F%EC%9E%AC%ED%85%8C%ED%81%AC/%EA%B2%BD%EC%A0%9C%2F%EC%9E%AC%ED%85%8C%ED%81%AC",
+            },
+            {
+                name: "글쓰기 미션 인증 밴드",
+                img: "./img/dna/band03.png",
+                link: "https://band.us/discover/recommended-mission/%EA%B8%80%EC%93%B0%EA%B8%B0",
+            },
         ],
         color: "#bb58ea",
         type: "ISTJ",
@@ -138,8 +154,16 @@ const resultData = [
             "싫은 사람이 생기면 티를 내지 않고 조용히 멀어지는 편",
         ],
         band: [
-            { img: "./img/dna/band11.png", name: "맛집 인기 밴드" },
-            { img: "./img/dna/band21.png", name: "그림/공예 미션 인증 밴드" },
+            {
+                name: "맛집 인기 밴드",
+                img: "./img/dna/band11.png",
+                link: "https://band.us/keyword-group/%EB%A7%9B%EC%A7%91%2F%EC%9A%94%EB%A6%AC/%EB%A7%9B%EC%A7%91",
+            },
+            {
+                name: "그림/공예 미션 인증 밴드",
+                img: "./img/dna/band21.png",
+                link: "https://band.us/discover/recommended-mission/%EA%B7%B8%EB%A6%BC%2F%EA%B3%B5%EC%98%88",
+            },
         ],
         color: "#07b53b",
         type: "ISFP",
@@ -155,8 +179,16 @@ const resultData = [
             "마음에도 없는 빈말은 굳이 No!",
         ],
         band: [
-            { img: "./img/dna/band20.png", name: "IT 인기 밴드" },
-            { img: "./img/dna/band09.png", name: "스터디 미션 인증 밴드" },
+            {
+                name: "IT 인기 밴드",
+                img: "./img/dna/band20.png",
+                link: "https://band.us/keyword-group/IT%2F%EC%BB%B4%ED%93%A8%ED%84%B0/IT",
+            },
+            {
+                name: "스터디 미션 인증 밴드",
+                img: "./img/dna/band09.png",
+                link: "https://band.us/discover/recommended-mission/%EC%8A%A4%ED%84%B0%EB%94%94",
+            },
         ],
         color: "#07b53b",
         type: "ISTP",
@@ -172,8 +204,16 @@ const resultData = [
             "배려, 예의가 없는 사람과는 대화 차단",
         ],
         band: [
-            { img: "./img/dna/band08.png", name: "드라마 인기 밴드" },
-            { img: "./img/dna/band16.png", name: "습관 미션 인증 밴드" },
+            {
+                name: "드라마 인기 밴드",
+                img: "./img/dna/band08.png",
+                link: "https://band.us/keyword-group/%EB%B0%A9%EC%86%A1%2F%EC%97%B0%EC%98%88/%EB%93%9C%EB%9D%BC%EB%A7%88",
+            },
+            {
+                name: "습관 미션 인증 밴드",
+                img: "./img/dna/band16.png",
+                link: "https://band.us/discover/recommended-mission/%EC%8A%B5%EA%B4%80",
+            },
         ],
         color: "#1ba7e9",
         type: "INFJ",
@@ -189,8 +229,16 @@ const resultData = [
             "갈등이 생기는 상황은 최대한 피하고 싶어요!",
         ],
         band: [
-            { img: "./img/dna/band10.png", name: "문화/예술 인기 밴드" },
-            { img: "./img/dna/band01.png", name: "독서 미션 인증 밴드" },
+            {
+                name: "문화/예술 인기 밴드",
+                img: "./img/dna/band10.png",
+                link: "https://band.us/keyword-group/%EB%AC%B8%ED%99%94%2F%EC%98%88%EC%88%A0/%EB%AC%B8%ED%99%94%2F%EC%98%88%EC%88%A0",
+            },
+            {
+                name: "독서 미션 인증 밴드",
+                img: "./img/dna/band01.png",
+                link: "https://band.us/discover/recommended-mission/%EB%8F%85%EC%84%9C",
+            },
         ],
         color: "#1ba7e9",
         type: "INFP",
@@ -206,8 +254,16 @@ const resultData = [
             "과도한 관심과 참견은 불편해요",
         ],
         band: [
-            { img: "./img/dna/band25.png", name: "공부 인기 밴드" },
-            { img: "./img/dna/band01.png", name: "독서 미션 인증 밴드" },
+            {
+                name: "공부 인기 밴드",
+                img: "./img/dna/band25.png",
+                link: "https://band.us/keyword-group/%EA%B5%90%EC%9C%A1%2F%EA%B3%B5%EB%B6%80",
+            },
+            {
+                name: "독서 미션 인증 밴드",
+                img: "./img/dna/band01.png",
+                link: "https://band.us/discover/recommended-mission/%EB%8F%85%EC%84%9C",
+            },
         ],
         color: "#fe747e",
         type: "INTJ",
@@ -223,8 +279,16 @@ const resultData = [
             "가끔 짓궂은 장난을 치기도 해요",
         ],
         band: [
-            { img: "./img/dna/band02.png", name: "인문/과학 인기 밴드" },
-            { img: "./img/dna/band03.png", name: "글쓰기 미션 인증 밴드" },
+            {
+                name: "인문/과학 인기 밴드",
+                img: "./img/dna/band02.png",
+                link: "https://band.us/keyword-group/%EC%9D%B8%EB%AC%B8%2F%EA%B3%BC%ED%95%99",
+            },
+            {
+                name: "글쓰기 미션 인증 밴드",
+                img: "./img/dna/band03.png",
+                link: "https://band.us/discover/recommended-mission/%EA%B8%80%EC%93%B0%EA%B8%B0",
+            },
         ],
         color: "#fe747e",
         type: "INTP",
@@ -240,8 +304,16 @@ const resultData = [
             "긴 침묵이 이어지는 어색한 상황은 견디기 어려운 편",
         ],
         band: [
-            { img: "./img/dna/band18.png", name: "반려동물 인기 밴드" },
-            { img: "./img/dna/band19.png", name: "팬 미션 인증 밴드" },
+            {
+                name: "반려동물 인기 밴드",
+                img: "./img/dna/band18.png",
+                link: "https://band.us/keyword-group/%EB%B0%98%EB%A0%A4%EB%8F%99%EB%AC%BC%2F%EB%8F%99%EB%AC%BC",
+            },
+            {
+                name: "팬 미션 인증 밴드",
+                img: "./img/dna/band19.png",
+                link: "https://band.us/discover/recommended-mission/%ED%8C%AC",
+            },
         ],
         color: "#bb58ea",
         type: "ESFJ",
@@ -257,8 +329,16 @@ const resultData = [
             "감정에 쉽게 휘둘리는 사람을 이해하기 힘든 편",
         ],
         band: [
-            { img: "./img/dna/band17.png", name: "건강/다이어트 인기 밴드" },
-            { img: "./img/dna/band09.png", name: "스터디 미션 인증 밴드" },
+            {
+                name: "건강/다이어트 인기 밴드",
+                img: "./img/dna/band17.png",
+                link: "https://band.us/keyword-group/%EA%B1%B4%EA%B0%95%2F%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8",
+            },
+            {
+                name: "스터디 미션 인증 밴드",
+                img: "./img/dna/band09.png",
+                link: "https://band.us/discover/recommended-mission/%EC%8A%A4%ED%84%B0%EB%94%94",
+            },
         ],
         color: "#bb58ea",
         type: "ESTJ",
@@ -274,8 +354,16 @@ const resultData = [
             "같이 즐거운 게 최고! 나의 흥을 전파하는 것이 곧 행복",
         ],
         band: [
-            { img: "./img/dna/band24.png", name: "힙합 인기 밴드" },
-            { img: "./img/dna/band05.png", name: "운동 미션 인증 밴드" },
+            {
+                name: "힙합 인기 밴드",
+                img: "./img/dna/band24.png",
+                link: "https://band.us/keyword-group/%EC%9D%8C%EC%95%85/%ED%9E%99%ED%95%A9",
+            },
+            {
+                name: "운동 미션 인증 밴드",
+                img: "./img/dna/band05.png",
+                link: "https://band.us/discover/recommended-mission/%EC%9A%B4%EB%8F%99",
+            },
         ],
         color: "#07b53b",
         type: "ESFP",
@@ -291,8 +379,16 @@ const resultData = [
             "관찰력이 좋아 다른 사람들의 스타일 변화를 잘 캐치하는 편",
         ],
         band: [
-            { img: "./img/dna/band22.png", name: "아이돌 팬클럽 인기 밴드" },
-            { img: "./img/dna/band23.png", name: "외국어 미션 인증 밴드" },
+            {
+                name: "아이돌 팬클럽 인기 밴드",
+                img: "./img/dna/band22.png",
+                link: "https://band.us/keyword-group/%ED%8C%AC%ED%81%B4%EB%9F%BD/%EC%95%84%EC%9D%B4%EB%8F%8C",
+            },
+            {
+                name: "외국어 미션 인증 밴드",
+                img: "./img/dna/band23.png",
+                link: "https://band.us/discover/recommended-mission/%EC%99%B8%EA%B5%AD%EC%96%B4",
+            },
         ],
         color: "#07b53b",
         type: "ESTP",
@@ -308,8 +404,16 @@ const resultData = [
             "부드러운 리더십으로 모두를 이끄는 타입",
         ],
         band: [
-            { img: "./img/dna/band11.png", name: "맛집 인기 밴드" },
-            { img: "./img/dna/band07.png", name: "미션 인증 밴드" },
+            {
+                name: "맛집 인기 밴드",
+                img: "./img/dna/band11.png",
+                link: "https://band.us/keyword-group/%EB%A7%9B%EC%A7%91%2F%EC%9A%94%EB%A6%AC/%EB%A7%9B%EC%A7%91",
+            },
+            {
+                name: "미션 인증 밴드",
+                img: "./img/dna/band07.png",
+                link: "https://band.us/discover/recommended-mission",
+            },
         ],
         color: "#1ba7e9",
         type: "ENFJ",
@@ -325,8 +429,16 @@ const resultData = [
             "다른 사람과 다툼이 있을 땐 식은땀부터 나요!",
         ],
         band: [
-            { img: "./img/dna/band12.png", name: "여행/캠핑 인기 밴드" },
-            { img: "./img/dna/band13.png", name: "취미 미션 인증 밴드" },
+            {
+                name: "여행/캠핑 인기 밴드",
+                img: "./img/dna/band12.png",
+                link: "https://band.us/keyword-group/%EC%97%AC%ED%96%89%2F%EC%BA%A0%ED%95%91",
+            },
+            {
+                name: "취미 미션 인증 밴드",
+                img: "./img/dna/band13.png",
+                link: "https://band.us/discover/recommended-mission/%EC%B7%A8%EB%AF%B8",
+            },
         ],
         color: "#1ba7e9",
         type: "ENFP",
@@ -342,8 +454,16 @@ const resultData = [
             "시간 낭비는 질색! 불필요한 잡담은 No!",
         ],
         band: [
-            { img: "./img/dna/band04.png", name: "스포츠/레저 인기 밴드" },
-            { img: "./img/dna/band05.png", name: "운동 미션 인증 밴드" },
+            {
+                name: "스포츠/레저 인기 밴드",
+                img: "./img/dna/band04.png",
+                link: "https://band.us/keyword-group/%EC%8A%A4%ED%8F%AC%EC%B8%A0%2F%EB%A0%88%EC%A0%80",
+            },
+            {
+                name: "운동 미션 인증 밴드",
+                img: "./img/dna/band05.png",
+                link: "https://band.us/discover/recommended-mission/%EC%9A%B4%EB%8F%99",
+            },
         ],
         color: "#fe747e",
         type: "ENTJ",
@@ -359,8 +479,16 @@ const resultData = [
             "주도적으로 이끌어가는 환경을 좋아하는 편",
         ],
         band: [
-            { img: "./img/dna/band06.png", name: "캠핑/백패킹 인기 밴드" },
-            { img: "./img/dna/band07.png", name: "미션 인증 밴드" },
+            {
+                name: "캠핑/백패킹 인기 밴드",
+                img: "./img/dna/band06.png",
+                link: "https://band.us/keyword-group/%EC%97%AC%ED%96%89%2F%EC%BA%A0%ED%95%91/%EC%BA%A0%ED%95%91%2F%EB%B0%B1%ED%8C%A8%ED%82%B9",
+            },
+            {
+                name: "미션 인증 밴드",
+                img: "./img/dna/band07.png",
+                link: "https://band.us/discover/recommended-mission",
+            },
         ],
         color: "#fe747e",
         type: "ENTP",
