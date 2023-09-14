@@ -15,6 +15,7 @@ const typeScore = [
     { type: "T", desc: "팩폭력", score: 1 },
     { type: "P", desc: "번개력", score: 1 },
 ];
+
 // qna 페이지 넣기
 qnaWrap.innerHTML = `<div class="progress_bar">
     <span class="progress"></span>
@@ -135,31 +136,20 @@ function setResult() {
         <img src="${result.img}" alt="${result.type}">
     </div>
     <ul class="result_graph">
-        ${typeScore
-            .map(
-                (ele) =>
-                    `<li>
+        ${typeScore.map((ele) =>
+            `<li>
                 <span>${ele.desc}</span>
                 <div class="progress_bar">
                     <div class="seperator">
                         ${Array.from(Array(5), (ele) => `<span></span>`).join("")}
                     </div>
-                    <span class="progress" style="width:calc(${ele.score * 20}% - 2px); background-color: ${
-                        result.color
-                    };"></span>
+                    <span class="progress" style="width:calc(${ele.score * 20}% - 2px); background-color: ${result.color};"></span>
                 </div>
             </li>`
-            )
-            .join("")}
+        ).join("")}
     </ul>
     <ul class="result_info">
-        ${result.info
-            .map(
-                (ele) => `
-            <li>${ele}</li>
-        `
-            )
-            .join("")}
+        ${result.info.map((ele) => `<li>${ele}</li>`).join("")}
     </ul>
     <div class="result_band">
         <h4 class="sec_title">
@@ -167,10 +157,8 @@ function setResult() {
         </h4>
         <p class="sec_desc">내 DNA를 깨워줄 밴드는?</p>
         <ul class="band_list">
-            ${result.band
-                .map(
-                    (ele) =>
-                        `<li>
+            ${result.band.map((ele) =>
+                `<li>
                     <a href="${ele.link}" target="_blank">
                         <div class="band_img">
                             <img src="${ele.img}" alt="${ele.name}">
@@ -184,16 +172,16 @@ function setResult() {
                         </div>
                     </a>
                 </li>`
-                )
-                .join("")}
+            ).join("")}
         </ul>
     </div>
     `;
     // qna 페이지 숨기기
     qnaWrap.style.display = "none";
     testCont.append(resultWrap);
+    
     resultWrap.style.opacity = 0;
-    // result 페이지 fadeIn 효과 주기
+    // fadeIn 효과 주기
     setTimeout(() => {
         resultWrap.style.opacity = 1;
     }, 600);
