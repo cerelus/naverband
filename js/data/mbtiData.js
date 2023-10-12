@@ -96,7 +96,7 @@ const resultData = [
     {
         title: "배려만점",
         desc: "스윗농도 100% 배려만점 DNA",
-        img: "./img/dna/type01.png",
+        img: "./assets/images/dna/type01.png",
         info: [
             "나만의 일상 루틴을 만들고 지키는 걸 좋아하는 편",
             "인정받는 건 좋지만, 과한 스포트라이트는 부담!",
@@ -106,12 +106,12 @@ const resultData = [
         band: [
             {
                 name: "취미 인기 밴드",
-                img: "./img/dna/band15.png",
+                img: "./assets/images/dna/band15.png",
                 link: "https://band.us/keyword-group/%EC%B7%A8%EB%AF%B8",
             },
             {
                 name: "습관 미션 인증 밴드",
-                img: "./img/dna/band16.png",
+                img: "./assets/images/dna/band16.png",
                 link: "https://band.us/discover/recommended-mission/%EC%8A%B5%EA%B4%80",
             },
         ],
@@ -121,7 +121,7 @@ const resultData = [
     {
         title: "슈퍼꼼꼼",
         desc: "빠트린 건 없지? 슈퍼꼼꼼 DNA",
-        img: "./img/dna/type02.png",
+        img: "./assets/images/dna/type02.png",
         info: [
             "계획과 원칙은 나를 상징하는 단어",
             "타인에게 먼저 다가가는 것에 어려움을 느끼는 편",
@@ -131,12 +131,12 @@ const resultData = [
         band: [
             {
                 name: "경제/재테크 인기 밴드",
-                img: "./img/dna/band14.png",
+                img: "./assets/images/dna/band14.png",
                 link: "https://band.us/keyword-group/%EA%B2%BD%EC%A0%9C%2F%EC%9E%AC%ED%85%8C%ED%81%AC/%EA%B2%BD%EC%A0%9C%2F%EC%9E%AC%ED%85%8C%ED%81%AC",
             },
             {
                 name: "글쓰기 미션 인증 밴드",
-                img: "./img/dna/band03.png",
+                img: "./assets/images/dna/band03.png",
                 link: "https://band.us/discover/recommended-mission/%EA%B8%80%EC%93%B0%EA%B8%B0",
             },
         ],
@@ -146,7 +146,7 @@ const resultData = [
     {
         title: "복세편살",
         desc: "복잡한 세상 편하게 살자 복세편살 DNA",
-        img: "./img/dna/type03.png",
+        img: "./assets/images/dna/type03.png",
         info: [
             "미루기 장인이지만, 때가 되면 누구보다 열심히!",
             "탁월한 공감 능력의 소유자",
@@ -156,12 +156,12 @@ const resultData = [
         band: [
             {
                 name: "맛집 인기 밴드",
-                img: "./img/dna/band11.png",
+                img: "./assets/images/dna/band11.png",
                 link: "https://band.us/keyword-group/%EB%A7%9B%EC%A7%91%2F%EC%9A%94%EB%A6%AC/%EB%A7%9B%EC%A7%91",
             },
             {
                 name: "그림/공예 미션 인증 밴드",
-                img: "./img/dna/band21.png",
+                img: "./assets/images/dna/band21.png",
                 link: "https://band.us/discover/recommended-mission/%EA%B7%B8%EB%A6%BC%2F%EA%B3%B5%EC%98%88",
             },
         ],
@@ -171,7 +171,7 @@ const resultData = [
     {
         title: "척척박사",
         desc: "걸어다니는 지식iN 척척박사 DNA",
-        img: "./img/dna/type04.png",
+        img: "./assets/images/dna/type04.png",
         info: [
             "여러 분야에서 다재다능한 재주꾼",
             "눈치가 빨라서 상황 파악이 빠른 편",
@@ -181,12 +181,12 @@ const resultData = [
         band: [
             {
                 name: "IT 인기 밴드",
-                img: "./img/dna/band20.png",
+                img: "./assets/images/dna/band20.png",
                 link: "https://band.us/keyword-group/IT%2F%EC%BB%B4%ED%93%A8%ED%84%B0/IT",
             },
             {
                 name: "스터디 미션 인증 밴드",
-                img: "./img/dna/band09.png",
+                img: "./assets/images/dna/band09.png",
                 link: "https://band.us/discover/recommended-mission/%EC%8A%A4%ED%84%B0%EB%94%94",
             },
         ],
@@ -196,7 +196,7 @@ const resultData = [
     {
         title: "반전매력",
         desc: "모임에 따라 180도 변신 반전매력 DNA",
-        img: "./img/dna/type05.png",
+        img: "./assets/images/dna/type05.png",
         info: [
             "스스로에게 엄격한 완벽주의자",
             "외로움을 잘 타지만, 고독을 즐기기도 하는 편",
@@ -206,12 +206,12 @@ const resultData = [
         band: [
             {
                 name: "드라마 인기 밴드",
-                img: "./img/dna/band08.png",
+                img: "./assets/images/dna/band08.png",
                 link: "https://band.us/keyword-group/%EB%B0%A9%EC%86%A1%2F%EC%97%B0%EC%98%88/%EB%93%9C%EB%9D%BC%EB%A7%88",
             },
             {
                 name: "습관 미션 인증 밴드",
-                img: "./img/dna/band16.png",
+                img: "./assets/images/dna/band16.png",
                 link: "https://band.us/discover/recommended-mission/%EC%8A%B5%EA%B4%80",
             },
         ],
@@ -221,7 +221,7 @@ const resultData = [
     {
         title: "평화지킴이",
         desc: "둥글게 둥글게 평화지킴이 DNA",
-        img: "./img/dna/type06.png",
+        img: "./assets/images/dna/type06.png",
         info: [
             "아늑하고 감성적인 분위기를 선호",
             "이야기를 잘 들어주는 프로경청러",
@@ -231,12 +231,12 @@ const resultData = [
         band: [
             {
                 name: "문화/예술 인기 밴드",
-                img: "./img/dna/band10.png",
+                img: "./assets/images/dna/band10.png",
                 link: "https://band.us/keyword-group/%EB%AC%B8%ED%99%94%2F%EC%98%88%EC%88%A0/%EB%AC%B8%ED%99%94%2F%EC%98%88%EC%88%A0",
             },
             {
                 name: "독서 미션 인증 밴드",
-                img: "./img/dna/band01.png",
+                img: "./assets/images/dna/band01.png",
                 link: "https://band.us/discover/recommended-mission/%EB%8F%85%EC%84%9C",
             },
         ],
@@ -246,7 +246,7 @@ const resultData = [
     {
         title: "겉바속촉",
         desc: "무심한 듯 다정한 겉바속촉 DNA",
-        img: "./img/dna/type07.png",
+        img: "./assets/images/dna/type07.png",
         info: [
             "스스로에게 엄격한 완벽주의자",
             "나만의 사회생활용 부캐 소유",
@@ -256,12 +256,12 @@ const resultData = [
         band: [
             {
                 name: "공부 인기 밴드",
-                img: "./img/dna/band25.png",
+                img: "./assets/images/dna/band25.png",
                 link: "https://band.us/keyword-group/%EA%B5%90%EC%9C%A1%2F%EA%B3%B5%EB%B6%80",
             },
             {
                 name: "독서 미션 인증 밴드",
-                img: "./img/dna/band01.png",
+                img: "./assets/images/dna/band01.png",
                 link: "https://band.us/discover/recommended-mission/%EB%8F%85%EC%84%9C",
             },
         ],
@@ -271,7 +271,7 @@ const resultData = [
     {
         title: "따끔조언",
         desc: "악의는 없어! 따끔조언 DNA",
-        img: "./img/dna/type08.png",
+        img: "./assets/images/dna/type08.png",
         info: [
             "내 관심사가 나오면 수다쟁이로 변신",
             "아무도 나를 봐주지 않으면 뭔가 서운한 느낌",
@@ -281,12 +281,12 @@ const resultData = [
         band: [
             {
                 name: "인문/과학 인기 밴드",
-                img: "./img/dna/band02.png",
+                img: "./assets/images/dna/band02.png",
                 link: "https://band.us/keyword-group/%EC%9D%B8%EB%AC%B8%2F%EA%B3%BC%ED%95%99",
             },
             {
                 name: "글쓰기 미션 인증 밴드",
-                img: "./img/dna/band03.png",
+                img: "./assets/images/dna/band03.png",
                 link: "https://band.us/discover/recommended-mission/%EA%B8%80%EC%93%B0%EA%B8%B0",
             },
         ],
@@ -296,7 +296,7 @@ const resultData = [
     {
         title: "리액션왕",
         desc: "폭풍 끄덕끄덕 리액션왕 DNA",
-        img: "./img/dna/type09.png",
+        img: "./assets/images/dna/type09.png",
         info: [
             "내가 잘못한 건 없는지 여러 번 체크 또 체크",
             "말하는 사람을 기분 좋게 만드는 뛰어난 공감 능력의 소유자",
@@ -306,12 +306,12 @@ const resultData = [
         band: [
             {
                 name: "반려동물 인기 밴드",
-                img: "./img/dna/band18.png",
+                img: "./assets/images/dna/band18.png",
                 link: "https://band.us/keyword-group/%EB%B0%98%EB%A0%A4%EB%8F%99%EB%AC%BC%2F%EB%8F%99%EB%AC%BC",
             },
             {
                 name: "팬 미션 인증 밴드",
-                img: "./img/dna/band19.png",
+                img: "./assets/images/dna/band19.png",
                 link: "https://band.us/discover/recommended-mission/%ED%8C%AC",
             },
         ],
@@ -321,7 +321,7 @@ const resultData = [
     {
         title: "현생만렙",
         desc: "자기관리 끝판왕 현생만렙 DNA",
-        img: "./img/dna/type10.png",
+        img: "./assets/images/dna/type10.png",
         info: [
             "효율을 중시하는 능률형 인간",
             "뭐든지 척척 해내 일잘러라는 평가를 받는 편",
@@ -331,12 +331,12 @@ const resultData = [
         band: [
             {
                 name: "건강/다이어트 인기 밴드",
-                img: "./img/dna/band17.png",
+                img: "./assets/images/dna/band17.png",
                 link: "https://band.us/keyword-group/%EA%B1%B4%EA%B0%95%2F%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8",
             },
             {
                 name: "스터디 미션 인증 밴드",
-                img: "./img/dna/band09.png",
+                img: "./assets/images/dna/band09.png",
                 link: "https://band.us/discover/recommended-mission/%EC%8A%A4%ED%84%B0%EB%94%94",
             },
         ],
@@ -346,7 +346,7 @@ const resultData = [
     {
         title: "흥마스터",
         desc: "이 구역의 흥부자는 나야 흥마스터 DNA",
-        img: "./img/dna/type11.png",
+        img: "./assets/images/dna/type11.png",
         info: [
             "천상 연예인인 당신! 관심은 언제나 짜릿",
             "노래를 흥얼흥얼, 넘치는 흥은 못 참는 편",
@@ -356,12 +356,12 @@ const resultData = [
         band: [
             {
                 name: "힙합 인기 밴드",
-                img: "./img/dna/band24.png",
+                img: "./assets/images/dna/band24.png",
                 link: "https://band.us/keyword-group/%EC%9D%8C%EC%95%85/%ED%9E%99%ED%95%A9",
             },
             {
                 name: "운동 미션 인증 밴드",
-                img: "./img/dna/band05.png",
+                img: "./assets/images/dna/band05.png",
                 link: "https://band.us/discover/recommended-mission/%EC%9A%B4%EB%8F%99",
             },
         ],
@@ -371,7 +371,7 @@ const resultData = [
     {
         title: "눈치백단",
         desc: "혹시 인생 N회차…? 눈치백단 DNA",
-        img: "./img/dna/type12.png",
+        img: "./assets/images/dna/type12.png",
         info: [
             "꽂히는 게 있으면 주저하지 않고 움직이는 행동파",
             "나를 가두는 규율과 질서는 질색",
@@ -381,12 +381,12 @@ const resultData = [
         band: [
             {
                 name: "아이돌 팬클럽 인기 밴드",
-                img: "./img/dna/band22.png",
+                img: "./assets/images/dna/band22.png",
                 link: "https://band.us/keyword-group/%ED%8C%AC%ED%81%B4%EB%9F%BD/%EC%95%84%EC%9D%B4%EB%8F%8C",
             },
             {
                 name: "외국어 미션 인증 밴드",
-                img: "./img/dna/band23.png",
+                img: "./assets/images/dna/band23.png",
                 link: "https://band.us/discover/recommended-mission/%EC%99%B8%EA%B5%AD%EC%96%B4",
             },
         ],
@@ -396,7 +396,7 @@ const resultData = [
     {
         title: "대동단결",
         desc: "이멤버! 리멤버! 대동단결 DNA",
-        img: "./img/dna/type13.png",
+        img: "./assets/images/dna/type13.png",
         info: [
             "다른 사람에게는 관대하지만, 본인에게는 냉철",
             "자신의 도움으로 다른 사람이 성장할 때 큰 보람을 느끼는 편",
@@ -406,12 +406,12 @@ const resultData = [
         band: [
             {
                 name: "맛집 인기 밴드",
-                img: "./img/dna/band11.png",
+                img: "./assets/images/dna/band11.png",
                 link: "https://band.us/keyword-group/%EB%A7%9B%EC%A7%91%2F%EC%9A%94%EB%A6%AC/%EB%A7%9B%EC%A7%91",
             },
             {
                 name: "미션 인증 밴드",
-                img: "./img/dna/band07.png",
+                img: "./assets/images/dna/band07.png",
                 link: "https://band.us/discover/recommended-mission",
             },
         ],
@@ -421,7 +421,7 @@ const resultData = [
     {
         title: "텐션담당",
         desc: "분위기 끌어 올려! 텐션담당 DNA",
-        img: "./img/dna/type14.png",
+        img: "./assets/images/dna/type14.png",
         info: [
             "재밌어 보이면 가시밭길도 걷는 열정러",
             "새로운 사람을 만나는 건 언제나 즐거운 편",
@@ -431,12 +431,12 @@ const resultData = [
         band: [
             {
                 name: "여행/캠핑 인기 밴드",
-                img: "./img/dna/band12.png",
+                img: "./assets/images/dna/band12.png",
                 link: "https://band.us/keyword-group/%EC%97%AC%ED%96%89%2F%EC%BA%A0%ED%95%91",
             },
             {
                 name: "취미 미션 인증 밴드",
-                img: "./img/dna/band13.png",
+                img: "./assets/images/dna/band13.png",
                 link: "https://band.us/discover/recommended-mission/%EC%B7%A8%EB%AF%B8",
             },
         ],
@@ -446,7 +446,7 @@ const resultData = [
     {
         title: "행동대장",
         desc: "나를 따르라! 행동대장 DNA",
-        img: "./img/dna/type15.png",
+        img: "./assets/images/dna/type15.png",
         info: [
             "아무것도 안 하는 게 스트레스인 워커홀릭",
             "스스로에 대한 자부심 뿜뿜",
@@ -456,12 +456,12 @@ const resultData = [
         band: [
             {
                 name: "스포츠/레저 인기 밴드",
-                img: "./img/dna/band04.png",
+                img: "./assets/images/dna/band04.png",
                 link: "https://band.us/keyword-group/%EC%8A%A4%ED%8F%AC%EC%B8%A0%2F%EB%A0%88%EC%A0%80",
             },
             {
                 name: "운동 미션 인증 밴드",
-                img: "./img/dna/band05.png",
+                img: "./assets/images/dna/band05.png",
                 link: "https://band.us/discover/recommended-mission/%EC%9A%B4%EB%8F%99",
             },
         ],
@@ -471,7 +471,7 @@ const resultData = [
     {
         title: "위풍당당",
         desc: "어디서든 자신 있게 위풍당당 DNA",
-        img: "./img/dna/type16.png",
+        img: "./assets/images/dna/type16.png",
         info: [
             "어디에서든 자신감 넘치는 사람!",
             "낯선 환경에서도 적응하는 능력이 탁월한 편",
@@ -481,12 +481,12 @@ const resultData = [
         band: [
             {
                 name: "캠핑/백패킹 인기 밴드",
-                img: "./img/dna/band06.png",
+                img: "./assets/images/dna/band06.png",
                 link: "https://band.us/keyword-group/%EC%97%AC%ED%96%89%2F%EC%BA%A0%ED%95%91/%EC%BA%A0%ED%95%91%2F%EB%B0%B1%ED%8C%A8%ED%82%B9",
             },
             {
                 name: "미션 인증 밴드",
-                img: "./img/dna/band07.png",
+                img: "./assets/images/dna/band07.png",
                 link: "https://band.us/discover/recommended-mission",
             },
         ],

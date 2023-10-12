@@ -100,12 +100,12 @@
     transform: translateX(-50%);
     width: 19px;
     height: 11px;
-    background-image: url(../img/ico_arrow-down.png);
+    background-image: url(../assets/images/ico_arrow-down.png);
     background-size: 19px 11px;
     transition: var(--btn-transition);
 }
 .btn_page-down:hover {
-    background-image: url(../img/ico_arrow-down_h.png);
+    background-image: url(../assets/images/ico_arrow-down_h.png);
 }
 @keyframes fadeInBg {
     to {
@@ -277,12 +277,12 @@
     transition: 0.8s cubic-bezier(0.35, 0.63, 0.42, 0.68);
 }
 .report3 .girl {
-    background: url(../img/girl.png) no-repeat center / cover;
+    background: url(../assets/images/girl.png) no-repeat center / cover;
     top: -65px;
     right: 0;
 }
 .report3 .boy {
-    background: url(../img/boy.png) no-repeat center / cover;
+    background: url(../assets/images/boy.png) no-repeat center / cover;
     bottom: -48px;
 }
 .report3 .text_tooltip {
@@ -316,11 +316,11 @@
 }
 .report3 .swiper-button-prev {
     left: 10px;
-    background: url(../img/btn_left.png) no-repeat 0 0;
+    background: url(../assets/images/btn_left.png) no-repeat 0 0;
 }
 .report3 .swiper-button-next {
     right: 10px;
-    background: url(../img/btn_right.png) no-repeat 0 0;
+    background: url(../assets/images/btn_right.png) no-repeat 0 0;
 }
 .report3 .swiper-pagination {
     bottom: 0;
@@ -414,16 +414,16 @@
     background-size: 120px 120px;
 }
 .report4 .item_download::after {
-    background: url(../img/emoji01.png) no-repeat 0 0;
+    background: url(../assets/images/emoji01.png) no-repeat 0 0;
 }
 .report4 .item_write::after {
-    background: url(../img/emoji02.png) no-repeat 0 0;
+    background: url(../assets/images/emoji02.png) no-repeat 0 0;
 }
 .report4 .item_reply::after {
-    background: url(../img/emoji03.png) no-repeat 0 0;
+    background: url(../assets/images/emoji03.png) no-repeat 0 0;
 }
 .report4 .item_chat::after {
-    background: url(../img/emoji04.png) no-repeat 0 0;
+    background: url(../assets/images/emoji04.png) no-repeat 0 0;
 }
 
 /* report5 */
@@ -432,7 +432,7 @@
     padding: 9% 0;
 }
 .report5 .tit_main {
-    margin-bottom: 50px;
+    margin: 30px 0;
 }
 .report5 .tab_wrap {
     position: relative;
@@ -451,7 +451,7 @@
     display: flex;
     padding: 6px;
     background-color: #fff;
-    border: 1px solid var(--border-color);
+    box-shadow: 0px 0px 5px var(--border-color);
     border-radius: 28px;
     text-align: center;
 }
@@ -474,7 +474,6 @@
 }
 .report5 .tab_content {
     background-color: var(--bg-color);
-    border-bottom: 1px solid var(--border-color);
 }
 .report5 .canvas_wrap {
     max-width: 1440px;
@@ -837,13 +836,13 @@
     right: 40px;
     width: 24px;
     height: 24px;
-    background-image: url(../img/ico_fold.png);
+    background-image: url(../assets/images/ico_fold.png);
     background-repeat: no-repeat;
     background-size: contain;
     transition: 0.6s ease-in-out;
 }
 .notice_title:hover::after {
-    background-image: url(../img/ico_fold_h.png);
+    background-image: url(../assets/images/ico_fold_h.png);
 }
 .notice .notice_title.on::after {
     transform: rotate(180deg);

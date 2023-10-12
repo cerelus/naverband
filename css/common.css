@@ -30,7 +30,7 @@ body.hidden {
     content: "";
     display: inline-block;
     vertical-align: middle;
-    background-image: url(../img/sp_pc.png);
+    background-image: url(../assets/images/sp_pc.png);
     background-size: 96px 94px;
 }
 .inner {
@@ -131,7 +131,7 @@ body.hidden {
 .btn_share {
     width: 28px;
     height: 28px;
-    background-image: url(../img/ico_share_w.png);
+    background-image: url(../assets/images/ico_share_w.png);
     background-size: 28px 28px;
 }
 /* header.fixed */
@@ -150,7 +150,7 @@ body.hidden {
     border-color: #000;
 }
 #header.fixed .btn_share {
-    background-image: url(../img/ico_share.png);
+    background-image: url(../assets/images/ico_share.png);
 }
 
 /* footer */
@@ -182,7 +182,7 @@ body.hidden {
     right: 30px;
     width: 60px;
     height: 60px;
-    background: url(../img/btn_top.png) no-repeat center/cover;
+    background: url(../assets/images/btn_top.png) no-repeat center/cover;
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
@@ -193,5 +193,5 @@ body.hidden {
     visibility: visible;
 }
 .btn_top:hover {
-    background: url(../img/btn_top_h.png) no-repeat center/cover;
+    background: url(../assets/images/btn_top_h.png) no-repeat center/cover;
 }

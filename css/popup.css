@@ -33,12 +33,12 @@
     right: 30px;
     width: 42px;
     height: 42px;
-    background-image: url(../img/ico_close.png);
+    background-image: url(../assets/images/ico_close.png);
     background-size: 42px 42px;
     transition: var(--btn-transition);
 }
 .popup_video .btn_close:hover {
-    background-image: url(../img/ico_close_h.png);
+    background-image: url(../assets/images/ico_close_h.png);
 }
 
 /* popup_mbti */
@@ -62,12 +62,12 @@
     right: 26px;
     width: 34px;
     aspect-ratio: 1;
-    background-image: url(../img/ico_close_circle.png);
+    background-image: url(../assets/images/ico_close_circle.png);
     background-size: 34px 34px;
     transition: var(--btn-transition);
 }
 .popup_mbti .btn_close:hover {
-    background-image: url(../img/ico_close_circle_h.png);
+    background-image: url(../assets/images/ico_close_circle_h.png);
 }
 .popup_mbti .test_title {
     height: 78px;
@@ -280,12 +280,4 @@
     font-size: 22px;
     font-weight: 800;
     letter-spacing: -0.5px;
-}
-/* 스크롤바 숨기기 */
-.result_wrap::-webkit-scrollbar {
-    display: none;
-}
-.result_wrap {
-    -ms-overflow-style: none; /* IE */
-    scrollbar-width: none; /* Firefox */
 }
