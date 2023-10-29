@@ -3,10 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="네이버 밴드 10주년 &lt;2023 밴드해&gt;" >
+    <meta property="og:description" content="세상 모든 모임의 시작, 네이버 밴드의 10주년을 함께 축하해요!">
+    <meta property="og:url" content="https://cerelus.github.io/naverband/">
+    <meta property="og:image" content="https://cerelus.github.io/naverband/assets/images/og.jpg">
+
+    <meta name="twitter:card" content="summary"> 
+    <meta name="twitter:title" content="네이버 밴드 10주년 &lt;2023 밴드해&gt;"> 
+    <meta name="twitter:description" content="세상 모든 모임의 시작, 네이버 밴드의 10주년을 함께 축하해요!">
+    <meta name="twitter:image" content="https://cerelus.github.io/naverband/assets/images/og.jpg">
     <title>밴드 10주년</title>
-    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+    
+    <link rel="stylesheet" href="./libs/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/media.css" />
 
     <script src="./libs/swiper-bundle.min.js"></script>
     <script type="module" src="./js/main.js"></script>
@@ -45,7 +55,7 @@
       </div>
     </header>
     <main id="content">
-      <section class="visual">
+      <div class="visual">
         <div class="video_wrap">
           <video id="visualVid" autoplay muted loop playsinline poster="./assets/images/bg_img.jpg">
             <source src="./assets/videos/visual_short.mp4" />
@@ -64,8 +74,8 @@
             <span class="ir">아래로 내려가기</span>
           </a>
         </div>
-      </section>
-      <section class="report1" id="report">
+      </div>
+      <section class="report1" id='report'>
         <div class="inner">
           <div class="tit_wrap">
             <p class="tit_sub">세상 모든 모임의 시작이 되다</p>
@@ -80,8 +90,8 @@
         </div>
       </section>
       <section class="report2">
-        <div class="scroll_wrap">
-          <div class="scroll scroll_before">
+        <div class="scroll_container">
+          <div class="scroll_wrap scroll_before">
             <div class="tit_wrap">
               <h3 class="tit_main">
                 10년 동안<br />
@@ -91,7 +101,7 @@
               <p class="tit_desc">BAND</p>
             </div>
           </div>
-          <div class="scroll scroll_after">
+          <div class="scroll_wrap scroll_after">
             <div class="tit_wrap">
               <h3 class="tit_main">
                 10년 동안<br />
@@ -109,8 +119,8 @@
             우리가 몰랐던<br />
             밴드의 <span class="text-green">3</span>가지 사실
           </h3>
-          <div class="slide_wrap">
-            <div class="slide_container swiper report3Slide">
+          <div class="slide_container">
+            <div class="slide_wrap swiper report3Slide">
               <ul class="swiper-wrapper">
                 <li class="slide1 swiper-slide">
                   <div class="text_wrap">
@@ -194,9 +204,9 @@
           </div>
         </div>
       </section>
-      <div class="section_wrap">
+      <section class="report_container">
         <div class="inner">
-          <section class="report8">
+          <div class="report8">
             <div class="tit_wrap">
               <p class="tit_sub">Happy Band Year</p>
               <h3 class="tit_main">
@@ -218,8 +228,8 @@
               </label>
               <p class="switch_desc">밀어서 축하하기</p>
             </div>
-          </section>
-          <section class="report9">
+          </div>
+          <div class="report9" id="mydna">
             <div class="tit_wrap">
               <p class="tit_sub">밴드 10주년 특집</p>
               <h3 class="tit_main">
@@ -233,9 +243,9 @@
             <div class="btn_wrap">
               <button type="button" class="btn_go-test">테스트 시작하기</button>
             </div>
-          </section>
+          </div>
         </div>
-      </div>
+      </section>
       <section class="report10">
         <h3 class="tit_main">
           <span><span class="text-green">10</span>년 동안</span>
